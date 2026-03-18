@@ -401,21 +401,18 @@ export default function Home() {
                 The Travel Center I-75 Drivers Actually Count On
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Running freight on I-75 through South Georgia means you pass through a lot of truck stops. Most of them offer the same thing — overpriced diesel, a fast food counter, and a parking lot you're not sure about leaving your rig in overnight. Super Petroleum was built to be something different. Two locations — one in Adel, one in Cordele — positioned right on your route so you're not adding miles to get to us.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-5">
-                We've been at this since 1995. That's three decades of fueling trucks, fixing rigs roadside at 2 AM, serving hot meals to drivers who haven't eaten since morning, and keeping our lots clean and well-lit. The drivers who stop here the first time tend to make it a regular stop — not because we ask them to, but because the experience is consistent.
+                Running I-75 through South Georgia and tired of the same truck stops? Super Petroleum has two locations — Adel and Cordele — right on your route. No detour, no extra miles.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Whether you're a company driver on a tight schedule, an owner-operator managing every expense, or a family traveler needing a real meal and a clean restroom — we're set up for all of it. Diesel, DEF, parking, food, showers, and a full-service truck care shop. One stop, no detour.
+                We've been fueling trucks, fixing rigs, and serving drivers since 1995. Diesel, DEF, parking, food, showers, and a full truck care shop. One stop covers it all.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Zap, title: "Competitive Diesel Prices", body: "Real-time competitive pricing on #2 diesel and premium fuel — with fleet card discounts that make a real difference on a long run." },
-                { icon: Shield, title: "Safe, Monitored Lots", body: "24/7 camera coverage across both locations. Well-lit pull-through spaces big enough for doubles and oversized loads." },
-                { icon: Wrench, title: "On-Site Truck Repair", body: "ASE-certified shop handles oil changes, tire blowouts, brake work, and DOT inspections. If you break down near us, we've got you." },
-                { icon: Coffee, title: "Real Food, Not Vending Machines", body: "KFC, Starbucks, Sbarro, and Curry & Grill inside. Hot food made to order — not something sitting under a heat lamp since noon." },
+                { icon: Zap, title: "Competitive Diesel Prices", body: "Competitive #2 diesel with fleet card discounts. Comdata, Fleetone, EFS, TCH, T-Chek, Voyager accepted." },
+                { icon: Shield, title: "Safe, Monitored Lots", body: "24/7 camera coverage, well-lit pull-through spaces for doubles and oversized loads." },
+                { icon: Wrench, title: "On-Site Truck Repair", body: "ASE-certified shop — oil changes, tires, brakes, DOT inspections, 24/7 roadside." },
+                { icon: Coffee, title: "Real Food On-Site", body: "KFC, Starbucks, Sbarro, and Curry & Grill — all four restaurants inside the travel center." },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -437,9 +434,9 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: "Adel, GA — Exit 39", body: "Right off I-75 at Exit 39. Our largest location with all four restaurants, a full truck care shop, driver showers, and wide paved lots for all rig types. Adel sits between Valdosta and Tifton — a natural stopping point for northbound and southbound freight." },
-                { title: "Cordele, GA — US-280 Junction", body: "Located at the I-75/US-280 interchange in Cordele. A key stop for drivers heading toward the Georgia coast, Florida, or cutting across to Alabama. Full fuel service, parking, and amenities available." },
-                { title: "Who Uses Our Stops", body: "Long-haul OTR drivers. Regional carriers running the I-75 corridor. Owner-operators running their own loads. Family travelers on road trips. Reefer haulers, flatbeds, tankers — we see every rig type through our gates." },
+                { title: "Adel, GA — Exit 39", body: "All four restaurants, full truck care shop, showers, and wide pull-through lots. Between Valdosta and Tifton on I-75." },
+                { title: "Cordele, GA — US-280 Junction", body: "I-75/US-280 interchange. Key stop for drivers heading to Florida, Georgia coast, or Alabama. Full fuel and amenities." },
+                { title: "Who Uses Our Stops", body: "OTR long-haul drivers, regional carriers, owner-operators, family travelers, reefer haulers, flatbeds, and tankers." },
               ].map((item, i) => (
                 <div key={i} className="border border-gray-700 hover:border-[#FFD10C] p-6 rounded-xl transition-all duration-300">
                   <h3 className="font-bold text-[#FFD10C] text-base mb-3">{item.title}</h3>
@@ -652,12 +649,12 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Diesel & DEF at Every Island", body: "No hunting for a DEF pump on the far end of the lot. Diesel exhaust fluid is available at every pump island at our Adel location. Fill your truck and top off DEF in one stop." },
-              { title: "Fuel Cards — All Major Programs", body: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager are all accepted. If your company runs on a fuel card program, we're in network. No cash-only surprises." },
-              { title: "Private Showers, Not an Afterthought", body: "Clean private shower rooms with fresh towels. Not a gym locker room situation — actual private rooms that get cleaned between every use. Available 24 hours." },
-              { title: "Truck Shop That's Actually Open", body: "Our truck care shop handles walk-ins and emergency breakdowns. Oil changes, tires, brakes, and roadside calls. DOT inspections available for drivers who need to stay compliant." },
-              { title: "Free Parking, No Time Limit", body: "Park your rig and stay as long as your HOS requires. No ticket, no tow, no hassle. We know a 10-hour break isn't negotiable — we've made the lot accordingly." },
-              { title: "Free WiFi That Actually Works", body: "High-speed WiFi throughout the facility. Check your load board, do your ELD logs, call dispatch, stream something in your cab. The connection holds up." },
+              { title: "Diesel & DEF at Every Island", body: "DEF available at every pump island — fill your truck and top off in one stop. No separate DEF-only lane." },
+              { title: "Fuel Cards — All Major Programs", body: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager accepted. If your fleet runs a fuel card program, you're covered." },
+              { title: "Private Showers, Not an Afterthought", body: "Private shower rooms cleaned between every use. Fresh towels provided. Available 24 hours at both locations." },
+              { title: "Truck Shop That's Actually Open", body: "Walk-in truck care shop — oil changes, tires, brakes, DOT inspections, and 24/7 emergency roadside." },
+              { title: "Free Parking, No Time Limit", body: "Pull-through spaces for 18-wheelers. Free, no time limit — stay as long as your HOS break requires." },
+              { title: "Free WiFi That Actually Works", body: "High-speed WiFi throughout the facility. Load board, ELD logs, dispatch calls — the connection holds up." },
             ].map((item, i) => (
               <div key={i} className="flex gap-4 p-5 bg-gray-50 border border-gray-200 hover:border-[#FFD10C] rounded-xl transition-all duration-300">
                 <CheckCircle className="w-5 h-5 text-[#FFD10C] flex-shrink-0 mt-0.5" />
@@ -680,13 +677,13 @@ export default function Home() {
           </div>
           <div className="space-y-3">
             {[
-              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "We have two locations on I-75 in South Georgia. The Adel Travel Center is at 1503 West 4th St, Adel, GA 31620 — right off Exit 39. The Cordele location is at 373 RockHouse Rd. East, Cordele, GA 31015 near the US-280 junction. Both are open 24 hours, 7 days a week." },
-              { q: "What fuel cards do you accept?", a: "We accept all major commercial fuel cards including Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager. If your fleet runs on a standard fuel card program, you're covered at both of our locations." },
-              { q: "Is there free truck parking at Super Petroleum?", a: "Yes. Parking is completely free with no time limits at both locations. Our lots have pull-through spaces sized for 18-wheelers, doubles, and oversized loads. We know HOS breaks are mandatory, so there's no pressure to move." },
-              { q: "Do you have DEF (diesel exhaust fluid) available?", a: "Yes. DEF is available at every pump island at our Adel travel center. You don't need to make a separate stop or find a specific island — it's available wherever you fuel up." },
-              { q: "Is there a truck repair shop at the travel center?", a: "Yes. Our full-service truck care shop at the Adel location handles oil changes, tire repair and replacement, brake service, DOT safety inspections, and 24/7 emergency roadside assistance. Walk-ins are welcome." },
-              { q: "What restaurants are inside the Adel travel center?", a: "The Adel location has four restaurants inside: KFC for fried chicken and meals, Starbucks for coffee and beverages, Sbarro for New York-style pizza, and Curry & Grill for Indian and grilled food. All four are inside the building — no driving to a separate food court." },
-              { q: "Are showers available at the truck stop?", a: "Yes. Private shower rooms are available 24 hours at both locations. Each is a fully private room cleaned between uses — not a shared locker room setup. Fresh towels are provided." },
+              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Two locations: Adel Travel Center at 1503 West 4th St, Adel, GA 31620 (Exit 39) and Cordele at 373 RockHouse Rd. East, Cordele, GA 31015. Both open 24/7." },
+              { q: "What fuel cards do you accept?", a: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager are all accepted at both locations." },
+              { q: "Is there free truck parking at Super Petroleum?", a: "Yes — free parking with no time limits at both locations. Pull-through spaces for 18-wheelers, doubles, and oversized loads." },
+              { q: "Do you have DEF (diesel exhaust fluid) available?", a: "Yes. DEF is available at every pump island at our Adel location — no separate stop required." },
+              { q: "Is there a truck repair shop at the travel center?", a: "Yes. The Adel location has a full truck care shop — oil changes, tires, brakes, DOT inspections, and 24/7 roadside. Walk-ins welcome." },
+              { q: "What restaurants are inside the Adel travel center?", a: "KFC, Starbucks, Sbarro, and Curry & Grill — all four inside the building, no driving to a separate location." },
+              { q: "Are showers available at the truck stop?", a: "Yes. Private shower rooms available 24 hours — cleaned between uses, fresh towels provided." },
             ].map((faq, i) => (
               <details key={i} className="group bg-white border border-gray-200 rounded-xl overflow-hidden">
                 <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none">

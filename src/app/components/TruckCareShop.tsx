@@ -57,32 +57,32 @@ const whyUs = [
   {
     icon: ShieldCheck,
     title: 'ASE Certified Technicians',
-    body: "Every tech in our shop holds ASE certification. That's not a marketing line — it means the person working on your rig has passed nationally recognized exams and knows commercial trucks inside out."
+    body: "Every technician holds ASE certification — nationally recognized credentials for commercial truck service."
   },
   {
     icon: Zap,
     title: 'Fast Turnaround Times',
-    body: "We stock the parts that break most often so we're not waiting on a supplier while your truck sits. Most routine service is done in hours, not days. We know time off the road is money out of your pocket."
+    body: "We stock high-demand parts so most routine service is done in hours, not days. Time off the road is money."
   },
   {
     icon: Clock,
     title: '24/7 Emergency Roadside',
-    body: "Breakdowns happen at the worst times. Our emergency roadside team is available around the clock — nights, weekends, holidays. If you're stranded near I-75 in South Georgia, we can get someone to you."
+    body: "Our emergency team runs around the clock. If you're stranded near I-75 in South Georgia, we can reach you."
   },
   {
     icon: Truck,
     title: 'All Makes & Models',
-    body: "Freightliner, Kenworth, Peterbilt, Volvo, International, Mack — we work on them all. No turning away a rig because it's a brand we don't specialize in."
+    body: "Freightliner, Kenworth, Peterbilt, Volvo, International, Mack — all major commercial truck brands serviced."
   },
   {
     icon: Users,
     title: 'Fleet Service Programs',
-    body: "Running multiple trucks through Georgia? Ask about our fleet maintenance programs. Scheduled service, priority lanes, and consolidated billing so your operation runs smoother."
+    body: "Scheduled service, priority lanes, and consolidated billing for fleets running through Georgia."
   },
   {
     icon: Settings,
     title: 'Full-Service Bays',
-    body: "Our shop is equipped for real work — not just oil changes. Full-height bays, alignment equipment, diagnostic computers, and a stocked parts room means we can handle heavy repairs on the spot."
+    body: "Full-height bays, diagnostic computers, and a stocked parts room for heavy repairs on the spot."
   },
 ];
 
@@ -278,11 +278,8 @@ export function TruckCareShop() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Full Commercial Tire Service<br /><span className="text-[#FFD10C]">On-Site in Adel</span>
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-5">
-                A blown tire on I-75 doesn't have to mean a long wait on the shoulder. Our shop carries commercial truck tires in steer, drive, and trailer sizes and has the equipment to get you back rolling fast. We handle everything from emergency blowout replacements to scheduled rotation and balancing on your fleet.
-              </p>
               <p className="text-gray-300 leading-relaxed mb-8">
-                Our technicians know the difference between a tire that needs a patch and one that needs to come off the road. We give you a straight answer and get the work done — no upselling, no runaround.
+                A blown tire on I-75 doesn't have to mean a long wait. We carry commercial tires in steer, drive, and trailer sizes and get you back rolling fast — from blowout replacements to scheduled rotation and balancing.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {tireServices.map((item, i) => (
@@ -316,13 +313,10 @@ export function TruckCareShop() {
                 The Right Shop at the Right Spot on Your Route
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                If you're running freight on I-75 through South Georgia, you've got two choices when something goes wrong — find a dealer two exits away and wait, or pull into a shop that's already where you're stopping anyway. Super Petroleum's truck care shop in Adel, GA is built into our travel center, which means your rig gets looked at while you eat, shower, or grab a few hours of rest.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-5">
-                We're not a big-box chain with a ticket system and a two-day backlog. When you pull into our shop, a certified technician talks to you directly, figures out what the truck actually needs, and gives you an honest answer about the work and the price before anything gets started.
+                Running I-75 through South Georgia and something goes wrong? Our truck care shop in Adel, GA is built into the travel center — your rig gets looked at while you eat, shower, or rest.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We handle everything from a quick oil change and filter swap to brake system repairs, DOT inspections, engine diagnostics, and trailer work. If we can fix it on-site, we will. If it needs a specialist, we'll tell you straight up rather than wasting your time.
+                We handle oil changes, brake repairs, DOT inspections, engine diagnostics, and trailer work. Certified techs, honest pricing, no two-day backlog.
               </p>
             </div>
             <div className="space-y-5">
@@ -332,19 +326,19 @@ export function TruckCareShop() {
               {[
                 {
                   title: "Stay Ahead of DOT Violations",
-                  body: "A failed roadside inspection costs you time and money you can't get back. Routine DOT inspections at our shop catch issues before an officer does — brakes, lights, tires, fluids, and everything on the checklist."
+                  body: "Routine DOT inspections catch violations before an officer does — brakes, lights, tires, fluids."
                 },
                 {
                   title: "Oil Changes Keep Engines Alive",
-                  body: "Modern diesel engines run hard and run hot. Skipping or stretching an oil change on a commercial engine isn't savings — it's deferred damage. We make oil changes fast and affordable so there's no reason to put it off."
+                  body: "Skipping oil changes on a diesel engine is deferred damage. We make it fast and affordable."
                 },
                 {
                   title: "Tire Health is Safety",
-                  body: "Tire failure is one of the leading causes of commercial truck accidents. We check tread depth, sidewall condition, and inflation pressure as part of our tire service. If something looks wrong, we tell you before it becomes a roadside emergency."
+                  body: "Tire failure causes accidents. We check tread, sidewalls, and pressure and flag problems early."
                 },
                 {
-                  title: "Catch Small Issues Before They Break the Load",
-                  body: "A loose brake chamber, a leaking coolant hose, a failing alternator — these are all cheap fixes when caught early. Our technicians do a walk-around with every vehicle that comes into the shop and flag anything that looks worth your attention."
+                  title: "Catch Small Issues Early",
+                  body: "A loose brake chamber or leaking coolant hose is a cheap fix now — a big problem on the road later."
                 },
               ].map((item, i) => (
                 <div key={i} className="border-l-4 border-[#FFD10C] pl-6 py-1">
@@ -368,14 +362,8 @@ export function TruckCareShop() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Broken Down Near I-75?<br /><span className="text-[#FFD10C]">We Can Get to You.</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-5">
-                A breakdown on I-75 in South Georgia doesn't have to mean sitting on the shoulder for hours waiting on a wrecker from three counties away. Our emergency roadside team runs around the clock, covering the area around Adel and Cordele so we can reach you faster than most regional services.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-5">
-                We handle the most common roadside failures that stop commercial trucks — blown tires, dead batteries, brake issues, fuel problems, and minor mechanical failures that don't require a full tow. If we can fix it on the side of the road, we will. If the truck needs to come in, we can arrange that too.
-              </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                One call gets you a technician with the tools and parts to handle the most common breakdowns. Don't wait on hold with a dispatch center two states away — call our shop directly.
+                Broken down on I-75 near Adel or Cordele? Our roadside team runs 24/7. One call gets you a tech with tools and parts — blown tires, dead batteries, brake issues, fuel problems, minor mechanical failures. If we can fix it roadside, we will.
               </p>
               <a href="tel:229-896-7453" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg">
                 <Phone className="w-5 h-5 text-[#FFD10C]" />
@@ -384,12 +372,12 @@ export function TruckCareShop() {
             </div>
             <div className="space-y-4">
               {[
-                { service: "Tire Blowout & Replacement", detail: "We carry commercial tire stock for steer, drive, and trailer positions. A blowout doesn't have to end your day — we can have you back rolling fast." },
-                { service: "Dead Battery & Jump Start", detail: "Commercial truck batteries fail in cold starts and after extended idle. We test, jump, and replace on-site so you're not stuck waiting for a standard roadside service." },
-                { service: "Brake System Emergencies", detail: "Air brake issues, brake chamber failures, and slack adjuster problems are some of the most dangerous faults to ignore. We can assess and repair brake system emergencies on the road." },
-                { service: "Fuel System Issues", detail: "Bad fuel, air in the lines, fuel filter failures — these kill engines without warning. Our team can diagnose and address common fuel system issues that leave trucks stranded." },
-                { service: "Minor Mechanical Failures", detail: "Belts, hoses, sensors, lighting, and other roadside-fixable issues. If it can be handled with tools and a parts run, we handle it where you're sitting." },
-                { service: "Tow Coordination", detail: "If the truck needs to come into the shop, we coordinate the tow and have the bay ready when it arrives so you're not losing additional time." },
+                { service: "Tire Blowout & Replacement", detail: "Steer, drive, and trailer tire stock on hand — back rolling fast." },
+                { service: "Dead Battery & Jump Start", detail: "Battery testing, jump start, and on-site replacement for commercial trucks." },
+                { service: "Brake System Emergencies", detail: "Air brake issues, chamber failures, and slack adjuster problems handled roadside." },
+                { service: "Fuel System Issues", detail: "Bad fuel, air in lines, and fuel filter failures diagnosed and addressed." },
+                { service: "Minor Mechanical Failures", detail: "Belts, hoses, sensors, lighting — fixed where you're sitting if parts allow." },
+                { service: "Tow Coordination", detail: "If the truck needs to come in, we coordinate the tow and have the bay ready." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 p-4 bg-white border border-gray-200 hover:border-[#FFD10C] rounded-xl transition-all duration-300">
                   <CheckCircle className="w-5 h-5 text-[#FFD10C] flex-shrink-0 mt-0.5" />
@@ -457,14 +445,14 @@ export function TruckCareShop() {
               </thead>
               <tbody>
                 {[
-                  { service: "Engine Oil & Filter", interval: "Every 15,000–25,000 miles", why: "Clean oil prevents engine wear and overheating on long hauls", available: true },
-                  { service: "Tire Inspection & Rotation", interval: "Every 25,000 miles", why: "Uneven wear shortens tire life and risks blowouts at highway speed", available: true },
-                  { service: "Brake System Inspection", interval: "Every 25,000–50,000 miles", why: "Air brake fade and worn linings are leading causes of commercial truck accidents", available: true },
-                  { service: "DOT Safety Inspection", interval: "Annually (required)", why: "Federal law requires an annual inspection — violations can put your truck out of service", available: true },
-                  { service: "Coolant System Service", interval: "Every 2 years or 300,000 miles", why: "Coolant breaks down and causes corrosion — a failed cooling system strands trucks fast", available: true },
-                  { service: "Transmission Service", interval: "Every 50,000–100,000 miles", why: "Fluid degradation damages gears — commercial transmissions are expensive to replace", available: true },
-                  { service: "Fuel Filter Replacement", interval: "Every 25,000 miles", why: "Clogged filters starve the engine and cause hard starts or power loss under load", available: true },
-                  { service: "Electrical System Check", interval: "Annually", why: "Battery, alternator, and lighting failures leave you stuck or out of DOT compliance", available: true },
+                  { service: "Engine Oil & Filter", interval: "Every 15,000–25,000 miles", why: "Prevents engine wear and overheating", available: true },
+                  { service: "Tire Inspection & Rotation", interval: "Every 25,000 miles", why: "Reduces blowout risk and extends tire life", available: true },
+                  { service: "Brake System Inspection", interval: "Every 25,000–50,000 miles", why: "Worn linings are a leading cause of accidents", available: true },
+                  { service: "DOT Safety Inspection", interval: "Annually (required)", why: "Violations can put your truck out of service", available: true },
+                  { service: "Coolant System Service", interval: "Every 2 years or 300,000 miles", why: "Prevents corrosion and cooling failure", available: true },
+                  { service: "Transmission Service", interval: "Every 50,000–100,000 miles", why: "Fluid degradation damages expensive gears", available: true },
+                  { service: "Fuel Filter Replacement", interval: "Every 25,000 miles", why: "Clogged filters cause hard starts and power loss", available: true },
+                  { service: "Electrical System Check", interval: "Annually", why: "Battery and lighting failures cause DOT violations", available: true },
                 ].map((row, i) => (
                   <tr key={i} className={`border-b border-gray-100 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"} hover:bg-yellow-50 transition-colors`}>
                     <td className="px-6 py-4 font-semibold text-gray-900 text-sm">{row.service}</td>
@@ -547,11 +535,8 @@ export function TruckCareShop() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Running a Fleet Through Georgia?<br /><span className="text-[#FFD10C]">We Can Help.</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Managing a fleet means juggling maintenance schedules, compliance deadlines, and driver availability across multiple units. We work with fleet managers to build a service plan that keeps your trucks moving and your records clean — without the back-and-forth of calling a different shop every time.
-              </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Whether you've got five trucks or fifty running through South Georgia, talk to us about setting up an account. We'll handle the scheduling, track your service history per unit, and keep your fleet DOT compliant.
+                Five trucks or fifty running through South Georgia — talk to us about a fleet account. We handle scheduling, track service history per unit, and keep your fleet DOT compliant without the back-and-forth.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {fleetBenefits.map((item, i) => (
