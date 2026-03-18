@@ -1,39 +1,46 @@
 import { ImageWithFallback } from '../images/ImageWithFallBack';
+import Link from 'next/link';
 
 const services = [
   {
     image: '/gas_astation.jpg',
     title: 'Fuel Services',
+    href: '/fuel/',
     description: 'Premium diesel and gasoline at competitive prices. We offer top-quality fuel products from trusted suppliers, ensuring your vehicle runs efficiently. All major fuel cards accepted including Comdata, T-Check, TCH, and more. Our fuel pumps are regularly maintained and calibrated for accuracy, and we provide DEF (Diesel Exhaust Fluid) at all locations.',
     features: ['24/7 Fuel Availability', 'All Major Fuel Cards Accepted', 'DEF Available', 'Competitive Pricing']
   },
   {
     image: '/kfc_image.jpg',
     title: 'Dining Options',
+    href: '/food-amenities/',
     description: 'Enjoy delicious hot meals and quick-service dining options to satisfy your appetite. Our full-service restaurants feature freshly prepared meals, breakfast served all day, and a variety of options for every taste. Quick-service counters offer grab-and-go snacks, beverages, and fresh sandwiches. We also have a selection of healthy options and fresh coffee to keep you energized on the road.',
     features: ['Full-Service Restaurants', 'Breakfast All Day', 'Grab & Go Options', 'Fresh Coffee & Beverages']
   },
   {
     image: '/truck_parking.jpg',
     title: 'Free WiFi',
+    href: '/food-amenities/',
     description: 'Stay connected with high-speed internet access throughout our facilities. Our complimentary WiFi network covers all parking areas, restrooms, and dining areas. Perfect for checking emails, streaming entertainment, video calls with family, or handling business on the road. Fast and reliable connection to keep you productive and entertained during your rest stops.',
     features: ['High-Speed Connection', 'Coverage Throughout Facility', 'No Time Limits', 'Completely Free']
   },
   {
     image: '/truck_care.jpg',
     title: 'Truck Maintenance & Repair',
+    href: '/truck-care/',
     description: 'Professional truck maintenance and repair services to keep your rig running smoothly. Our certified technicians provide expert service for all truck makes and models. We offer routine maintenance, oil changes, tire services, brake repairs, electrical diagnostics, and emergency roadside assistance. Our fully equipped service bays are available for major repairs, and we stock commonly needed parts for quick turnaround times.',
     features: ['Certified Technicians', 'All Makes & Models', 'Emergency Repairs', 'Parts Inventory']
   },
   {
     image: '/truck_parking.jpg',
     title: 'Clean Shower Facilities',
+    href: '/food-amenities/',
     description: 'Private, clean shower facilities available 24/7 for your comfort and hygiene. Our well-maintained shower rooms feature premium amenities including fresh towels, quality toiletries, and private changing areas. Clean facilities are our priority, with regular cleaning schedules ensuring a fresh experience every time. Perfect for refreshing after a long day on the road.',
     features: ['24/7 Availability', 'Private Rooms', 'Fresh Towels Provided', 'Premium Toiletries']
   },
   {
     image: '/truck_parking.jpg',
     title: 'Secure Truck Parking',
+    href: '/truck-parking/',
     description: 'Secure, spacious parking with ample space for all vehicle sizes. Our well-lit parking areas are monitored 24/7 for your safety and peace of mind. We accommodate everything from pickup trucks to 18-wheelers, with easy access lanes and clearly marked spaces. All parking areas are paved, level, and designed for easy maneuvering. Reserve your spot or park overnight with confidence.',
     features: ['24/7 Security Monitoring', 'Well-Lit Areas', 'Spacious Parking', 'All Vehicle Sizes']
   }
@@ -85,9 +92,9 @@ export function Services() {
                     ))}
                   </div>
                   <div className="pt-4 border-t border-gray-200">
-                    <span className="text-[#FFD10C] font-semibold text-sm inline-flex items-center gap-1 cursor-pointer">
+                    <Link href={service.href} className="text-[#FFD10C] font-semibold text-sm inline-flex items-center gap-1 hover:text-yellow-500 transition-colors">
                       Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
