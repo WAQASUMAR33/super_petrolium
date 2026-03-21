@@ -1,12 +1,10 @@
 import { MetadataRoute } from 'next'
-import { blogPosts } from './blog/data'
-
-export const dynamic = 'force-static'
+import prisma from '@/lib/prisma'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleum.com'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticRoutes = [
     '',
     '/locations',
     '/services',
@@ -20,20 +18,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms',
   ]
 
-  const staticPages: MetadataRoute.Sitemap = routes.map((route) => ({
+  const staticPages: MetadataRoute.Sitemap = staticRoutes.map(route => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'daily' : 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/blog' ? 0.9 : 0.8,
   }))
 
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  const blogPosts = await prisma.blogPost.findMany({
+    where: { published: true },
+    select: { slug: true, updatedAt: true },
+    orderBy: { publishedAt: 'desc' },
+  })
+
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map(post => ({
     url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: post.updatedAt,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
   return [...staticPages, ...blogPages]
 }
-

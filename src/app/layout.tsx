@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import { Header } from './components/header'
-import { Footer } from './components/footer'
 import { StructuredData } from './components/StructuredData'
+import PublicLayout from './components/PublicLayout'
 import './globals.css'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleum.com'
@@ -134,9 +133,7 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <PublicLayout>{children}</PublicLayout>
       </body>
     </html>
   )
