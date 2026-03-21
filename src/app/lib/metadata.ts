@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleum.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleums.com'
 const siteName = 'Super Petroleum'
 
 interface GenerateMetadataOptions {

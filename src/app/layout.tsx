@@ -3,7 +3,7 @@ import { StructuredData } from './components/StructuredData'
 import PublicLayout from './components/PublicLayout'
 import './globals.css'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleum.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleums.com'
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-W2LSRPV5'
 
 export const metadata: Metadata = {

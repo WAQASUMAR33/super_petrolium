@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export const dynamic = 'force-dynamic'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleum.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleums.com'
 
 const staticRoutes = [
   { path: '', changeFreq: 'daily' as const, priority: 1.0 },

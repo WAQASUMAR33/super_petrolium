@@ -4,7 +4,7 @@ interface StructuredDataProps {
 }
 
 export function StructuredData({ type = 'LocalBusiness', data }: StructuredDataProps) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleum.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://superpetroleums.com'
   
   const defaultData = {
     '@context': 'https://schema.org',
