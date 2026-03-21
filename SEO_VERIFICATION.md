@@ -9,16 +9,16 @@
 ### Individual Pages
 All pages now have proper canonical tags via the `generatePageMetadata` utility:
 
-1. ✅ **Homepage** (`/`) - Canonical: `https://superpetroleum.com/`
-2. ✅ **Services** (`/services`) - Canonical: `https://superpetroleum.com/services`
-3. ✅ **Locations** (`/locations`) - Canonical: `https://superpetroleum.com/locations`
-4. ✅ **Fuel** (`/fuel`) - Canonical: `https://superpetroleum.com/fuel`
-5. ✅ **Truck Care** (`/truck-care`) - Canonical: `https://superpetroleum.com/truck-care`
-6. ✅ **FAQ** (`/faq`) - Canonical: `https://superpetroleum.com/faq`
-7. ✅ **Careers** (`/careers`) - Canonical: `https://superpetroleum.com/careers`
-8. ✅ **Contact** (`/contact`) - Canonical: `https://superpetroleum.com/contact`
-9. ✅ **Privacy** (`/privacy`) - Canonical: `https://superpetroleum.com/privacy`
-10. ✅ **Terms** (`/terms`) - Canonical: `https://superpetroleum.com/terms`
+1. ✅ **Homepage** (`/`) - Canonical: `https://superpetroleums.com/`
+2. ✅ **Services** (`/services`) - Canonical: `https://superpetroleums.com/services`
+3. ✅ **Locations** (`/locations`) - Canonical: `https://superpetroleums.com/locations`
+4. ✅ **Fuel** (`/fuel`) - Canonical: `https://superpetroleums.com/fuel`
+5. ✅ **Truck Care** (`/truck-care`) - Canonical: `https://superpetroleums.com/truck-care`
+6. ✅ **FAQ** (`/faq`) - Canonical: `https://superpetroleums.com/faq`
+7. ✅ **Careers** (`/careers`) - Canonical: `https://superpetroleums.com/careers`
+8. ✅ **Contact** (`/contact`) - Canonical: `https://superpetroleums.com/contact`
+9. ✅ **Privacy** (`/privacy`) - Canonical: `https://superpetroleums.com/privacy`
+10. ✅ **Terms** (`/terms`) - Canonical: `https://superpetroleums.com/terms`
 
 ## ✅ Meta Tags Status
 

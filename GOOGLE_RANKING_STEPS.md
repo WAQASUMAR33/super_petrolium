@@ -39,7 +39,7 @@ This document outlines all the SEO steps performed to optimize your website for 
 - **Status**: ✅ Implemented on all pages
 - **Implementation**: Via `generatePageMetadata` utility
 - **Purpose**: Prevents duplicate content issues
-- **Example**: `https://superpetroleum.com/services`
+- **Example**: `https://superpetroleums.com/services`
 
 ---
 
@@ -206,7 +206,7 @@ This document outlines all the SEO steps performed to optimize your website for 
 ### Environment Variables Required
 Create `.env.local` file with:
 ```env
-NEXT_PUBLIC_SITE_URL=https://superpetroleum.com
+NEXT_PUBLIC_SITE_URL=https://superpetroleums.com
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 NEXT_PUBLIC_GOOGLE_VERIFICATION=your-verification-code
 ```
@@ -254,8 +254,8 @@ NEXT_PUBLIC_GOOGLE_VERIFICATION=your-verification-code
 ### Immediate Actions:
 1. **Submit Sitemap to Google Search Console**
    - Go to https://search.google.com/search-console
-   - Add property: `https://superpetroleum.com`
-   - Submit sitemap: `https://superpetroleum.com/sitemap.xml`
+   - Add property: `https://superpetroleums.com`
+   - Submit sitemap: `https://superpetroleums.com/sitemap.xml`
 
 2. **Verify Domain Ownership**
    - Add `NEXT_PUBLIC_GOOGLE_VERIFICATION` to `.env.local`

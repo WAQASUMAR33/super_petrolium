@@ -8,7 +8,7 @@ Create a `.env.local` file in the root directory with the following variables:
 
 ```env
 # Site Configuration
-NEXT_PUBLIC_SITE_URL=https://superpetroleum.com
+NEXT_PUBLIC_SITE_URL=https://superpetroleums.com
 
 # Google Tag Manager
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX

@@ -76,11 +76,11 @@ All pages include complete OpenGraph tags via `generatePageMetadata`:
 ```html
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="https://superpetroleum.com/services" />
+<meta property="og:url" content="https://superpetroleums.com/services" />
 <meta property="og:site_name" content="Super Petroleum" />
 <meta property="og:title" content="Our Services - Fuel, Parking, Dining & More | Super Petroleum" />
 <meta property="og:description" content="Discover our comprehensive services..." />
-<meta property="og:image" content="https://superpetroleum.com/og-image.jpg" />
+<meta property="og:image" content="https://superpetroleums.com/og-image.jpg" />
 ```
 
 ---
@@ -89,16 +89,16 @@ All pages include complete OpenGraph tags via `generatePageMetadata`:
 
 All pages have proper canonical tags:
 
-1. ✅ **Homepage** - `https://superpetroleum.com/`
-2. ✅ **Services** - `https://superpetroleum.com/services`
-3. ✅ **Locations** - `https://superpetroleum.com/locations`
-4. ✅ **Fuel** - `https://superpetroleum.com/fuel`
-5. ✅ **Truck Care** - `https://superpetroleum.com/truck-care`
-6. ✅ **FAQ** - `https://superpetroleum.com/faq`
-7. ✅ **Careers** - `https://superpetroleum.com/careers`
-8. ✅ **Contact** - `https://superpetroleum.com/contact`
-9. ✅ **Privacy** - `https://superpetroleum.com/privacy`
-10. ✅ **Terms** - `https://superpetroleum.com/terms`
+1. ✅ **Homepage** - `https://superpetroleums.com/`
+2. ✅ **Services** - `https://superpetroleums.com/services`
+3. ✅ **Locations** - `https://superpetroleums.com/locations`
+4. ✅ **Fuel** - `https://superpetroleums.com/fuel`
+5. ✅ **Truck Care** - `https://superpetroleums.com/truck-care`
+6. ✅ **FAQ** - `https://superpetroleums.com/faq`
+7. ✅ **Careers** - `https://superpetroleums.com/careers`
+8. ✅ **Contact** - `https://superpetroleums.com/contact`
+9. ✅ **Privacy** - `https://superpetroleums.com/privacy`
+10. ✅ **Terms** - `https://superpetroleums.com/terms`
 
 All canonical tags are set via `alternates.canonical` in metadata.
 
