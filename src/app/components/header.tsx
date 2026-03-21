@@ -55,6 +55,7 @@ export function Header() {
             <Link href="/truck-care/" className="hover:text-[#FFD10C] transition-colors">Truck Care</Link>
             <Link href="/faq/" className="hover:text-[#FFD10C] transition-colors">FAQ</Link>
             <Link href="/careers/" className="hover:text-[#FFD10C] transition-colors">Careers</Link>
+            <Link href="/blog/" className="hover:text-[#FFD10C] transition-colors">Blog</Link>
             <Link href="/contact/" className="hover:text-[#FFD10C] transition-colors">Contact</Link>
           </nav>
 
@@ -78,6 +79,7 @@ export function Header() {
             <Link href="/truck-care/" className="hover:text-[#FFD10C] transition-colors" onClick={() => setMobileMenuOpen(false)}>Truck Care</Link>
             <Link href="/faq/" className="hover:text-[#FFD10C] transition-colors" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
             <Link href="/careers/" className="hover:text-[#FFD10C] transition-colors" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
+            <Link href="/blog/" className="hover:text-[#FFD10C] transition-colors" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
             <Link href="/contact/" className="hover:text-[#FFD10C] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </nav>
         )}

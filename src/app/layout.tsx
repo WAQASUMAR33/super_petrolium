@@ -70,10 +70,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-    // Add other verification codes as needed
-    // yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
-    // bing: process.env.NEXT_PUBLIC_BING_VERIFICATION,
+    google: 'yIqRVtFkcqQ5bWhPROgNiqF3JBHSbhBVhxorfthU_VY',
   },
   alternates: {
     canonical: siteUrl,
