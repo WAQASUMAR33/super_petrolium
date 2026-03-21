@@ -12,7 +12,7 @@ export default async function AdminBlogPage() {
       id: true,
       slug: true,
       title: true,
-      category: true,
+      category: { select: { name: true } },
       published: true,
       publishedAt: true,
       createdAt: true,
@@ -46,6 +46,7 @@ export default async function AdminBlogPage() {
       <div className="bg-gray-900 rounded-xl border border-gray-800">
         <BlogListTable posts={posts.map(p => ({
           ...p,
+          category: p.category?.name ?? null,
           publishedAt: p.publishedAt?.toISOString() ?? null,
           createdAt: p.createdAt.toISOString(),
         }))} />

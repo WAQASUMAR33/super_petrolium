@@ -33,7 +33,7 @@ export async function POST(request: Request) {
         title: body.title,
         excerpt: body.excerpt,
         content: body.content,
-        category: body.category,
+        categoryId: body.categoryId ? Number(body.categoryId) : null,
         tags: body.tags || '',
         metaTitle: body.metaTitle || body.title,
         metaDescription: body.metaDescription || body.excerpt,

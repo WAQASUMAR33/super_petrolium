@@ -8,7 +8,7 @@ interface Post {
   id: number
   slug: string
   title: string
-  category: string
+  category: string | null
   published: boolean
   publishedAt: string | null
   createdAt: string
@@ -63,7 +63,7 @@ export default function BlogListTable({ posts }: { posts: Post[] }) {
                 <div className="text-gray-500 text-xs mt-0.5">/{post.slug}</div>
               </td>
               <td className="py-4 px-4 hidden md:table-cell">
-                <span className="text-gray-300 text-sm">{post.category}</span>
+                <span className="text-gray-300 text-sm">{post.category ?? <span className="text-gray-600 italic">Uncategorized</span>}</span>
               </td>
               <td className="py-4 px-4">
                 {post.published ? (

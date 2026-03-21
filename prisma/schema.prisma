@@ -7,13 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Category {
+  id          Int        @id @default(autoincrement())
+  name        String     @unique @db.VarChar(100)
+  slug        String     @unique @db.VarChar(100)
+  description String?    @db.VarChar(255)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  posts       BlogPost[]
+
+  @@index([slug])
+}
+
 model BlogPost {
   id              Int       @id @default(autoincrement())
   slug            String    @unique @db.VarChar(255)
   title           String    @db.VarChar(255)
   excerpt         String    @db.Text
   content         String    @db.LongText
-  category        String    @db.VarChar(100)
+  categoryId      Int?
+  category        Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
   tags            String    @default("") @db.VarChar(500)
   metaTitle       String    @db.VarChar(70)
   metaDescription String    @db.VarChar(170)
@@ -28,4 +41,5 @@ model BlogPost {
   @@index([published])
   @@index([slug])
   @@index([publishedAt])
+  @@index([categoryId])
 }

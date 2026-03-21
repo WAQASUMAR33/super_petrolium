@@ -19,7 +19,7 @@ export default async function BlogPage() {
       slug: true,
       title: true,
       excerpt: true,
-      category: true,
+      category: { select: { name: true } },
       readTime: true,
       publishedAt: true,
     },
@@ -53,7 +53,7 @@ export default async function BlogPage() {
               >
                 <div className="bg-[#FFD10C] px-4 py-2">
                   <span className="text-black text-sm font-semibold uppercase tracking-wide">
-                    {post.category}
+                    {post.category?.name ?? 'General'}
                   </span>
                 </div>
                 <div className="p-6">

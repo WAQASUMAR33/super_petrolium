@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const post = await prisma.blogPost.findUnique({
     where: { slug: params.slug, published: true },
+    include: { category: { select: { name: true } } },
   })
   if (!post) notFound()
 
@@ -54,7 +55,7 @@ export default async function BlogPostPage({ params }: Props) {
             Back to Blog
           </Link>
           <div className="inline-block bg-[#FFD10C] text-black text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded mb-4">
-            {post.category}
+            {post.category?.name ?? 'General'}
           </div>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
           <div className="flex gap-4 text-gray-400 text-sm">

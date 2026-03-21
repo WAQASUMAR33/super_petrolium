@@ -23,7 +23,7 @@ export default async function EditBlogPostPage({ params }: Props) {
         title: post.title,
         excerpt: post.excerpt,
         content: post.content,
-        category: post.category,
+        categoryId: post.categoryId,
         tags: post.tags,
         metaTitle: post.metaTitle,
         metaDescription: post.metaDescription,

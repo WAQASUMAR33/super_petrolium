@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Save, Eye, EyeOff } from 'lucide-react'
+import { ArrowLeft, Save, Eye, EyeOff, ExternalLink } from 'lucide-react'
+
+interface Category {
+  id: number
+  name: string
+}
 
 interface BlogFormData {
   id?: number
@@ -11,7 +16,7 @@ interface BlogFormData {
   title: string
   excerpt: string
   content: string
-  category: string
+  categoryId: number | null
   tags: string
   metaTitle: string
   metaDescription: string
@@ -20,11 +25,6 @@ interface BlogFormData {
   readTime: string
   published: boolean
 }
-
-const CATEGORIES = [
-  'Travel Tips', 'Fuel', 'Fuel Cards', 'Parking', 'Safety',
-  'Truck Care', 'Food & Dining', 'News', 'Company Updates',
-]
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim()
@@ -38,11 +38,7 @@ function calcReadTime(content: string): string {
 function CharCounter({ value, min, max }: { value: string; min: number; max: number }) {
   const len = value.length
   const color = len >= min && len <= max ? 'text-green-400' : len > max ? 'text-red-400' : 'text-yellow-400'
-  return (
-    <span className={`text-xs ${color}`}>
-      {len}/{max}
-    </span>
-  )
+  return <span className={`text-xs ${color}`}>{len}/{max}</span>
 }
 
 export default function BlogForm({ initialData }: { initialData?: Partial<BlogFormData> }) {
@@ -55,7 +51,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
     title: initialData?.title || '',
     excerpt: initialData?.excerpt || '',
     content: initialData?.content || '',
-    category: initialData?.category || '',
+    categoryId: initialData?.categoryId ?? null,
     tags: initialData?.tags || '',
     metaTitle: initialData?.metaTitle || '',
     metaDescription: initialData?.metaDescription || '',
@@ -65,6 +61,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
     published: initialData?.published || false,
   })
 
+  const [categories, setCategories] = useState<Category[]>([])
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(isEditing)
   const [metaTitleManuallyEdited, setMetaTitleManuallyEdited] = useState(isEditing)
   const [metaDescManuallyEdited, setMetaDescManuallyEdited] = useState(isEditing)
@@ -72,31 +69,29 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
-  // Auto-populate slug and meta title from title
   useEffect(() => {
-    if (!slugManuallyEdited) {
-      setForm(f => ({ ...f, slug: slugify(f.title) }))
-    }
-    if (!metaTitleManuallyEdited) {
-      setForm(f => ({ ...f, metaTitle: f.title.slice(0, 70) }))
-    }
+    fetch('/api/admin/category')
+      .then(r => r.json())
+      .then(setCategories)
+  }, [])
+
+  // Auto-populate slug + metaTitle from title
+  useEffect(() => {
+    if (!slugManuallyEdited) setForm(f => ({ ...f, slug: slugify(f.title) }))
+    if (!metaTitleManuallyEdited) setForm(f => ({ ...f, metaTitle: f.title.slice(0, 70) }))
   }, [form.title, slugManuallyEdited, metaTitleManuallyEdited])
 
   // Auto-populate meta description from excerpt
   useEffect(() => {
-    if (!metaDescManuallyEdited) {
-      setForm(f => ({ ...f, metaDescription: f.excerpt.slice(0, 160) }))
-    }
+    if (!metaDescManuallyEdited) setForm(f => ({ ...f, metaDescription: f.excerpt.slice(0, 160) }))
   }, [form.excerpt, metaDescManuallyEdited])
 
-  // Auto-calculate read time from content
+  // Auto-calculate read time
   useEffect(() => {
-    if (form.content) {
-      setForm(f => ({ ...f, readTime: calcReadTime(f.content) }))
-    }
+    if (form.content) setForm(f => ({ ...f, readTime: calcReadTime(f.content) }))
   }, [form.content])
 
-  function set(field: keyof BlogFormData, value: string | boolean) {
+  function set<K extends keyof BlogFormData>(field: K, value: BlogFormData[K]) {
     setForm(f => ({ ...f, [field]: value }))
   }
 
@@ -124,7 +119,6 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
     }
   }
 
-  // Simple markdown preview renderer
   function renderPreview(content: string) {
     return content.trim().split('\n').map((line, i) => {
       if (!line.trim()) return null
@@ -152,15 +146,20 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="text-xl font-bold text-white">
-              {isEditing ? 'Edit Post' : 'New Blog Post'}
-            </h1>
-            {form.slug && (
-              <p className="text-gray-500 text-xs mt-0.5">/blog/{form.slug}</p>
-            )}
+            <h1 className="text-xl font-bold text-white">{isEditing ? 'Edit Post' : 'New Blog Post'}</h1>
+            {form.slug && <p className="text-gray-500 text-xs mt-0.5">/blog/{form.slug}</p>}
           </div>
         </div>
         <div className="flex items-center gap-3">
+          {isEditing && form.published && (
+            <Link
+              href={`/blog/${form.slug}/`}
+              target="_blank"
+              className="flex items-center gap-1.5 px-3 py-2 text-gray-400 hover:text-white text-sm transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" /> View
+            </Link>
+          )}
           <button
             onClick={() => handleSubmit(false)}
             disabled={submitting}
@@ -191,9 +190,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
 
           {/* Title */}
           <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
-            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-              Post Title *
-            </label>
+            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Post Title *</label>
             <input
               type="text"
               value={form.title}
@@ -205,25 +202,21 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
 
           {/* Slug */}
           <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
-            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-              URL Slug
-            </label>
+            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">URL Slug</label>
             <div className="flex items-center gap-2">
               <span className="text-gray-500 text-sm whitespace-nowrap">/blog/</span>
               <input
                 type="text"
                 value={form.slug}
                 onChange={e => { setSlugManuallyEdited(true); set('slug', slugify(e.target.value)) }}
-                className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD10C] transition-colors"
+                className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#FFD10C] transition-colors"
               />
             </div>
           </div>
 
           {/* Excerpt */}
           <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
-            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-              Excerpt / Summary *
-            </label>
+            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Excerpt / Summary *</label>
             <textarea
               value={form.excerpt}
               onChange={e => set('excerpt', e.target.value)}
@@ -236,20 +229,12 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
           {/* Content editor */}
           <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
             <div className="flex items-center justify-between mb-3">
-              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                Content *
-              </label>
+              <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Content *</label>
               <div className="flex bg-gray-800 rounded-lg p-1">
-                <button
-                  onClick={() => setContentTab('write')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium transition-colors ${contentTab === 'write' ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white'}`}
-                >
+                <button onClick={() => setContentTab('write')} className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium transition-colors ${contentTab === 'write' ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white'}`}>
                   <EyeOff className="w-3 h-3" /> Write
                 </button>
-                <button
-                  onClick={() => setContentTab('preview')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium transition-colors ${contentTab === 'preview' ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white'}`}
-                >
+                <button onClick={() => setContentTab('preview')} className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium transition-colors ${contentTab === 'preview' ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white'}`}>
                   <Eye className="w-3 h-3" /> Preview
                 </button>
               </div>
@@ -261,18 +246,14 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
                   value={form.content}
                   onChange={e => set('content', e.target.value)}
                   rows={20}
-                  placeholder={`Write your post in Markdown...\n\n## Section Heading\n\nYour paragraph text here.\n\n- Bullet point\n- Another point`}
+                  placeholder={`Write your post in Markdown...\n\n## Section Heading\n\nYour paragraph here.\n\n- Bullet point\n- Another point`}
                   className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD10C] transition-colors resize-y font-mono"
                 />
-                <p className="text-gray-600 text-xs mt-2">
-                  Supports Markdown: ## Heading, **bold**, - list, 1. numbered
-                </p>
+                <p className="text-gray-600 text-xs mt-2">Supports Markdown: ## Heading, **bold**, - list, 1. numbered</p>
               </>
             ) : (
               <div className="min-h-[480px] bg-gray-800 border border-gray-700 rounded-lg px-4 py-3">
-                {form.content ? renderPreview(form.content) : (
-                  <p className="text-gray-600 text-sm italic">Nothing to preview yet...</p>
-                )}
+                {form.content ? renderPreview(form.content) : <p className="text-gray-600 text-sm italic">Nothing to preview yet...</p>}
               </div>
             )}
           </div>
@@ -288,7 +269,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
               <span className="text-sm text-gray-300">Published</span>
               <div
                 onClick={() => set('published', !form.published)}
-                className={`relative w-11 h-6 rounded-full transition-colors ${form.published ? 'bg-[#FFD10C]' : 'bg-gray-700'}`}
+                className={`relative w-11 h-6 rounded-full transition-colors cursor-pointer ${form.published ? 'bg-[#FFD10C]' : 'bg-gray-700'}`}
               >
                 <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${form.published ? 'translate-x-5' : ''}`} />
               </div>
@@ -300,18 +281,28 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
 
           {/* Category & Tags */}
           <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 space-y-4">
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Category & Tags</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Category & Tags</h3>
+              <Link href="/admin/categories" className="text-xs text-[#FFD10C] hover:underline">Manage</Link>
+            </div>
 
             <div>
               <label className="block text-sm text-gray-300 mb-1.5">Category *</label>
               <select
-                value={form.category}
-                onChange={e => set('category', e.target.value)}
+                value={form.categoryId ?? ''}
+                onChange={e => set('categoryId', e.target.value ? Number(e.target.value) : null)}
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-[#FFD10C] transition-colors"
               >
-                <option value="">Select a category</option>
-                {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
+                <option value="">— Select a category —</option>
+                {categories.map(c => (
+                  <option key={c.id} value={c.id}>{c.name}</option>
+                ))}
               </select>
+              {categories.length === 0 && (
+                <p className="text-yellow-500 text-xs mt-1">
+                  No categories yet. <Link href="/admin/categories" className="underline">Add one first.</Link>
+                </p>
+              )}
             </div>
 
             <div>
@@ -346,9 +337,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <label className="text-sm text-gray-300">Focus Keyword</label>
-              </div>
+              <label className="block text-sm text-gray-300 mb-1.5">Focus Keyword</label>
               <input
                 type="text"
                 value={form.focusKeyword}
@@ -368,7 +357,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
                 type="text"
                 value={form.metaTitle}
                 onChange={e => { setMetaTitleManuallyEdited(true); set('metaTitle', e.target.value) }}
-                placeholder="SEO page title (50-60 chars)"
+                placeholder="SEO title (50–60 chars)"
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD10C] transition-colors"
               />
               <div className="mt-1.5 bg-gray-800 rounded p-2">
@@ -386,7 +375,7 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
                 value={form.metaDescription}
                 onChange={e => { setMetaDescManuallyEdited(true); set('metaDescription', e.target.value) }}
                 rows={3}
-                placeholder="Description shown in Google results (150-160 chars)"
+                placeholder="Description shown in Google results (150–160 chars)"
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD10C] transition-colors resize-none"
               />
             </div>
@@ -397,27 +386,19 @@ export default function BlogForm({ initialData }: { initialData?: Partial<BlogFo
                 type="url"
                 value={form.ogImage}
                 onChange={e => set('ogImage', e.target.value)}
-                placeholder="https://... (1200×630px for best results)"
+                placeholder="https://... (1200×630px)"
                 className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD10C] transition-colors"
               />
-              <p className="text-gray-600 text-xs mt-1">Social sharing image (Facebook, Twitter)</p>
+              <p className="text-gray-600 text-xs mt-1">Social sharing image</p>
             </div>
           </div>
 
           {/* Submit (mobile) */}
           <div className="xl:hidden flex gap-3">
-            <button
-              onClick={() => handleSubmit(false)}
-              disabled={submitting}
-              className="flex-1 py-3 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 text-sm"
-            >
+            <button onClick={() => handleSubmit(false)} disabled={submitting} className="flex-1 py-3 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors disabled:opacity-50 text-sm">
               Save Draft
             </button>
-            <button
-              onClick={() => handleSubmit(true)}
-              disabled={submitting}
-              className="flex-1 py-3 bg-[#FFD10C] text-black font-bold rounded-lg hover:bg-yellow-400 transition-colors disabled:opacity-50 text-sm"
-            >
+            <button onClick={() => handleSubmit(true)} disabled={submitting} className="flex-1 py-3 bg-[#FFD10C] text-black font-bold rounded-lg hover:bg-yellow-400 transition-colors disabled:opacity-50 text-sm">
               Publish
             </button>
           </div>
