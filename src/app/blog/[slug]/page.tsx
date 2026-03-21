@@ -8,20 +8,25 @@ import { ArrowLeft } from 'lucide-react'
 export const revalidate = 60
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  const posts = await prisma.blogPost.findMany({
-    where: { published: true },
-    select: { slug: true },
-  })
-  return posts.map(p => ({ slug: p.slug }))
+  try {
+    const posts = await prisma.blogPost.findMany({
+      where: { published: true },
+      select: { slug: true },
+    })
+    return posts.map(p => ({ slug: p.slug }))
+  } catch {
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
   const post = await prisma.blogPost.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     select: { title: true, metaTitle: true, metaDescription: true, slug: true, ogImage: true },
   })
   if (!post) return {}
@@ -34,8 +39,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params
   const post = await prisma.blogPost.findUnique({
-    where: { slug: params.slug, published: true },
+    where: { slug, published: true },
     include: { category: { select: { name: true } } },
   })
   if (!post) notFound()

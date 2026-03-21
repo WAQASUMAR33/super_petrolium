@@ -5,12 +5,14 @@ import BlogForm from '../../BlogForm'
 export const dynamic = 'force-dynamic'
 
 interface Props {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export default async function EditBlogPostPage({ params }: Props) {
+  const { id } = await params
+
   const post = await prisma.blogPost.findUnique({
-    where: { id: Number(params.id) },
+    where: { id: Number(id) },
   })
 
   if (!post) notFound()

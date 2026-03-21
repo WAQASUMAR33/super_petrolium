@@ -1,16 +1,13 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
 import prisma from '@/lib/prisma'
 
-interface Params {
-  params: { id: string }
-}
+type Context = { params: Promise<{ id: string }> }
 
-export async function GET(_req: Request, { params }: Params) {
+export async function GET(_req: NextRequest, context: Context) {
+  const { id } = await context.params
   try {
-    const post = await prisma.blogPost.findUnique({
-      where: { id: Number(params.id) },
-    })
+    const post = await prisma.blogPost.findUnique({ where: { id: Number(id) } })
     if (!post) return NextResponse.json({ error: 'Not found' }, { status: 404 })
     return NextResponse.json(post)
   } catch {
@@ -18,12 +15,13 @@ export async function GET(_req: Request, { params }: Params) {
   }
 }
 
-export async function PUT(request: Request, { params }: Params) {
+export async function PUT(request: NextRequest, context: Context) {
+  const { id } = await context.params
   try {
     const body = await request.json()
 
     const existing = await prisma.blogPost.findUnique({
-      where: { id: Number(params.id) },
+      where: { id: Number(id) },
       select: { published: true, publishedAt: true, slug: true },
     })
     if (!existing) return NextResponse.json({ error: 'Not found' }, { status: 404 })
@@ -36,7 +34,7 @@ export async function PUT(request: Request, { params }: Params) {
         : null
 
     const post = await prisma.blogPost.update({
-      where: { id: Number(params.id) },
+      where: { id: Number(id) },
       data: {
         slug: body.slug,
         title: body.title,
@@ -69,11 +67,10 @@ export async function PUT(request: Request, { params }: Params) {
   }
 }
 
-export async function DELETE(_req: Request, { params }: Params) {
+export async function DELETE(_req: NextRequest, context: Context) {
+  const { id } = await context.params
   try {
-    const post = await prisma.blogPost.delete({
-      where: { id: Number(params.id) },
-    })
+    const post = await prisma.blogPost.delete({ where: { id: Number(id) } })
     revalidatePath('/blog')
     revalidatePath(`/blog/${post.slug}`)
     revalidatePath('/sitemap.xml')

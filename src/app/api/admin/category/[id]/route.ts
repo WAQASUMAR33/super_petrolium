@@ -1,11 +1,10 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 
-interface Params {
-  params: { id: string }
-}
+type Context = { params: Promise<{ id: string }> }
 
-export async function PUT(request: Request, { params }: Params) {
+export async function PUT(request: NextRequest, context: Context) {
+  const { id } = await context.params
   try {
     const { name, description } = await request.json()
 
@@ -16,7 +15,7 @@ export async function PUT(request: Request, { params }: Params) {
     const slug = name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim()
 
     const category = await prisma.category.update({
-      where: { id: Number(params.id) },
+      where: { id: Number(id) },
       data: { name: name.trim(), slug, description: description?.trim() || null },
     })
 
@@ -30,10 +29,11 @@ export async function PUT(request: Request, { params }: Params) {
   }
 }
 
-export async function DELETE(_req: Request, { params }: Params) {
+export async function DELETE(_req: NextRequest, context: Context) {
+  const { id } = await context.params
   try {
     const count = await prisma.blogPost.count({
-      where: { categoryId: Number(params.id) },
+      where: { categoryId: Number(id) },
     })
 
     if (count > 0) {
@@ -43,7 +43,7 @@ export async function DELETE(_req: Request, { params }: Params) {
       )
     }
 
-    await prisma.category.delete({ where: { id: Number(params.id) } })
+    await prisma.category.delete({ where: { id: Number(id) } })
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Failed to delete category' }, { status: 500 })
