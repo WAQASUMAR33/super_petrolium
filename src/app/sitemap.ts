@@ -25,18 +25,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1 : route === '/blog' ? 0.9 : 0.8,
   }))
 
-  const blogPosts = await prisma.blogPost.findMany({
-    where: { published: true },
-    select: { slug: true, updatedAt: true },
-    orderBy: { publishedAt: 'desc' },
-  })
+  let blogPages: MetadataRoute.Sitemap = []
 
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map(post => ({
-    url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: post.updatedAt,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  try {
+    const blogPosts = await prisma.blogPost.findMany({
+      where: { published: true },
+      select: { slug: true, updatedAt: true },
+      orderBy: { publishedAt: 'desc' },
+    })
+
+    blogPages = blogPosts.map(post => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  } catch {
+    // DB not yet available — return static pages only
+  }
 
   return [...staticPages, ...blogPages]
 }
