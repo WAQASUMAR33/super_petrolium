@@ -128,7 +128,7 @@ $mail->Username = 'superpetroleum2021@gmail.com';
 $mail->Password = 'your-app-password';  // Use App Password for Gmail
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
-$mail->setFrom('noreply@superpetroleum.com', 'Super Petroleum');
+$mail->setFrom('noreply@superpetroleums.com', 'Super Petroleum');
 $mail->addAddress($RECIPIENT_EMAIL);
 $mail->isHTML(true);
 $mail->Subject = $SUBJECT;
