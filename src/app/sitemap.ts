@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
-import prisma from '@/lib/prisma'
+import pool from '@/lib/db'
+import type { RowDataPacket } from 'mysql2'
 
 const siteUrl = 'https://superpetroleums.com'
 
@@ -20,14 +21,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let blogRoutes: MetadataRoute.Sitemap = []
   try {
-    const posts = await prisma.blogPost.findMany({
-      where: { published: true },
-      select: { slug: true, updatedAt: true },
-      orderBy: { publishedAt: 'desc' },
-    })
-    blogRoutes = posts.map((post: { slug: string; updatedAt: Date }) => ({
+    const [rows] = await pool.execute<RowDataPacket[]>(
+      'SELECT slug, updatedAt FROM BlogPost WHERE published = 1 ORDER BY publishedAt DESC'
+    )
+    blogRoutes = rows.map(post => ({
       url: `${siteUrl}/blog/${post.slug}/`,
-      lastModified: post.updatedAt,
+      lastModified: new Date(post.updatedAt),
       changeFrequency: 'monthly',
       priority: 0.7,
     }))

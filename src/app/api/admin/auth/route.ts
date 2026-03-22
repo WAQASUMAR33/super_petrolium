@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { signToken } from '@/lib/jwt'
-import prisma from '@/lib/prisma'
+import pool from '@/lib/db'
 import { verifyPassword } from '@/lib/password'
 import { rateLimit } from '@/lib/rateLimit'
+import type { RowDataPacket } from 'mysql2'
 
 export async function POST(request: Request) {
   try {
@@ -17,9 +18,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Email and password are required' }, { status: 400 })
     }
 
-    let user
+    let user: RowDataPacket | undefined
     try {
-      user = await prisma.adminUser.findUnique({ where: { email } })
+      const [rows] = await pool.execute<RowDataPacket[]>(
+        'SELECT id, email, password, role, active FROM AdminUser WHERE email = ? LIMIT 1',
+        [email]
+      )
+      user = rows[0]
     } catch (dbErr) {
       console.error('DB error:', dbErr)
       return NextResponse.json({ error: 'Database error: ' + String(dbErr) }, { status: 500 })

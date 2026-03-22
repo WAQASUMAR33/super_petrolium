@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
-import prisma from '@/lib/prisma'
+import pool from '@/lib/db'
 import BlogForm from '../../BlogForm'
+import type { RowDataPacket } from 'mysql2'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,9 +12,8 @@ interface Props {
 export default async function EditBlogPostPage({ params }: Props) {
   const { id } = await params
 
-  const post = await prisma.blogPost.findUnique({
-    where: { id: Number(id) },
-  })
+  const [rows] = await pool.execute<RowDataPacket[]>('SELECT * FROM BlogPost WHERE id = ?', [Number(id)])
+  const post = rows[0]
 
   if (!post) notFound()
 
@@ -32,7 +32,7 @@ export default async function EditBlogPostPage({ params }: Props) {
         ogImage: post.ogImage,
         focusKeyword: post.focusKeyword,
         readTime: post.readTime,
-        published: post.published,
+        published: !!post.published,
       }}
     />
   )

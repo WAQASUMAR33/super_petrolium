@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import prisma from '@/lib/prisma'
+import pool from '@/lib/db'
+import type { RowDataPacket } from 'mysql2'
 import { generatePageMetadata } from '../../lib/metadata'
 import { ArrowLeft, Clock, Tag, FolderOpen } from 'lucide-react'
 
@@ -13,11 +14,10 @@ interface Props {
 
 export async function generateStaticParams() {
   try {
-    const posts = await prisma.blogPost.findMany({
-      where: { published: true },
-      select: { slug: true },
-    })
-    return posts.map(p => ({ slug: p.slug }))
+    const [rows] = await pool.execute<RowDataPacket[]>(
+      'SELECT slug FROM BlogPost WHERE published = 1'
+    )
+    return (rows as { slug: string }[]).map(p => ({ slug: p.slug }))
   } catch {
     return []
   }
@@ -25,50 +25,68 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await prisma.blogPost.findUnique({
-    where: { slug },
-    select: { title: true, metaTitle: true, metaDescription: true, slug: true, ogImage: true },
-  })
-  if (!post) return {}
-  return generatePageMetadata({
-    title: post.metaTitle || post.title,
-    description: post.metaDescription,
-    path: `/blog/${post.slug}`,
-    image: post.ogImage || undefined,
-  })
+  try {
+    const [rows] = await pool.execute<RowDataPacket[]>(
+      'SELECT title, metaTitle, metaDescription, slug, ogImage FROM BlogPost WHERE slug = ? LIMIT 1',
+      [slug]
+    )
+    const post = rows[0]
+    if (!post) return {}
+    return generatePageMetadata({
+      title: post.metaTitle || post.title,
+      description: post.metaDescription,
+      path: `/blog/${post.slug}`,
+      image: post.ogImage || undefined,
+    })
+  } catch {
+    return {}
+  }
 }
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
 
-  let post = null
-  let recentPosts: { slug: string; title: string; publishedAt: Date | null; readTime: string; category: { name: string } | null }[] = []
-  let categories: { name: string; slug: string; _count: { posts: number } }[] = []
+  let post: RowDataPacket | null = null
+  let recentPosts: RowDataPacket[] = []
+  let categories: RowDataPacket[] = []
 
   try {
-    ;[post, recentPosts, categories] = await Promise.all([
-      prisma.blogPost.findUnique({
-        where: { slug, published: true },
-        include: { category: { select: { name: true, slug: true } } },
-      }),
-      prisma.blogPost.findMany({
-        where: { published: true, slug: { not: slug } },
-        orderBy: { publishedAt: 'desc' },
-        take: 5,
-        select: { slug: true, title: true, publishedAt: true, readTime: true, category: { select: { name: true } } },
-      }),
-      prisma.category.findMany({
-        select: { name: true, slug: true, _count: { select: { posts: { where: { published: true } } } } },
-        orderBy: { name: 'asc' },
-      }),
-    ])
+    const [postRows] = await pool.execute<RowDataPacket[]>(`
+      SELECT bp.*, c.name AS categoryName, c.slug AS categorySlug
+      FROM BlogPost bp
+      LEFT JOIN Category c ON bp.categoryId = c.id
+      WHERE bp.slug = ? AND bp.published = 1
+      LIMIT 1
+    `, [slug])
+    post = postRows[0] ?? null
+
+    if (post) {
+      const [recentRows] = await pool.execute<RowDataPacket[]>(`
+        SELECT bp.slug, bp.title, bp.publishedAt, bp.readTime, c.name AS categoryName
+        FROM BlogPost bp
+        LEFT JOIN Category c ON bp.categoryId = c.id
+        WHERE bp.published = 1 AND bp.slug != ?
+        ORDER BY bp.publishedAt DESC
+        LIMIT 5
+      `, [slug])
+      recentPosts = recentRows
+
+      const [catRows] = await pool.execute<RowDataPacket[]>(`
+        SELECT c.name, c.slug, COUNT(bp.id) AS postCount
+        FROM Category c
+        LEFT JOIN BlogPost bp ON bp.categoryId = c.id AND bp.published = 1
+        GROUP BY c.id
+        ORDER BY c.name ASC
+      `)
+      categories = catRows
+    }
   } catch {
     // DB unreachable in local dev
   }
 
   if (!post) notFound()
 
-  const lines = post.content.trim().split('\n')
+  const lines: string[] = String(post.content).trim().split('\n')
 
   const blogSchema = {
     '@context': 'https://schema.org',
@@ -76,8 +94,8 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.metaDescription || post.excerpt || '',
     image: post.ogImage || 'https://superpetroleums.com/og-image.jpg',
-    datePublished: post.publishedAt?.toISOString() || post.createdAt.toISOString(),
-    dateModified: post.updatedAt.toISOString(),
+    datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : new Date(post.createdAt).toISOString(),
+    dateModified: new Date(post.updatedAt).toISOString(),
     author: { '@type': 'Organization', name: 'Super Petroleum', url: 'https://superpetroleums.com' },
     publisher: {
       '@type': 'Organization',
@@ -102,7 +120,7 @@ export default async function BlogPostPage({ params }: Props) {
             Back to Blog
           </Link>
           <div className="inline-block bg-[#FFD10C] text-black text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded mb-4">
-            {post.category?.name ?? 'General'}
+            {post.categoryName ?? 'General'}
           </div>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight max-w-3xl">{post.title}</h1>
           <div className="flex flex-wrap gap-4 text-gray-400 text-sm items-center">
@@ -184,14 +202,14 @@ export default async function BlogPostPage({ params }: Props) {
                 Categories
               </h3>
               <ul className="space-y-2">
-                {categories.filter(c => c._count.posts > 0).map(cat => (
+                {categories.filter(c => Number(c.postCount) > 0).map(cat => (
                   <li key={cat.slug}>
                     <Link
                       href={`/blog/?category=${cat.slug}`}
                       className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
                     >
                       <span className="text-gray-700 group-hover:text-[#FFD10C] text-sm font-medium transition-colors">{cat.name}</span>
-                      <span className="bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-0.5 rounded-full">{cat._count.posts}</span>
+                      <span className="bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-0.5 rounded-full">{Number(cat.postCount)}</span>
                     </Link>
                   </li>
                 ))}
@@ -209,8 +227,8 @@ export default async function BlogPostPage({ params }: Props) {
                   {recentPosts.map(p => (
                     <li key={p.slug}>
                       <Link href={`/blog/${p.slug}/`} className="group block">
-                        {p.category && (
-                          <span className="text-[#FFD10C] text-xs font-semibold uppercase tracking-wide">{p.category.name}</span>
+                        {p.categoryName && (
+                          <span className="text-[#FFD10C] text-xs font-semibold uppercase tracking-wide">{p.categoryName}</span>
                         )}
                         <p className="text-gray-800 text-sm font-medium leading-snug group-hover:text-[#FFD10C] transition-colors mt-0.5">
                           {p.title}

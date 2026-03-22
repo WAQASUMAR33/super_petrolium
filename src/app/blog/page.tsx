@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { generatePageMetadata } from '../lib/metadata'
 import type { Metadata } from 'next'
-import prisma from '@/lib/prisma'
+import pool from '@/lib/db'
+import type { RowDataPacket } from 'mysql2'
 
 export const revalidate = 60
 
@@ -14,23 +15,19 @@ export const metadata: Metadata = generatePageMetadata({
 export default async function BlogPage() {
   let posts: {
     slug: string; title: string; excerpt: string;
-    category: { name: string } | null;
+    categoryName: string | null;
     readTime: string; publishedAt: Date | null;
   }[] = []
 
   try {
-    posts = await prisma.blogPost.findMany({
-      where: { published: true },
-      orderBy: { publishedAt: 'desc' },
-      select: {
-        slug: true,
-        title: true,
-        excerpt: true,
-        category: { select: { name: true } },
-        readTime: true,
-        publishedAt: true,
-      },
-    })
+    const [rows] = await pool.execute<RowDataPacket[]>(`
+      SELECT bp.slug, bp.title, bp.excerpt, bp.readTime, bp.publishedAt, c.name AS categoryName
+      FROM BlogPost bp
+      LEFT JOIN Category c ON bp.categoryId = c.id
+      WHERE bp.published = 1
+      ORDER BY bp.publishedAt DESC
+    `)
+    posts = rows as typeof posts
   } catch {
     // DB unreachable in local dev — show empty state
   }
@@ -63,7 +60,7 @@ export default async function BlogPage() {
               >
                 <div className="bg-[#FFD10C] px-4 py-2">
                   <span className="text-black text-sm font-semibold uppercase tracking-wide">
-                    {post.category?.name ?? 'General'}
+                    {post.categoryName ?? 'General'}
                   </span>
                 </div>
                 <div className="p-6">
