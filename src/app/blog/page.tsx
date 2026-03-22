@@ -12,18 +12,28 @@ export const metadata: Metadata = generatePageMetadata({
 })
 
 export default async function BlogPage() {
-  const posts = await prisma.blogPost.findMany({
-    where: { published: true },
-    orderBy: { publishedAt: 'desc' },
-    select: {
-      slug: true,
-      title: true,
-      excerpt: true,
-      category: { select: { name: true } },
-      readTime: true,
-      publishedAt: true,
-    },
-  })
+  let posts: {
+    slug: string; title: string; excerpt: string;
+    category: { name: string } | null;
+    readTime: string; publishedAt: Date | null;
+  }[] = []
+
+  try {
+    posts = await prisma.blogPost.findMany({
+      where: { published: true },
+      orderBy: { publishedAt: 'desc' },
+      select: {
+        slug: true,
+        title: true,
+        excerpt: true,
+        category: { select: { name: true } },
+        readTime: true,
+        publishedAt: true,
+      },
+    })
+  } catch {
+    // DB unreachable in local dev — show empty state
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">

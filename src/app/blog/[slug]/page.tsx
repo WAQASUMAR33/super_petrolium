@@ -41,22 +41,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
 
-  const [post, recentPosts, categories] = await Promise.all([
-    prisma.blogPost.findUnique({
-      where: { slug, published: true },
-      include: { category: { select: { name: true, slug: true } } },
-    }),
-    prisma.blogPost.findMany({
-      where: { published: true, slug: { not: slug } },
-      orderBy: { publishedAt: 'desc' },
-      take: 5,
-      select: { slug: true, title: true, publishedAt: true, readTime: true, category: { select: { name: true } } },
-    }),
-    prisma.category.findMany({
-      select: { name: true, slug: true, _count: { select: { posts: { where: { published: true } } } } },
-      orderBy: { name: 'asc' },
-    }),
-  ])
+  let post = null
+  let recentPosts: { slug: string; title: string; publishedAt: Date | null; readTime: string; category: { name: string } | null }[] = []
+  let categories: { name: string; slug: string; _count: { posts: number } }[] = []
+
+  try {
+    ;[post, recentPosts, categories] = await Promise.all([
+      prisma.blogPost.findUnique({
+        where: { slug, published: true },
+        include: { category: { select: { name: true, slug: true } } },
+      }),
+      prisma.blogPost.findMany({
+        where: { published: true, slug: { not: slug } },
+        orderBy: { publishedAt: 'desc' },
+        take: 5,
+        select: { slug: true, title: true, publishedAt: true, readTime: true, category: { select: { name: true } } },
+      }),
+      prisma.category.findMany({
+        select: { name: true, slug: true, _count: { select: { posts: { where: { published: true } } } } },
+        orderBy: { name: 'asc' },
+      }),
+    ])
+  } catch {
+    // DB unreachable in local dev
+  }
 
   if (!post) notFound()
 
