@@ -1,7 +1,14 @@
 import { PrismaClient } from '@prisma/client'
 import { blogPosts } from '../src/app/blog/data'
+import { scryptSync, randomBytes } from 'crypto'
 
 const prisma = new PrismaClient()
+
+function hashPassword(password: string): string {
+  const salt = randomBytes(16).toString('hex')
+  const hash = scryptSync(password, salt, 64).toString('hex')
+  return `${salt}:${hash}`
+}
 
 const seedCategories = [
   { name: 'Travel Tips', slug: 'travel-tips', description: 'Tips for long-haul drivers on the road' },
@@ -16,7 +23,20 @@ const seedCategories = [
 ]
 
 async function main() {
-  console.log('Seeding categories...')
+  console.log('Seeding admin user...')
+  await prisma.adminUser.upsert({
+    where: { email: 'admin@superpetroleum.com' },
+    update: {},
+    create: {
+      name: 'Super Admin',
+      email: 'admin@superpetroleum.com',
+      password: hashPassword('786ninja'),
+      role: 'admin',
+    },
+  })
+  console.log('  ✓ Admin user: admin@superpetroleum.com')
+
+  console.log('\nSeeding categories...')
 
   const categoryMap: Record<string, number> = {}
 
