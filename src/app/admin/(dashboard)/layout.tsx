@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { LayoutDashboard, FileText, PlusCircle, Tag } from 'lucide-react'
+import { LayoutDashboard, FileText, PlusCircle, Tag, Users } from 'lucide-react'
 import LogoutButton from './LogoutButton'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -48,6 +48,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           >
             <Tag className="w-4 h-4" />
             Categories
+          </Link>
+          <Link
+            href="/admin/users"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition-colors text-sm"
+          >
+            <Users className="w-4 h-4" />
+            Users
           </Link>
 
           <div className="pt-4 border-t border-gray-800 mt-4">
