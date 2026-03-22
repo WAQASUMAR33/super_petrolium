@@ -7,7 +7,7 @@ const getSecret = () =>
     process.env.JWT_SECRET || 'change-this-secret-in-production-min-32-chars'
   )
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const token = request.cookies.get('admin_token')?.value
   const isApiRoute = request.nextUrl.pathname.startsWith('/api/admin')
 
