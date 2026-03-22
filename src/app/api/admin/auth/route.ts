@@ -2,9 +2,15 @@ import { NextResponse } from 'next/server'
 import { signToken } from '@/lib/jwt'
 import prisma from '@/lib/prisma'
 import { verifyPassword } from '@/lib/password'
+import { rateLimit } from '@/lib/rateLimit'
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get('x-forwarded-for') ?? 'unknown'
+    if (!rateLimit(ip, 10, 60_000)) {
+      return NextResponse.json({ error: 'Too many attempts. Try again in 1 minute.' }, { status: 429 })
+    }
+
     const { email, password } = await request.json()
 
     if (!email || !password) {

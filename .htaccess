@@ -1,14 +1,14 @@
 Options -MultiViews
 RewriteEngine On
 
-# Serve _next/static files directly from .next/static on disk
+# Serve _next/static files directly from .next/static on disk (bypass Node.js)
 RewriteCond %{REQUEST_URI} ^/_next/static/
 RewriteRule ^_next/static/(.*)$ .next/static/$1 [L]
 
-# Serve _next/image files directly
-RewriteCond %{REQUEST_URI} ^/_next/image
-RewriteRule ^_next/image(.*)$ .next/image$1 [L]
-
-# Serve public files directly
+# Serve public static files directly
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
+
+# Block common scanner/bot paths
+RewriteCond %{REQUEST_URI} ^/(wp-admin|wp-login|phpMyAdmin|phpmyadmin|xmlrpc\.php|\.env|backup|shell) [NC]
+RewriteRule ^ - [F,L]

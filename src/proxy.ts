@@ -7,11 +7,21 @@ const getSecret = () =>
     process.env.JWT_SECRET || 'change-this-secret-in-production-min-32-chars'
   )
 
+const SCANNER_PATTERNS = [
+  '/wp-', '/wordpress', '/phpmyadmin', '/phpMyAdmin', '/.env',
+  '/config', '/backup', '/shell', '/eval', '/xmlrpc', '/cgi-bin',
+]
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const token = request.cookies.get('admin_token')?.value
   const isApiRoute = pathname.startsWith('/api/admin')
   const isLoginPage = pathname === '/admin/login' || pathname === '/admin/login/'
+
+  // Block scanner/bot paths instantly
+  if (SCANNER_PATTERNS.some(p => pathname.includes(p))) {
+    return new NextResponse('Not found', { status: 404 })
+  }
 
   // Allow login page through always
   if (isLoginPage) return NextResponse.next()
