@@ -7,45 +7,42 @@ export async function POST(request: Request) {
   try {
     const { email, password } = await request.json()
 
-    // Check database first
-    let authenticated = false
-    let role = 'admin'
-
-    try {
-      const user = await prisma.adminUser.findUnique({ where: { email, active: true } })
-      if (user && verifyPassword(password, user.password)) {
-        authenticated = true
-        role = user.role
-      }
-    } catch {
-      // DB unavailable — fall back to env credentials
-      if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-        authenticated = true
-      }
+    if (!email || !password) {
+      return NextResponse.json({ error: 'Email and password are required' }, { status: 400 })
     }
 
-    // Also allow env credentials as superadmin fallback
-    if (!authenticated && email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-      authenticated = true
+    const user = await prisma.adminUser.findUnique({
+      where: { email },
+    })
+
+    if (!user) {
+      return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 })
     }
 
-    if (!authenticated) {
-      return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
+    if (!user.active) {
+      return NextResponse.json({ error: 'Account is disabled. Contact administrator.' }, { status: 403 })
     }
 
-    const token = await signToken({ email, role })
+    const valid = verifyPassword(password, user.password)
+    if (!valid) {
+      return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 })
+    }
+
+    const token = await signToken({ id: user.id, email: user.email, role: user.role })
+
     const response = NextResponse.json({ success: true })
     response.cookies.set('admin_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 60 * 60 * 24 * 7,
+      maxAge: 60 * 60 * 24 * 7, // 7 days
       path: '/',
     })
 
     return response
-  } catch {
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+  } catch (e) {
+    console.error('Auth error:', e)
+    return NextResponse.json({ error: 'Server error. Please try again.' }, { status: 500 })
   }
 }
 
