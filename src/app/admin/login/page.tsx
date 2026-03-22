@@ -9,6 +9,7 @@ export default function AdminLoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [debug, setDebug] = useState('')
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
@@ -22,10 +23,12 @@ export default function AdminLoginPage() {
       body: JSON.stringify({ email, password }),
     })
 
+    const data = await res.json()
+    setDebug(`Status: ${res.status} | Response: ${JSON.stringify(data)}`)
+
     if (res.ok) {
       router.push('/admin/blog')
     } else {
-      const data = await res.json()
       setError(data.error || 'Login failed')
       setLoading(false)
     }
@@ -44,6 +47,11 @@ export default function AdminLoginPage() {
           {error && (
             <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-lg px-4 py-3">
               {error}
+            </div>
+          )}
+          {debug && (
+            <div className="bg-gray-800 border border-gray-600 text-gray-300 text-xs rounded-lg px-4 py-3 font-mono break-all">
+              {debug}
             </div>
           )}
 
