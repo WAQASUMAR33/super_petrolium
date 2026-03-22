@@ -1,6 +1,21 @@
+import type { Metadata } from 'next'
 import { Fuel, Truck, Coffee, Wrench, CreditCard, MapPin, Clock, Shield, Star, Quote, ChevronDown, CheckCircle, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { ImageWithFallback } from './images/ImageWithFallBack';
+
+export const metadata: Metadata = {
+  title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
+  description: 'Super Petroleum travel centers in Adel, GA offer diesel fuel, truck parking, truck repair, dining, and 24/7 services for professional drivers. Open 24/7.',
+  alternates: {
+    canonical: 'https://superpetroleums.com/',
+  },
+  openGraph: {
+    title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
+    description: 'Super Petroleum travel centers in Adel, GA offer diesel fuel, truck parking, truck repair, dining, and 24/7 services for professional drivers.',
+    url: 'https://superpetroleums.com/',
+    images: [{ url: 'https://superpetroleums.com/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default function Home() {
   return (

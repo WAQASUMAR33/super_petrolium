@@ -48,8 +48,29 @@ export default async function BlogPostPage({ params }: Props) {
 
   const lines = post.content.trim().split('\n')
 
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.metaDescription || post.excerpt || '',
+    image: post.ogImage || 'https://superpetroleums.com/og-image.jpg',
+    datePublished: post.publishedAt?.toISOString() || post.createdAt.toISOString(),
+    dateModified: post.updatedAt.toISOString(),
+    author: { '@type': 'Organization', name: 'Super Petroleum', url: 'https://superpetroleums.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Super Petroleum',
+      logo: { '@type': 'ImageObject', url: 'https://superpetroleums.com/splogo.png' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://superpetroleums.com/blog/${post.slug}/` },
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       {/* Header */}
       <div className="bg-black text-white py-12">
         <div className="max-w-3xl mx-auto px-4">

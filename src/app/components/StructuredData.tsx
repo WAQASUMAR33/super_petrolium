@@ -12,7 +12,7 @@ export function StructuredData({ type = 'LocalBusiness', data }: StructuredDataP
     name: 'Super Petroleum',
     description: 'Professional drivers deserve professional service. Find quality fuel, food, and facilities at our Georgia travel centers.',
     url: baseUrl,
-    logo: `${baseUrl}/logo.png`,
+    logo: `${baseUrl}/splogo.png`,
     image: `${baseUrl}/og-image.jpg`,
     telephone: '+1-800-ROAD-HELP',
     email: 'superpetroleum2021@gmail.com',

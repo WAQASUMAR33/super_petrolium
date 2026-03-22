@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     'professional drivers',
     'rest stops',
   ],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   authors: [{ name: 'Super Petroleum' }],
   creator: 'Super Petroleum',
   publisher: 'Super Petroleum',
