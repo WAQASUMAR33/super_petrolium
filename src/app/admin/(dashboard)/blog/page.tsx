@@ -6,19 +6,27 @@ import BlogListTable from './BlogListTable'
 export const dynamic = 'force-dynamic'
 
 export default async function AdminBlogPage() {
-  const posts = await prisma.blogPost.findMany({
-    orderBy: { createdAt: 'desc' },
-    select: {
-      id: true,
-      slug: true,
-      title: true,
-      category: { select: { name: true } },
-      published: true,
-      publishedAt: true,
-      createdAt: true,
-      readTime: true,
-    },
-  })
+  let posts: {
+    id: number; slug: string; title: string;
+    category: { name: string } | null;
+    published: boolean; publishedAt: Date | null;
+    createdAt: Date; readTime: string;
+  }[] = []
+  let dbError = ''
+
+  try {
+    posts = await prisma.blogPost.findMany({
+      orderBy: { createdAt: 'desc' },
+      select: {
+        id: true, slug: true, title: true,
+        category: { select: { name: true } },
+        published: true, publishedAt: true,
+        createdAt: true, readTime: true,
+      },
+    })
+  } catch (e) {
+    dbError = e instanceof Error ? e.message : 'Database connection failed'
+  }
 
   const published = posts.filter(p => p.published).length
   const drafts = posts.filter(p => !p.published).length
@@ -41,6 +49,17 @@ export default async function AdminBlogPage() {
           New Post
         </Link>
       </div>
+
+      {/* DB Error */}
+      {dbError && (
+        <div className="mb-6 bg-red-500/10 border border-red-500/30 text-red-400 rounded-xl p-5">
+          <p className="font-semibold mb-1">Database connection failed</p>
+          <p className="text-sm opacity-80">{dbError}</p>
+          <p className="text-sm mt-3 text-gray-400">
+            Fix: Go to Hostinger hPanel → Databases → Remote MySQL and whitelist your IP address, then restart the dev server.
+          </p>
+        </div>
+      )}
 
       {/* Table */}
       <div className="bg-gray-900 rounded-xl border border-gray-800">
