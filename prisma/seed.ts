@@ -29,12 +29,12 @@ async function main() {
     update: {},
     create: {
       name: 'Super Admin',
-      email: 'admin@superpetroleum.com',
+      email: 'admin@superpetroleums.com',
       password: hashPassword('786ninja'),
       role: 'admin',
     },
   })
-  console.log('  ✓ Admin user: admin@superpetroleum.com')
+  console.log('  ✓ Admin user: admin@superpetroleums.com')
 
   console.log('\nSeeding categories...')
 
