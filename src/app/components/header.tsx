@@ -41,8 +41,13 @@ export function Header() {
               className="h-10 md:h-12 w-auto object-contain"
               priority
             />
-            <div className="hidden md:block text-white text-2xl font-bold">
-              SUPER <span className="text-[#FFD10C]">PETROLEUM</span>
+            <div className="hidden md:block">
+              <div className="text-white text-2xl font-bold leading-tight">
+                SUPER <span className="text-[#FFD10C]">PETROLEUM</span>
+              </div>
+              <div className="text-[#FFD10C] text-xs font-medium tracking-widest uppercase">
+                Petro-Stopping Center
+              </div>
             </div>
           </Link>
 
