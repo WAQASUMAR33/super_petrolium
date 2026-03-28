@@ -18,7 +18,8 @@ export function generatePageMetadata({
   image = '/og-image.jpg',
   noIndex = false,
 }: GenerateMetadataOptions): Metadata {
-  const url = `${siteUrl}${path}`
+  const normalizedPath = path && !path.endsWith('/') ? `${path}/` : path
+  const url = `${siteUrl}${normalizedPath}`
   const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`
 
   return {
