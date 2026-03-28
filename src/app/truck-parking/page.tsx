@@ -5,8 +5,8 @@ import { Shield, Clock, MapPin, CheckCircle, Truck, Phone, Star, ChevronDown } f
 import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Truck Parking in Adel & Cordele GA - Secure Overnight Truck Parking',
-  description: 'Safe, secure overnight truck parking in Adel and Cordele, Georgia. Well-lit lots monitored 24/7, wide spaces for all rig sizes. Located off I-75. Free truck parking available.',
+  title: 'Free Truck Parking in Adel & Cordele GA - Reserve Truck Parking Available',
+  description: 'Free truck parking and reserve truck parking at Super Petroleum — part of the Travel Centers of America (TA) network. Safe, well-lit lots monitored 24/7 in Adel and Cordele, Georgia, off I-75.',
   path: '/truck-parking/',
 });
 
@@ -38,9 +38,9 @@ const highlights = [
   'Pull-through spaces for all truck lengths',
   'Overnight parking available',
   'On-site security staff',
-  'Close to showers, food, and fuel',
-  'No reservation required',
-  'Truck wash nearby',
+  'Close to showers, food, and high speed diesel',
+  'Free truck parking — no fees ever',
+  'Reserve truck parking available by phone',
   'Easy access from I-75',
 ];
 
@@ -65,10 +65,10 @@ export default function TruckParkingPage() {
             <p className="text-[#FFD10C] uppercase tracking-widest text-sm font-semibold">Truck Parking — Georgia</p>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Secure Overnight<br /><span className="text-[#FFD10C]">Truck Parking</span>
+            Free & Secure<br /><span className="text-[#FFD10C]">Truck Parking</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
-            Rest easy at our well-lit, monitored truck lots in Adel and Cordele, Georgia. Pull in off I-75 any time — day or night.
+            Free truck parking at our well-lit, monitored lots in Adel and Cordele, Georgia. Walk in anytime or call ahead to reserve truck parking — we're off I-75 and open 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -153,7 +153,7 @@ export default function TruckParkingPage() {
                 Everything a Driver Needs in One Stop
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Pulling into Super Petroleum means more than parking. Our travel centers are built around the driver — so once you park, showers, hot food, fresh coffee, and fuel are steps away. No shuttling across town, no wasted time.
+                Pulling into Super Petroleum means more than parking. Our travel centers are built around the driver — so once you park, showers, hot food, fresh coffee, and high speed diesel are steps away. No shuttling across town, no wasted time.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {highlights.map((item, i) => (
@@ -261,7 +261,7 @@ export default function TruckParkingPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Diesel & DEF", sub: "All fleet cards accepted", href: "/fuel/" },
+              { label: "High Speed Diesel & DEF", sub: "All fleet cards accepted", href: "/fuel/" },
               { label: "Hot Food", sub: "KFC · Starbucks · Sbarro · Curry & Grill", href: "/food-amenities/" },
               { label: "Private Showers", sub: "Clean · 24/7 · No wait list", href: "/food-amenities/" },
               { label: "Truck Care Shop", sub: "Oil · Tires · Brakes · DOT", href: "/truck-care/" },
@@ -286,19 +286,19 @@ export default function TruckParkingPage() {
                 <p className="text-[#FFD10C] uppercase tracking-wide text-sm font-semibold">Truck Parking in South Georgia</p>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Finding Reliable Overnight Truck Parking on I-75 in Georgia
+                Free & Reserve Truck Parking on I-75 in Georgia
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                If you're hauling freight through South Georgia on I-75, you already know how hard it can be to find a safe parking spot that doesn't eat into your drive time or your sleep. Most rest areas fill up fast, and the ones that don't aren't exactly the kind of places you want to leave your rig overnight. That's the situation we built Super Petroleum around.
+                Super Petroleum is part of the <strong>Travel Centers of America (TA)</strong> network — and our two Georgia locations in Adel and Cordele are built to the same standard that TA drivers across the country rely on. If you've stopped at a TA travel center before, you know what to expect: a safe, well-run property where your rig is looked after. That's exactly what we deliver here on I-75.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Our <strong>truck parking in Adel, GA</strong> and <strong>Cordele, GA</strong> gives you properly sized pull-through spaces — wide enough for 18-wheelers, doubles, and oversized flatbeds — without the juggling act you get in undersized lots. You pull in straight, you park, and you're done. No tight corners, no backing into traffic.
+                Our <strong>free truck parking in Adel, GA</strong> and <strong>Cordele, GA</strong> gives you properly sized pull-through spaces — wide enough for 18-wheelers, doubles, and oversized flatbeds — without the juggling act you get in undersized lots. You pull in straight, you park, and you're done. No tight corners, no backing into traffic.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Both lots are paved, well-drained, and fully lit through the night. We have on-site staff and camera coverage across the property so your cab, trailer, and cargo are looked after while you sleep. This isn't a dark corner of a gas station — it's a proper <strong>commercial truck stop</strong> built for working drivers.
+                Both lots are paved, well-drained, and fully lit through the night. We have on-site staff and camera coverage across the property so your cab, trailer, and cargo are looked after while you sleep. This isn't a dark corner of a gas station — it's a proper <strong>travel center</strong> built for working drivers.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                No apps to download, no reservation system, no fees. Roll in off the interstate, find a spot, and get the hours your logbook requires. Showers, hot food, and fresh fuel are waiting for you when you're ready to move.
+                Walk-in <strong>free truck parking</strong> is available first-come, first-served at both locations. If you need a guaranteed spot — especially for a 34-hour restart or a long layover — call us ahead and <strong>reserve truck parking</strong>. No apps, no fees, just a quick call. When you're ready to roll, high speed diesel is 50 feet from your cab.
               </p>
             </div>
 
@@ -354,7 +354,7 @@ export default function TruckParkingPage() {
             {[
               {
                 q: "Is truck parking free at Super Petroleum?",
-                a: "Yes — parking is completely free at both our Adel and Cordele locations. There are no daily fees, no membership requirements, and no reservation system. Pull in, park, and leave when you're ready."
+                a: "Yes — free truck parking is available at both our Adel and Cordele locations. No daily fees, no membership, and no app required. Just pull in and park. If you want to guarantee a spot in advance, you can also reserve truck parking by calling us before you arrive."
               },
               {
                 q: "Can I park overnight at your Georgia truck stop?",
@@ -377,8 +377,12 @@ export default function TruckParkingPage() {
                 a: "Yes. Private shower rooms, hot food from KFC, Starbucks, Sbarro, and Curry & Grill, free WiFi, and clean restrooms are all available on-site. You're not just getting a parking space — you're getting everything you need to reset properly before your next run."
               },
               {
+                q: "Can I reserve truck parking ahead of time?",
+                a: "Yes. Call us before you arrive and we'll hold a space for you — especially helpful if you're planning a 34-hour restart or arriving late when lots can fill up. Free truck parking is also available walk-in at both locations on a first-come, first-served basis."
+              },
+              {
                 q: "Do you offer fuel cards for commercial truckers?",
-                a: "Yes. We accept Comdata, Fleetone, EFS, TCH, T-Chek, and other major fleet fuel cards at both locations. Diesel, DEF, and gasoline are available 24/7 right next to the parking areas."
+                a: "Yes. We accept Comdata, Fleetone, EFS, TCH, T-Chek, and other major fleet fuel cards at both locations. High speed diesel, DEF, and gasoline are available 24/7 right next to the parking areas."
               },
             ].map((faq, i) => (
               <details key={i} className="group bg-white border border-gray-200 rounded-xl overflow-hidden">

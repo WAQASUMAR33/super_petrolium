@@ -5,8 +5,8 @@ import { CreditCard, Fuel, CheckCircle, MapPin, Clock, Shield, Droplets, Star } 
 import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Diesel Fuel & Fuel Cards - Super Petroleum Travel Center Georgia',
-  description: 'Quality diesel fuel and gasoline at competitive prices in Adel and Cordele, GA. We accept Comdata, Fleetone, EFS, TCH, T-Chek, and all major fleet fuel cards. DEF available 24/7.',
+  title: 'High Speed Diesel & Fuel Cards - Super Petroleum Travel Center Georgia',
+  description: 'High speed diesel and gasoline at competitive prices in Adel and Cordele, GA. We accept Comdata, Fleetone, EFS, TCH, T-Chek, and all major fleet fuel cards. DEF available 24/7.',
   path: '/fuel/',
 });
 
@@ -22,8 +22,8 @@ const acceptedCards = [
 const fuelFeatures = [
   {
     icon: Fuel,
-    title: 'Premium Diesel & Gasoline',
-    description: 'We stock high-quality #2 diesel and regular unleaded gasoline from trusted suppliers. Our fuel is fresh, our pumps are calibrated regularly, and our prices stay competitive along the I-75 corridor.',
+    title: 'High Speed Diesel & Gasoline',
+    description: 'We stock high speed diesel and regular unleaded gasoline from trusted suppliers. High-flow pump lanes mean you\'re in and out fast — no waiting behind a line of rigs. Our fuel is fresh, our pumps are calibrated regularly, and our prices stay competitive along the I-75 corridor.',
   },
   {
     icon: Droplets,
@@ -43,8 +43,8 @@ const fuelFeatures = [
 ];
 
 const whyChooseUs = [
-  'Competitive diesel prices along I-75 Georgia',
-  'High-flow diesel lanes for quick fueling',
+  'High speed diesel at competitive prices on I-75',
+  'High-flow diesel lanes for fast fueling',
   'DEF available at all pump islands',
   'All major fleet fuel cards accepted',
   'Clean, well-lit fuel bays 24/7',
@@ -74,10 +74,10 @@ export default function FuelPage() {
             <p className="text-[#FFD10C] uppercase tracking-widest text-sm font-semibold">Diesel Fuel — Adel & Cordele, Georgia</p>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Quality Fuel at <br /><span className="text-[#FFD10C]">Competitive Prices</span>
+            High Speed Diesel at <br /><span className="text-[#FFD10C]">Competitive Prices</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
-            Premium diesel, DEF, and gasoline at two Georgia travel centers. All major fleet fuel cards accepted — 24 hours a day, 7 days a week.
+            High speed diesel, DEF, and gasoline at two Georgia travel centers. All major fleet fuel cards accepted — 24 hours a day, 7 days a week.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/locations/" className="bg-[#FFD10C] text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors shadow-lg">

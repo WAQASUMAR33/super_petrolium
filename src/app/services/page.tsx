@@ -3,8 +3,8 @@ import { generatePageMetadata } from '../lib/metadata';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Our Services - Fuel, Parking, Dining & More',
-  description: 'Discover our comprehensive services including quality fuel, secure truck parking, dining options, clean facilities, truck care, and more at Super Petroleum travel centers.',
+  title: 'Our Services - High Speed Diesel, Free Truck Parking & More | TA Travel Center Georgia',
+  description: 'Super Petroleum — part of the Travel Centers of America (TA) network — offers high speed diesel, free truck parking, reserve truck parking, dining, truck repair, and 24/7 services in Adel & Cordele, GA.',
   path: '/services',
 });
 

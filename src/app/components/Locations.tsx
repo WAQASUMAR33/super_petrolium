@@ -11,43 +11,43 @@ const locations = [
     city: 'Adel, GA 31620',
     phone: '(229) 896-7453',
     hours: 'Open 24/7',
-    description: 'Full-service travel center with dining and fuel services',
+    description: 'Travel Centers of America (TA) location in Adel, GA — high speed diesel, free truck parking, dining, and truck care right off I-75.',
     image: 'https://images.unsplash.com/photo-1638425637198-f4ebe6ef341a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWVzZWwlMjBmdWVsJTIwcHVtcHxlbnwxfHx8fDE3NjQwMjE0OTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     amenities: [
-      { icon: Utensils, label: 'Huddle House Restaurant' },
-      { icon: Fuel, label: 'Diesel & Gas' },
-      { icon: Truck, label: 'Truck Parking' },
+      { icon: Utensils, label: 'KFC · Starbucks · Sbarro' },
+      { icon: Fuel, label: 'High Speed Diesel & DEF' },
+      { icon: Truck, label: 'Free Truck Parking' },
       { icon: Wifi, label: 'Free WiFi' }
     ],
     features: [
-      'Huddle House Restaurant',
-      'Full Service Dining',
-      'Dine-In & Pickup Available',
+      'Travel Centers of America (TA) Location',
+      'High Speed Diesel & DEF 24/7',
+      'Free Truck Parking — No Fees',
+      'Reserve Truck Parking Available',
       'Truck Care Shop',
-      'Clean Restrooms',
-      'ATM Available'
+      'KFC · Starbucks · Sbarro · Curry & Grill'
     ]
   },
   {
-    name: 'Petro-Stopping Center',
-    address: '393 Rock house RD East',
+    name: 'Petro-Cordele',
+    address: '373 RockHouse Rd. East',
     city: 'Cordele, GA 31015',
     phone: '(229) XXX-XXXX',
     hours: 'Open 24/7',
-    description: 'Complete truck stop with all essential services',
+    description: 'Travel Centers of America (TA) location in Cordele, GA — high speed diesel, free truck parking, and full services at I-75 and US-280.',
     image: 'https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     amenities: [
-      { icon: Fuel, label: 'Full Service Fuel' },
-      { icon: Truck, label: 'Large Truck Parking' },
+      { icon: Fuel, label: 'High Speed Diesel & DEF' },
+      { icon: Truck, label: 'Free Truck Parking' },
       { icon: Wifi, label: 'Free WiFi' }
     ],
     features: [
-      'Full Service Station',
-      'Truck Parking',
-      'Fuel Services',
+      'Travel Centers of America (TA) Location',
+      'High Speed Diesel & DEF 24/7',
+      'Free Truck Parking — No Fees',
+      'Reserve Truck Parking Available',
       'Clean Facilities',
-      'ATM Available',
-      'Convenience Store'
+      'All Major Fleet Cards Accepted'
     ]
   }
 ];
@@ -66,7 +66,7 @@ export function Locations() {
           <div className="max-w-3xl">
             <h1 className="mb-6 text-4xl md:text-5xl font-bold">Our Locations</h1>
             <p className="text-xl">
-              Find Super Petroleum locations near you. We're strategically positioned along major routes to serve you better.
+              Super Petroleum is part of the Travel Centers of America (TA) network. Find our two Georgia travel centers in Adel and Cordele — high speed diesel, free truck parking, and full services right off I-75.
             </p>
           </div>
         </div>

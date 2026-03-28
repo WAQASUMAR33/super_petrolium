@@ -6,8 +6,8 @@ const services = [
     image: '/gas_astation.jpg',
     title: 'Fuel Services',
     href: '/fuel/',
-    description: 'Premium diesel and gasoline at competitive prices. We offer top-quality fuel products from trusted suppliers, ensuring your vehicle runs efficiently. All major fuel cards accepted including Comdata, T-Check, TCH, and more. Our fuel pumps are regularly maintained and calibrated for accuracy, and we provide DEF (Diesel Exhaust Fluid) at all locations.',
-    features: ['24/7 Fuel Availability', 'All Major Fuel Cards Accepted', 'DEF Available', 'Competitive Pricing']
+    description: 'High speed diesel and gasoline at competitive prices along I-75 Georgia. As part of the Travel Centers of America (TA) network, we deliver the same reliable fueling experience TA drivers count on — high-flow pumps, fresh fuel, and DEF at every island. All major fleet cards accepted including Comdata, T-Check, TCH, EFS, and more.',
+    features: ['High Speed Diesel 24/7', 'All Major Fuel Cards Accepted', 'DEF at Every Pump', 'Competitive Pricing']
   },
   {
     image: '/kfc_image.jpg',
@@ -39,10 +39,10 @@ const services = [
   },
   {
     image: '/truck_parking.jpg',
-    title: 'Secure Truck Parking',
+    title: 'Free & Reserve Truck Parking',
     href: '/truck-parking/',
-    description: 'Secure, spacious parking with ample space for all vehicle sizes. Our well-lit parking areas are monitored 24/7 for your safety and peace of mind. We accommodate everything from pickup trucks to 18-wheelers, with easy access lanes and clearly marked spaces. All parking areas are paved, level, and designed for easy maneuvering. Reserve your spot or park overnight with confidence.',
-    features: ['24/7 Security Monitoring', 'Well-Lit Areas', 'Spacious Parking', 'All Vehicle Sizes']
+    description: 'Free truck parking at both our Adel and Cordele locations — no fees, no apps, no hassle. Walk in anytime or call ahead to reserve truck parking if you need a guaranteed spot for a long restart. Well-lit, paved pull-through spaces monitored 24/7, sized for 18-wheelers, tankers, flatbeds, and doubles. High speed diesel is steps away when you\'re ready to roll.',
+    features: ['Free Truck Parking', 'Reserve Truck Parking Available', '24/7 Security Monitoring', 'All Rig Sizes Welcome']
   }
 ];
 
@@ -59,7 +59,7 @@ export function Services() {
           </h1>
           <div className="w-24 h-1 bg-[#FFD10C] mx-auto mb-4"></div>
           <p className="max-w-2xl mx-auto text-xl text-gray-600">
-            Everything you need to keep moving forward, all in one convenient location
+            Part of the Travel Centers of America (TA) network — everything you need to keep moving, all in one stop in Adel and Cordele, Georgia.
           </p>
         </div>
 

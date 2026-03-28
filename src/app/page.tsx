@@ -5,13 +5,13 @@ import { ImageWithFallback } from './images/ImageWithFallBack';
 
 export const metadata: Metadata = {
   title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
-  description: 'Super Petroleum travel centers in Adel, GA offer diesel fuel, truck parking, truck repair, dining, and 24/7 services for professional drivers. Open 24/7.',
+  description: 'Super Petroleum — part of the Travel Centers of America (TA) network — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services in Adel & Cordele, GA.',
   alternates: {
     canonical: 'https://superpetroleums.com/',
   },
   openGraph: {
     title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
-    description: 'Super Petroleum travel centers in Adel, GA offer diesel fuel, truck parking, truck repair, dining, and 24/7 services for professional drivers.',
+    description: 'Super Petroleum — part of the Travel Centers of America (TA) network — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services in Adel & Cordele, GA.',
     url: 'https://superpetroleums.com/',
     images: [{ url: 'https://superpetroleums.com/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -224,7 +224,7 @@ export default function Home() {
               </div>
               <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-1">
                 <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                  Premium <strong>#2 diesel</strong> and unleaded gasoline at competitive prices along I-75 Georgia. DEF available at every pump island — no extra stops needed.
+                  <strong>High speed diesel</strong> and unleaded gasoline at competitive prices along I-75 Georgia. DEF available at every pump island — no extra stops needed.
                 </p>
                 <ul className="space-y-1.5 mb-4">
                   {['Comdata · Fleetone · EFS · TCH', 'DEF at Every Pump', 'Reefer Fuel Available', 'Open 24/7 — No Exceptions'].map((item) => (
@@ -262,10 +262,10 @@ export default function Home() {
               </div>
               <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-1">
                 <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                  Safe <strong>overnight truck parking</strong> in Adel and Cordele, GA. Wide paved lots with pull-through spaces for 18-wheelers, tankers, and flatbeds — monitored around the clock.
+                  <strong>Free truck parking</strong> in Adel and Cordele, GA. Wide paved lots with pull-through spaces for 18-wheelers, tankers, and flatbeds — monitored around the clock. Reserve truck parking also available.
                 </p>
                 <ul className="space-y-1.5 mb-4">
-                  {['24/7 Camera Surveillance', 'Pull-Through Spaces', 'Free — No Reservation Needed', 'Well-Lit Lots All Night'].map((item) => (
+                  {['24/7 Camera Surveillance', 'Pull-Through Spaces', 'Free & Reserve Parking Available', 'Well-Lit Lots All Night'].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-xs text-gray-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0 mt-1.5"></span>
                       {item}
@@ -416,10 +416,13 @@ export default function Home() {
                 The Travel Center I-75 Drivers Actually Count On
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Running I-75 through South Georgia and tired of the same truck stops? Super Petroleum has two locations — Adel and Cordele — right on your route. No detour, no extra miles.
+                Super Petroleum is a proud part of the <strong>Travel Centers of America (TA)</strong> network — one of the most trusted names in the trucking industry. Our two locations in Adel and Cordele sit right on I-75 in South Georgia, so you're never out of your way.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-5">
+                As a TA travel center, we carry the same commitment to professional drivers that the brand has built over decades — high speed diesel, DEF, free truck parking, hot food, showers, and a full truck care shop under one roof. We've been serving Georgia drivers since 1995.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We've been fueling trucks, fixing rigs, and serving drivers since 1995. Diesel, DEF, parking, food, showers, and a full truck care shop. One stop covers it all.
+                Need to reserve truck parking ahead of time? Call us before you arrive and we'll hold a space for you. Walk-ins are always welcome too — free truck parking is available first-come, first-served at both locations.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">

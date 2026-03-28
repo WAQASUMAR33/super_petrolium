@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions - Super Petroleum',
-  description: 'Find answers to common questions about fuel services, truck repairs, parking, dining, and more at Super Petroleum travel centers.',
+  title: 'Frequently Asked Questions - Super Petroleum | Travel Centers of America (TA) Georgia',
+  description: 'Answers to common questions about high speed diesel, free truck parking, reserve truck parking, dining, and truck repairs at Super Petroleum — part of the Travel Centers of America (TA) network in Adel & Cordele, GA.',
   alternates: { canonical: 'https://superpetroleums.com/faq/' },
 };
 
@@ -20,10 +20,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Do you offer DEF (Diesel Exhaust Fluid)?',
+      name: 'Do you offer high speed diesel and DEF?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, we provide DEF at all our locations alongside our premium diesel.',
+        text: 'Yes. We provide high speed diesel at high-flow pump lanes, and DEF is available at every fuel island. No separate lanes needed — grab both at the same pump.',
       },
     },
     {
@@ -52,10 +52,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Is truck parking available?',
+      name: 'Is truck parking free? Can I reserve truck parking?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, we offer secure, spacious truck parking with 24/7 security monitoring for all vehicle sizes.',
+        text: 'Free truck parking is available at both locations — no fees, no membership. You can also reserve truck parking by calling ahead. Both options include 24/7 security monitoring and pull-through spaces for all rig sizes.',
       },
     },
     {
@@ -80,6 +80,14 @@ const faqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Yes, we provide free high-speed WiFi throughout our facilities with no time limits or login requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Super Petroleum part of Travel Centers of America (TA)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Super Petroleum is part of the Travel Centers of America (TA) network. Our locations in Adel and Cordele, Georgia offer high speed diesel, free truck parking, reserve truck parking, dining, and full driver services.',
       },
     },
   ],

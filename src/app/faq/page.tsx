@@ -13,8 +13,8 @@ const faqs = [
   {
     id: 2,
     category: 'Fuel Services',
-    question: 'Do you offer DEF (Diesel Exhaust Fluid)?',
-    answer: 'Yes, we provide DEF at all our locations. DEF is essential for modern diesel engines with SCR (Selective Catalytic Reduction) systems to reduce emissions. You can purchase DEF at our fuel islands alongside our premium diesel.'
+    question: 'Do you offer high speed diesel and DEF?',
+    answer: 'Yes. We provide high speed diesel at high-flow pump lanes so you\'re in and out fast, and DEF (Diesel Exhaust Fluid) is available at every fuel island alongside our diesel. No separate lanes, no extra trip — grab both at the same pump.'
   },
   {
     id: 3,
@@ -37,8 +37,8 @@ const faqs = [
   {
     id: 6,
     category: 'Gas Station',
-    question: 'Is truck parking available?',
-    answer: 'Yes, we offer secure, spacious truck parking with 24/7 security monitoring. Our well-lit parking areas can accommodate vehicles of all sizes, from pickup trucks to 18-wheelers. All parking spaces are paved and level for easy maneuvering.'
+    question: 'Is truck parking free? Can I reserve truck parking?',
+    answer: 'Free truck parking is available at both our Adel and Cordele locations — no fees, no membership required. Just pull in and park. If you want to guarantee a spot ahead of your arrival, you can also reserve truck parking by calling us. Both options are available 24/7 with full security monitoring and well-lit pull-through spaces for all rig sizes.'
   },
   {
     id: 7,
@@ -56,13 +56,19 @@ const faqs = [
     id: 9,
     category: 'Fuel Services',
     question: 'What is your fuel pricing policy?',
-    answer: 'We offer competitive fuel pricing with premium diesel and gasoline. Our prices are updated regularly to reflect market conditions. We accept cash and all major fuel cards. For fleet customers, we offer volume discounts and fuel card programs tailored to your business needs.'
+    answer: 'We offer competitive pricing on high speed diesel and gasoline, updated regularly to reflect market conditions. We accept cash and all major fleet fuel cards. Fleet customers can also take advantage of volume discounts and card programs tailored to their business needs.'
   },
   {
     id: 10,
     category: 'Gas Station',
     question: 'Do you have WiFi available?',
-    answer: 'Yes! We provide free high-speed WiFi throughout our facilities, including parking areas, restrooms, and dining areas. There are no time limits or login requirements - simply connect to stay in touch, work, or stream entertainment during your stop.'
+    answer: 'Yes! We provide free high-speed WiFi throughout our facilities, including parking areas, restrooms, and dining areas. There are no time limits or login requirements — simply connect to stay in touch, work, or stream during your stop.'
+  },
+  {
+    id: 11,
+    category: 'Gas Station',
+    question: 'Is Super Petroleum part of Travel Centers of America (TA)?',
+    answer: 'Yes. Super Petroleum is part of the Travel Centers of America (TA) network — one of the most trusted names in the trucking industry. Our locations in Adel and Cordele, Georgia operate to the same standards TA drivers rely on across the country: reliable high speed diesel, safe truck parking, clean facilities, and full driver services all in one stop.'
   }
 ];
 
