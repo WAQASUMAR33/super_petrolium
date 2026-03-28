@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const locations = [
   {
-    name: 'Adel Travel Center',
+    name: 'Adel Truck Stop',
     address: '1503 West 4th St',
     city: 'Adel, GA 31620',
     phone: '(229) 896-7453',
@@ -32,9 +32,9 @@ const locations = [
     name: 'Petro-Cordele',
     address: '373 RockHouse Rd. East',
     city: 'Cordele, GA 31015',
-    phone: '(229) XXX-XXXX',
+    phone: '(229) 513-1590',
     hours: 'Open 24/7',
-    description: 'Travel Centers of America (TA) location in Cordele, GA — high speed diesel, free truck parking, and full services at I-75 and US-280.',
+    description: 'Travel Centers of America (TA) location in Cordele, GA — high speed diesel, free truck parking, and full services at I-75/Exit-97.',
     image: 'https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     amenities: [
       { icon: Fuel, label: 'High Speed Diesel & DEF' },

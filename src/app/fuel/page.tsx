@@ -233,8 +233,8 @@ export default function FuelPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { name: 'Adel Travel Center', address: '1503 West 4th St, Adel, GA 31620', phone: '(229) 896-7453', maps: 'https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620' },
-              { name: 'Petro-Stopping Center', address: '393 Rock House Rd East, Cordele, GA 31015', phone: '(229) XXX-XXXX', maps: 'https://www.google.com/maps/search/?api=1&query=393+Rock+house+RD+East,+Cordele,+GA+31015' },
+              { name: 'Adel Truck Stop', address: '1503 West 4th St, Adel, GA 31620', phone: '(229) 896-7453', maps: 'https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620' },
+              { name: 'Petro-Stopping Center', address: '393 Rock House Rd East, Cordele, GA 31015', phone: '(229) 513-1590', maps: 'https://www.google.com/maps/search/?api=1&query=393+Rock+house+RD+East,+Cordele,+GA+31015' },
             ].map((loc, i) => (
               <div key={i} className="bg-white border border-gray-200 hover:border-[#FFD10C] p-8 rounded-2xl transition-all duration-300 hover:shadow-lg">
                 <div className="flex items-start gap-4 mb-4">

@@ -3,7 +3,7 @@ import { MapPin, Clock } from 'lucide-react';
 
 const locations = [
   {
-    name: 'Adel Travel Center',
+    name: 'Adel Truck Stop',
     address: '1503 West 4th St, Adel, GA 31620',
     hours: 'Open 24/7',
     features: ['Huddle House Restaurant', 'Full Service Dining', 'Dine-In & Pickup Available'],

@@ -54,7 +54,7 @@ export function CallToAction() {
           <div className="bg-white/5 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4 text-white">Accepted at Both Locations</h3>
             <p className="text-gray-300 mb-6">
-              All fuel cards listed above are accepted at our Adel Travel Center and Petro-Stopping Center locations. 
+              All fuel cards listed above are accepted at our Adel Truck Stop and Petro-Stopping Center locations. 
               Enjoy seamless payment experiences at any of our travel centers.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -62,7 +62,7 @@ export function CallToAction() {
                 <div className="w-12 h-12 bg-[#FFD10C]/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <CheckCircle className="w-6 h-6 text-[#FFD10C]" />
                 </div>
-                <p className="text-gray-300 text-sm">Adel Travel Center</p>
+                <p className="text-gray-300 text-sm">Adel Truck Stop</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-[#FFD10C]/20 rounded-full flex items-center justify-center mx-auto mb-3">

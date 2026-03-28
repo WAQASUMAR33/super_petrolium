@@ -110,7 +110,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-[#FFD10C] transition-colors duration-300">Adel Travel Center</h3>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-[#FFD10C] transition-colors duration-300">Adel Truck Stop</h3>
                 <p className="text-gray-600 mb-4 text-sm italic">Full-service travel center with dining and fuel services</p>
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   <span className="block font-medium">1503 West 4th St</span>
@@ -167,10 +167,10 @@ export default function Home() {
                 <div className="mb-2">
                   <span className="text-gray-600 text-sm">Phone:</span>
                   <a 
-                    href="tel:229-XXX-XXXX" 
+                    href="tel:229-513-1590" 
                     className="text-[#FFD10C] font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-2 ml-2"
                   >
-                    <span>(229) XXX-XXXX</span>
+                    <span>(229) 513-1590</span>
                   </a>
                 </div>
                 <div className="mb-4">
@@ -453,7 +453,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { title: "Adel, GA — Exit 39", body: "All four restaurants, full truck care shop, showers, and wide pull-through lots. Between Valdosta and Tifton on I-75." },
-                { title: "Cordele, GA — US-280 Junction", body: "I-75/US-280 interchange. Key stop for drivers heading to Florida, Georgia coast, or Alabama. Full fuel and amenities." },
+                { title: "Cordele, GA — I-75/Exit-97", body: "I-75/Exit-97. Key stop for drivers heading to Florida, Georgia coast, or Alabama. Full fuel and amenities." },
                 { title: "Who Uses Our Stops", body: "OTR long-haul drivers, regional carriers, owner-operators, family travelers, reefer haulers, flatbeds, and tankers." },
               ].map((item, i) => (
                 <div key={i} className="border border-gray-700 hover:border-[#FFD10C] p-6 rounded-xl transition-all duration-300">
@@ -695,7 +695,7 @@ export default function Home() {
           </div>
           <div className="space-y-3">
             {[
-              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Two locations: Adel Travel Center at 1503 West 4th St, Adel, GA 31620 (Exit 39) and Cordele at 373 RockHouse Rd. East, Cordele, GA 31015. Both open 24/7." },
+              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Two locations: Adel Truck Stop at 1503 West 4th St, Adel, GA 31620 (Exit 39) and Cordele at 373 RockHouse Rd. East, Cordele, GA 31015. Both open 24/7." },
               { q: "What fuel cards do you accept?", a: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager are all accepted at both locations." },
               { q: "Is there free truck parking at Super Petroleum?", a: "Yes — free parking with no time limits at both locations. Pull-through spaces for 18-wheelers, doubles, and oversized loads." },
               { q: "Do you have DEF (diesel exhaust fluid) available?", a: "Yes. DEF is available at every pump island at our Adel location — no separate stop required." },

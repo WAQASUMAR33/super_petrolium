@@ -83,7 +83,7 @@ export default function KFCPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-block bg-[#FFD10C]/10 px-4 py-2 rounded-full mb-4">
-                <p className="text-[#FFD10C] uppercase tracking-wide text-sm font-semibold">KFC at Adel Travel Center</p>
+                <p className="text-[#FFD10C] uppercase tracking-wide text-sm font-semibold">KFC at Adel Truck Stop</p>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 A Real Meal Without Leaving the Truck Stop
@@ -136,7 +136,7 @@ export default function KFCPage() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-2">Find KFC at <span className="text-[#FFD10C]">Super Petroleum</span></h2>
-            <p className="text-gray-400">Located inside our Adel Travel Center — right off I-75</p>
+            <p className="text-gray-400">Located inside our Adel Truck Stop — right off I-75</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
