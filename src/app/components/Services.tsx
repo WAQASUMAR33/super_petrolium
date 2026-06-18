@@ -6,7 +6,7 @@ const services = [
     image: '/gas_astation.jpg',
     title: 'Fuel Services',
     href: '/fuel/',
-    description: 'High speed diesel and gasoline at competitive prices along I-75 Georgia. As part of the Travel Centers of America (TA) network, we deliver the same reliable fueling experience TA drivers count on — high-flow pumps, fresh fuel, and DEF at every island. All major fleet cards accepted including Comdata, T-Check, TCH, EFS, and more.',
+    description: 'High speed diesel and gasoline at competitive prices along I-75 Georgia. As proud Marathon stations, we deliver the same reliable fueling experience Marathon drivers count on — high-flow pumps, fresh fuel, and DEF at every island. All major fleet cards accepted including Comdata, T-Check, TCH, EFS, and more.',
     features: ['High Speed Diesel 24/7', 'All Major Fuel Cards Accepted', 'DEF at Every Pump', 'Competitive Pricing']
   },
   {
@@ -59,7 +59,7 @@ export function Services() {
           </h1>
           <div className="w-24 h-1 bg-[#FFD10C] mx-auto mb-4"></div>
           <p className="max-w-2xl mx-auto text-xl text-gray-600">
-            Part of the Travel Centers of America (TA) network — everything you need to keep moving, all in one stop in Adel and Cordele, Georgia.
+            Proud Marathon stations — everything you need to keep moving, all in one stop in Adel and Cordele, Georgia.
           </p>
         </div>
 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Free Truck Parking in Adel & Cordele GA - Reserve Truck Parking Available',
-  description: 'Free truck parking and reserve truck parking at Super Petroleum — part of the Travel Centers of America (TA) network. Safe, well-lit lots monitored 24/7 in Adel and Cordele, Georgia, off I-75.',
+  description: 'Free truck parking and reserve truck parking at Super Petroleum — proud Marathon station in Adel, GA and Marathon station in Cordele, GA. Safe, well-lit lots monitored 24/7 in Adel and Cordele, Georgia, off I-75.',
   path: '/truck-parking/',
 });
 
@@ -289,7 +289,7 @@ export default function TruckParkingPage() {
                 Free & Reserve Truck Parking on I-75 in Georgia
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Super Petroleum is part of the <strong>Travel Centers of America (TA)</strong> network — and our two Georgia locations in Adel and Cordele are built to the same standard that TA drivers across the country rely on. If you've stopped at a TA travel center before, you know what to expect: a safe, well-run property where your rig is looked after. That's exactly what we deliver here on I-75.
+                Super Petroleum locations are proud <strong>Marathon</strong> stations — and our two Georgia locations in Adel and Cordele are built to the same high standard that Marathon drivers across the country rely on. If you've stopped at a Marathon station before, you know what to expect: a safe, well-run property where your rig is looked after. That's exactly what we deliver here on I-75.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
                 Our <strong>free truck parking in Adel, GA</strong> and <strong>Cordele, GA</strong> gives you properly sized pull-through spaces — wide enough for 18-wheelers, doubles, and oversized flatbeds — without the juggling act you get in undersized lots. You pull in straight, you park, and you're done. No tight corners, no backing into traffic.

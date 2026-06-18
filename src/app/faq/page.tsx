@@ -67,8 +67,8 @@ const faqs = [
   {
     id: 11,
     category: 'Gas Station',
-    question: 'Is Super Petroleum part of Travel Centers of America (TA)?',
-    answer: 'Yes. Super Petroleum is part of the Travel Centers of America (TA) network — one of the most trusted names in the trucking industry. Our locations in Adel and Cordele, Georgia operate to the same standards TA drivers rely on across the country: reliable high speed diesel, safe truck parking, clean facilities, and full driver services all in one stop.'
+    question: 'Is Super Petroleum a Marathon station?',
+    answer: 'Yes. Super Petroleum locations are proud Marathon stations. Our locations in Adel and Cordele, Georgia operate to the same high standards Marathon drivers rely on across the country: reliable high speed diesel, safe truck parking, clean facilities, and full driver services all in one stop.'
   }
 ];
 

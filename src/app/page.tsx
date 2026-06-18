@@ -5,13 +5,13 @@ import { ImageWithFallback } from './images/ImageWithFallBack';
 
 export const metadata: Metadata = {
   title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
-  description: 'Super Petroleum — part of the Travel Centers of America (TA) network — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services in Adel & Cordele, GA.',
+  description: 'Super Petroleum — proud Marathon station in Adel, GA and Marathon station in Cordele, GA — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services.',
   alternates: {
     canonical: 'https://superpetroleums.com/',
   },
   openGraph: {
     title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
-    description: 'Super Petroleum — part of the Travel Centers of America (TA) network — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services in Adel & Cordele, GA.',
+    description: 'Super Petroleum — proud Marathon station in Adel, GA and Marathon station in Cordele, GA — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services.',
     url: 'https://superpetroleums.com/',
     images: [{ url: 'https://superpetroleums.com/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -416,10 +416,10 @@ export default function Home() {
                 The Travel Center I-75 Drivers Actually Count On
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Super Petroleum is a proud part of the <strong>Travel Centers of America (TA)</strong> network — one of the most trusted names in the trucking industry. Our two locations in Adel and Cordele sit right on I-75 in South Georgia, so you're never out of your way.
+              Super Petroleum locations are proud <strong>Marathon</strong> stations — sitting right on I-75 in South Georgia, so you're never out of your way. Our locations in Adel and Cordele are built to meet the needs of all long-haul and regional drivers.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                As a TA travel center, we carry the same commitment to professional drivers that the brand has built over decades — high speed diesel, DEF, free truck parking, hot food, showers, and a full truck care shop under one roof. We've been serving Georgia drivers since 1995.
+              As proud Marathon stations, we carry the same commitment to professional drivers that Marathon has built over decades — high speed diesel, DEF, free truck parking, hot food, showers, and a full truck care shop under one roof. We've been serving Georgia drivers since 1995.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Need to reserve truck parking ahead of time? Call us before you arrive and we'll hold a space for you. Walk-ins are always welcome too — free truck parking is available first-come, first-served at both locations.

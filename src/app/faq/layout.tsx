@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions - Super Petroleum | Travel Centers of America (TA) Georgia',
-  description: 'Answers to common questions about high speed diesel, free truck parking, reserve truck parking, dining, and truck repairs at Super Petroleum — part of the Travel Centers of America (TA) network in Adel & Cordele, GA.',
+  title: 'Frequently Asked Questions - Super Petroleum | Marathon station in Adel, GA',
+  description: 'Answers to common questions about high speed diesel, free truck parking, reserve truck parking, dining, and truck repairs at Super Petroleum — Marathon station in Adel, GA & Cordele, GA.',
   alternates: { canonical: 'https://superpetroleums.com/faq/' },
 };
 
@@ -84,10 +84,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Is Super Petroleum part of Travel Centers of America (TA)?',
+      name: 'Is Super Petroleum a Marathon station?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Super Petroleum is part of the Travel Centers of America (TA) network. Our locations in Adel and Cordele, Georgia offer high speed diesel, free truck parking, reserve truck parking, dining, and full driver services.',
+        text: 'Yes. Super Petroleum locations are proud Marathon stations. Our locations in Adel and Cordele, Georgia offer high speed diesel, free truck parking, reserve truck parking, dining, and full driver services.',
       },
     },
   ],
