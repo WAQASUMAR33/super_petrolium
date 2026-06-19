@@ -198,7 +198,7 @@ export default function TruckParkingPage() {
               },
               {
                 heading: "Cordele, GA — Petro-Cordele",
-                body: "Cordele sits at the crossroads of I-75/Exit-97, making it a key stop for drivers heading east-west across Georgia as well as north-south freight. Our Petro-Cordele location at 373 RockHouse Rd. East gives you easy access without navigating into town."
+                body: "Cordele sits at the crossroads of I-75/Exit-97, making it a key stop for drivers heading east-west across Georgia as well as north-south freight. Our Petro-Cordele location at Travel Centers of America gives you easy access without navigating into town."
               },
               {
                 heading: "South Georgia Freight Corridor",
@@ -370,7 +370,7 @@ export default function TruckParkingPage() {
               },
               {
                 q: "Where are you located relative to I-75?",
-                a: "Our Adel Truck Stop is located at 1503 West 4th St, Adel, GA — just off I-75. Our Cordele location (Petro-Cordele) is at 373 RockHouse Rd. East, Cordele, GA. Both are easy on-and-off from the interstate with no complicated routing."
+                a: "Our Adel Truck Stop is located at 1503 West 4th St, Adel, GA — just off I-75. Our Cordele location (Petro-Cordele) is at Travel Centers of America, Cordele, GA. Both are easy on-and-off from the interstate with no complicated routing."
               },
               {
                 q: "Are showers and food available at the truck stop?",
@@ -412,7 +412,7 @@ export default function TruckParkingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               { name: 'Adel Truck Stop', address: '1503 West 4th St, Adel, GA 31620', phone: '(229) 896-7453' },
-              { name: 'Petro-Cordele', address: '373 RockHouse Rd. East, Cordele, GA 31015', phone: '(229) 513-1590' },
+              { name: 'Petro-Cordele', address: 'Travel Centers of America, Cordele, GA 31015', phone: '(229) 513-1590' },
             ].map((loc, i) => (
               <div key={i} className="bg-white/5 border border-gray-800 hover:border-[#FFD10C] p-8 rounded-2xl transition-all duration-300">
                 <div className="flex items-start gap-4 mb-4">

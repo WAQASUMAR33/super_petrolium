@@ -161,7 +161,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-[#FFD10C] transition-colors duration-300">Petro-Cordele</h3>
                 <p className="text-gray-600 mb-4 text-sm italic">Complete truck stop with all essential services</p>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  <span className="block font-medium">373 RockHouse Rd. East</span>
+                  <span className="block font-medium">Travel Centers of America</span>
                   <span className="block">Cordele, GA 31015</span>
                 </p>
                 <div className="mb-2">
@@ -178,7 +178,7 @@ export default function Home() {
                   <span className="text-[#FFD10C] font-semibold">Open 24/7</span>
                 </div>
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=373+RockHouse+Rd+East,+Cordele,+GA+31015"
+                  href="https://www.google.com/maps/search/?api=1&query=Travel+Centers+of+America,+Cordele,+GA+31015"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#FFD10C] hover:text-black transition-all duration-300 shadow-md hover:shadow-lg"
@@ -695,7 +695,7 @@ export default function Home() {
           </div>
           <div className="space-y-3">
             {[
-              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Two locations: Adel Truck Stop at 1503 West 4th St, Adel, GA 31620 (Exit 39) and Cordele at 373 RockHouse Rd. East, Cordele, GA 31015. Both open 24/7." },
+              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Two locations: Adel Truck Stop at 1503 West 4th St, Adel, GA 31620 (Exit 39) and Cordele at Travel Centers of America, Cordele, GA 31015. Both open 24/7." },
               { q: "What fuel cards do you accept?", a: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager are all accepted at both locations." },
               { q: "Is there free truck parking at Super Petroleum?", a: "Yes — free parking with no time limits at both locations. Pull-through spaces for 18-wheelers, doubles, and oversized loads." },
               { q: "Do you have DEF (diesel exhaust fluid) available?", a: "Yes. DEF is available at every pump island at our Adel location — no separate stop required." },

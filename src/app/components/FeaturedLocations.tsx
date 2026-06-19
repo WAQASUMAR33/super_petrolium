@@ -11,7 +11,7 @@ const locations = [
   },
   {
     name: 'Petro-Stopping Center',
-    address: '393 Rock house RD East, Cordele, GA 31015',
+    address: 'Travel Centers of America, Cordele, GA 31015',
     hours: 'Open 24/7',
     features: ['Full Service Station', 'Truck Parking', 'Fuel Services'],
     image: 'https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
