@@ -1,7 +1,7 @@
 'use client';
 
 import { ImageWithFallback } from '../images/ImageWithFallBack';
-import { MapPin, Clock, Phone, Navigation, Utensils, Fuel, Truck, Wifi } from 'lucide-react';
+import { MapPin, Clock, Phone, Navigation, Utensils, Fuel, Truck } from 'lucide-react';
 import { useState } from 'react';
 
 const locations = [
@@ -11,21 +11,18 @@ const locations = [
     city: 'Adel, GA 31620',
     phone: '(229) 896-7453',
     hours: 'Open 24/7',
-    description: 'Marathon station in Adel, GA — high speed diesel, free truck parking, dining, and truck care right off I-75.',
+    description: 'Marathon station in Adel, GA — high speed diesel, free truck parking, and dining right off I-75.',
     image: 'https://images.unsplash.com/photo-1638425637198-f4ebe6ef341a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWVzZWwlMjBmdWVsJTIwcHVtcHxlbnwxfHx8fDE3NjQwMjE0OTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     amenities: [
-      { icon: Utensils, label: 'KFC · Starbucks · Sbarro' },
+      { icon: Utensils, label: 'Huddle House' },
       { icon: Fuel, label: 'High Speed Diesel & DEF' },
-      { icon: Truck, label: 'Free Truck Parking' },
-      { icon: Wifi, label: 'Free WiFi' }
+      { icon: Truck, label: 'Free Truck Parking' }
     ],
     features: [
       'Marathon station in Adel, GA',
       'High Speed Diesel & DEF 24/7',
       'Free Truck Parking — No Fees',
-      'Reserve Truck Parking Available',
-      'Truck Care Shop',
-      'KFC · Starbucks · Sbarro · Curry & Grill'
+      'Huddle House Restaurant'
     ]
   },
   {
@@ -38,8 +35,7 @@ const locations = [
     image: 'https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     amenities: [
       { icon: Fuel, label: 'High Speed Diesel & DEF' },
-      { icon: Truck, label: 'Free Truck Parking' },
-      { icon: Wifi, label: 'Free WiFi' }
+      { icon: Truck, label: 'Free Truck Parking' }
     ],
     features: [
       'Travel Centers of America',
