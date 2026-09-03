@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Fuel, Truck, Coffee, Wrench, CreditCard, MapPin, Clock, Shield, Star, Quote, ChevronDown, CheckCircle, Zap } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Fuel, Truck, Coffee, Wrench, CreditCard, MapPin, Clock, Shield, Star, Quote, ChevronDown, CheckCircle, Zap, Phone, Navigation, ArrowRight, Utensils, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { ImageWithFallback } from './images/ImageWithFallBack';
 
@@ -81,108 +81,276 @@ export default function Home() {
       </section>
 
       {/* Locations Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4">
+      <section id="locations" className="py-20 md:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Subtle ambient lighting */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FFD10C]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-black/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-              Our Locations
+            <div className="inline-flex items-center gap-2 bg-[#FFD10C]/15 border border-[#FFD10C]/30 text-gray-900 px-4 py-1.5 rounded-full mb-4 shadow-sm">
+              <MapPin className="w-4 h-4 text-black fill-[#FFD10C]" />
+              <span className="text-xs md:text-sm font-bold tracking-wide uppercase">Strategic I-75 Georgia Corridor</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">
+              Our Premier <span className="bg-gradient-to-r from-gray-900 via-[#ca9d00] to-gray-900 bg-clip-text text-transparent">Travel Centers</span>
             </h2>
-            <div className="w-24 h-1 bg-[#FFD10C] mx-auto mb-4"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Find us along your route</p>
+            <div className="w-24 h-1.5 bg-[#FFD10C] rounded-full mx-auto mb-4"></div>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Two full-service travel centers strategically located along I-75 in South Georgia. Built specifically for professional drivers.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {/* Location 1 */}
-            <div className="group bg-white p-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden">
-              <div className="w-full h-64 md:h-72 overflow-hidden relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+            {/* Location 1: Adel Truck Stop */}
+            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden flex flex-col relative">
+              {/* Image Banner */}
+              <div className="w-full h-72 md:h-80 overflow-hidden relative bg-gray-900">
                 <img
                   src="/gas_astation2.jpg"
-                  alt="Adel Location"
-                  className="w-full h-full object-cover object-bottom group-hover:scale-110 transition-transform duration-500"
+                  alt="Adel Truck Stop along I-75 Georgia"
+                  className="w-full h-full object-cover object-bottom group-hover:scale-105 transition-transform duration-700"
                   style={{ opacity: 1 }}
+                  loading="eager"
+                  fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="bg-[#FFD10C] p-2 rounded-lg inline-block">
-                    <MapPin className="w-5 h-5 text-black" />
+                {/* Visual Gradients */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
+
+                {/* Top Badges */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <span className="bg-[#FFD10C] text-black text-xs md:text-sm font-bold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5">
+                    <Navigation className="w-3.5 h-3.5" />
+                    I-75 • Exit 39
+                  </span>
+                  <span className="bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-white/20">
+                    Adel, GA
+                  </span>
+                </div>
+
+                <div className="absolute top-4 right-4">
+                  <div className="bg-emerald-500/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 border border-emerald-400/40">
+                    <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    Open 24/7
                   </div>
                 </div>
+
+                {/* Bottom Image Overlay Text */}
+                <div className="absolute bottom-4 left-5 right-5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[#FFD10C] text-xs font-bold uppercase tracking-wider">Marathon Travel Plaza</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight drop-shadow-md">
+                    Adel Truck Stop
+                  </h3>
+                  <p className="text-gray-300 text-xs md:text-sm line-clamp-1 mt-0.5">
+                    1503 West 4th St, Adel, GA 31620
+                  </p>
+                </div>
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-[#FFD10C] transition-colors duration-300">Adel Truck Stop</h3>
-                <p className="text-gray-600 mb-4 text-sm italic">Full-service travel center with dining and fuel services</p>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  <span className="block font-medium">1503 West 4th St</span>
-                  <span className="block">Adel, GA 31620</span>
-                </p>
-                <div className="mb-2">
-                  <span className="text-gray-600 text-sm">Phone:</span>
+
+              {/* Card Details Body */}
+              <div className="p-6 md:p-8 flex flex-col flex-1 bg-white">
+                {/* Quick Info Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-6 border-b border-gray-100 mb-6 text-sm">
+                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
+                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium">Direct Phone</p>
+                      <a href="tel:229-896-7453" className="font-bold text-gray-900 hover:text-[#ca9d00] transition-colors">
+                        (229) 896-7453
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
+                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium">Station Hours</p>
+                      <span className="font-bold text-gray-900">Always Open 24/7</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Amenity Highlights Badges */}
+                <div className="mb-6">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">On-Site Amenities & Services</p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { label: 'High Speed Diesel & DEF', icon: Fuel },
+                      { label: 'Free Truck Parking', icon: Truck },
+                      { label: 'KFC Restaurant', icon: Utensils },
+                      { label: 'Starbucks Coffee', icon: Coffee },
+                      { label: 'Sbarro Pizza', icon: Utensils },
+                      { label: 'Curry & Grill', icon: Utensils },
+                      { label: 'ASE Truck Care Shop', icon: Wrench },
+                      { label: 'Private Showers 24/7', icon: CheckCircle },
+                    ].map((badge, idx) => {
+                      const Icon = badge.icon;
+                      return (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-[#FFD10C]/20 text-gray-800 text-xs font-semibold border border-gray-200/80 transition-colors"
+                        >
+                          <Icon className="w-3.5 h-3.5 text-black" />
+                          {badge.label}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Card Action Buttons */}
+                <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
                   <a 
-                    href="tel:229-896-7453" 
-                    className="text-[#FFD10C] font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-2 ml-2"
+                    href="https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#FFD10C] text-black py-3.5 px-5 rounded-xl font-bold hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn text-sm text-center"
                   >
-                    <span>(229) 896-7453</span>
+                    <Navigation className="w-4 h-4 text-black group-hover/btn:translate-x-0.5 transition-transform" />
+                    <span>Get Directions</span>
+                  </a>
+
+                  <a 
+                    href="tel:229-896-7453"
+                    className="flex-1 bg-black text-white py-3.5 px-5 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm text-center"
+                  >
+                    <Phone className="w-4 h-4 text-[#FFD10C]" />
+                    <span>Call Adel</span>
                   </a>
                 </div>
-                <div className="mb-4">
-                  <span className="text-gray-600 text-sm">Hours: </span>
-                  <span className="text-[#FFD10C] font-semibold">Open 24/7</span>
-                </div>
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#FFD10C] hover:text-black transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  Get Directions
-                </a>
               </div>
             </div>
 
-            {/* Location 2 - Petro-Stopping Center */}
-            <div className="group bg-white p-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden">
-              <div className="w-full h-64 md:h-72 overflow-hidden relative">
+            {/* Location 2: Petro-Cordele */}
+            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden flex flex-col relative">
+              {/* Image Banner */}
+              <div className="w-full h-72 md:h-80 overflow-hidden relative bg-gray-900">
                 <img
-                  src="https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Petro-Stopping Center"
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  src="/cordele_location.jpg"
+                  alt="Petro-Cordele Travel Center I-75 Exit 97"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   style={{ opacity: 1 }}
+                  loading="eager"
+                  fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="bg-[#FFD10C] p-2 rounded-lg inline-block">
-                    <MapPin className="w-5 h-5 text-black" />
+                {/* Visual Gradients */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
+
+                {/* Top Badges */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <span className="bg-[#FFD10C] text-black text-xs md:text-sm font-bold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5">
+                    <Navigation className="w-3.5 h-3.5" />
+                    I-75 • Exit 97
+                  </span>
+                  <span className="bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-white/20">
+                    Cordele, GA
+                  </span>
+                </div>
+
+                <div className="absolute top-4 right-4">
+                  <div className="bg-emerald-500/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 border border-emerald-400/40">
+                    <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    Open 24/7
                   </div>
                 </div>
+
+                {/* Bottom Image Overlay Text */}
+                <div className="absolute bottom-4 left-5 right-5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[#FFD10C] text-xs font-bold uppercase tracking-wider">Travel Centers of America Partner</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight drop-shadow-md">
+                    Petro-Cordele
+                  </h3>
+                  <p className="text-gray-300 text-xs md:text-sm line-clamp-1 mt-0.5">
+                    Travel Centers of America, Cordele, GA 31015
+                  </p>
+                </div>
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-[#FFD10C] transition-colors duration-300">Petro-Cordele</h3>
-                <p className="text-gray-600 mb-4 text-sm italic">Complete truck stop with all essential services</p>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  <span className="block font-medium">Travel Centers of America</span>
-                  <span className="block">Cordele, GA 31015</span>
-                </p>
-                <div className="mb-2">
-                  <span className="text-gray-600 text-sm">Phone:</span>
+
+              {/* Card Details Body */}
+              <div className="p-6 md:p-8 flex flex-col flex-1 bg-white">
+                {/* Quick Info Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-6 border-b border-gray-100 mb-6 text-sm">
+                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
+                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium">Direct Phone</p>
+                      <a href="tel:229-513-1590" className="font-bold text-gray-900 hover:text-[#ca9d00] transition-colors">
+                        (229) 513-1590
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
+                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium">Station Hours</p>
+                      <span className="font-bold text-gray-900">Always Open 24/7</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Amenity Highlights Badges */}
+                <div className="mb-6">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">On-Site Amenities & Services</p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { label: 'High Speed Diesel & DEF', icon: Fuel },
+                      { label: 'Free Truck Parking', icon: Truck },
+                      { label: 'Reserve Parking Available', icon: Shield },
+                      { label: 'Driver Lounge & Cafe', icon: Coffee },
+                      { label: 'Hot Private Showers', icon: CheckCircle },
+                      { label: 'All Major Fleet Cards', icon: CreditCard },
+                      { label: 'TA Travel Center Services', icon: Sparkles },
+                      { label: '24/7 Monitored Lots', icon: Shield },
+                    ].map((badge, idx) => {
+                      const Icon = badge.icon;
+                      return (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-[#FFD10C]/20 text-gray-800 text-xs font-semibold border border-gray-200/80 transition-colors"
+                        >
+                          <Icon className="w-3.5 h-3.5 text-black" />
+                          {badge.label}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Card Action Buttons */}
+                <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
                   <a 
-                    href="tel:229-513-1590" 
-                    className="text-[#FFD10C] font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-2 ml-2"
+                    href="https://www.google.com/maps/search/?api=1&query=Travel+Centers+of+America,+Cordele,+GA+31015"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#FFD10C] text-black py-3.5 px-5 rounded-xl font-bold hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn text-sm text-center"
                   >
-                    <span>(229) 513-1590</span>
+                    <Navigation className="w-4 h-4 text-black group-hover/btn:translate-x-0.5 transition-transform" />
+                    <span>Get Directions</span>
+                  </a>
+
+                  <a 
+                    href="tel:229-513-1590"
+                    className="flex-1 bg-black text-white py-3.5 px-5 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm text-center"
+                  >
+                    <Phone className="w-4 h-4 text-[#FFD10C]" />
+                    <span>Call Cordele</span>
                   </a>
                 </div>
-                <div className="mb-4">
-                  <span className="text-gray-600 text-sm">Hours: </span>
-                  <span className="text-[#FFD10C] font-semibold">Open 24/7</span>
-                </div>
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Travel+Centers+of+America,+Cordele,+GA+31015"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#FFD10C] hover:text-black transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  Get Directions
-                </a>
               </div>
             </div>
           </div>
@@ -190,170 +358,202 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50">
+      <section id="services" className="py-20 md:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-              Our Services
+            <div className="inline-flex items-center gap-2 bg-[#FFD10C]/15 border border-[#FFD10C]/30 text-gray-900 px-4 py-1.5 rounded-full mb-4 shadow-sm">
+              <Zap className="w-4 h-4 text-black fill-[#FFD10C]" />
+              <span className="text-xs md:text-sm font-bold tracking-wide uppercase">Driver-First Infrastructure</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">
+              Our Professional <span className="bg-gradient-to-r from-gray-900 via-[#ca9d00] to-gray-900 bg-clip-text text-transparent">Services</span>
             </h2>
-            <div className="w-24 h-1 bg-[#FFD10C] mx-auto mb-4"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to keep moving</p>
+            <div className="w-24 h-1.5 bg-[#FFD10C] rounded-full mx-auto mb-4"></div>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Engineered to minimize your downtime and keep you comfortable, compliant, and rolling on schedule.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-
             {/* Service 1 — Quality Fuel */}
-            <div className="group bg-white p-0 rounded-2xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col">
-              <div className="w-full h-48 overflow-hidden bg-gray-200 relative flex-shrink-0">
-                <ImageWithFallback
-                  src="/gas_astation.jpg"
-                  alt="Diesel fuel and gasoline at Super Petroleum Georgia travel center"
+            <div className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col overflow-hidden">
+              <div className="w-full h-52 overflow-hidden bg-gray-900 relative flex-shrink-0">
+                <img
+                  src="/diesel_fuel_hd.jpg"
+                  alt="High-speed commercial diesel fuel and DEF at Super Petroleum"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  style={{ opacity: 1 }}
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
                 <div className="absolute top-4 right-4">
-                  <div className="bg-[#FFD10C] p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Fuel className="w-6 h-6 text-black" />
+                  <div className="bg-[#FFD10C] p-2.5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Fuel className="w-5 h-5 text-black" />
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg">Quality Fuel</h3>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="text-[#FFD10C] text-xs font-bold tracking-wider uppercase block mb-0.5">Commercial Fueling</span>
+                  <h3 className="text-xl font-extrabold text-white drop-shadow-md">Quality Fuel & DEF</h3>
                 </div>
               </div>
-              <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-1">
-                <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                  <strong>High speed diesel</strong> and unleaded gasoline at competitive prices along I-75 Georgia. DEF available at every pump island — no extra stops needed.
+              <div className="p-6 flex flex-col flex-1 bg-white">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  <strong>High-speed commercial diesel</strong> and unleaded gasoline at competitive prices. DEF available at every island — no extra turns or separate pump lines needed.
                 </p>
-                <ul className="space-y-1.5 mb-4">
-                  {['Comdata · Fleetone · EFS · TCH', 'DEF at Every Pump', 'Reefer Fuel Available', 'Open 24/7 — No Exceptions'].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-gray-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0 mt-1.5"></span>
-                      {item}
-                    </li>
+                <div className="space-y-2 mb-6">
+                  {['Comdata · Fleetone · EFS · TCH', 'DEF at Every Pump Island', 'Reefer Fuel & High Flow Nozzles', 'Open 24/7/365 — Never Closed'].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </div>
                   ))}
-                </ul>
-                <div className="mt-auto pt-4 border-t border-gray-200">
-                  <Link href="/fuel/" className="text-[#FFD10C] font-semibold text-sm inline-flex items-center gap-1 hover:text-yellow-500 transition-colors">
-                    Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+                <div className="mt-auto pt-4 border-t border-gray-100">
+                  <Link 
+                    href="/fuel/" 
+                    className="inline-flex items-center justify-between w-full text-black font-bold text-sm bg-gray-50 hover:bg-[#FFD10C] py-2.5 px-4 rounded-xl transition-all duration-300 group/link"
+                  >
+                    <span>Fuel Card Programs</span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Service 2 — Truck Parking */}
-            <div className="group bg-white p-0 rounded-2xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col">
-              <div className="w-full h-48 overflow-hidden bg-gray-200 relative flex-shrink-0">
-                <ImageWithFallback
-                  src="/truck_parking.jpg"
-                  alt="Safe overnight truck parking near I-75 Georgia"
+            <div className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col overflow-hidden">
+              <div className="w-full h-52 overflow-hidden bg-gray-900 relative flex-shrink-0">
+                <img
+                  src="/truck_parking_hd.jpg"
+                  alt="Safe well-lit truck parking lot along I-75 Georgia"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  style={{ opacity: 1 }}
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
                 <div className="absolute top-4 right-4">
-                  <div className="bg-[#FFD10C] p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Truck className="w-6 h-6 text-black" />
+                  <div className="bg-[#FFD10C] p-2.5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Truck className="w-5 h-5 text-black" />
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg">Truck Parking</h3>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="text-[#FFD10C] text-xs font-bold tracking-wider uppercase block mb-0.5">Secure Rest Stop</span>
+                  <h3 className="text-xl font-extrabold text-white drop-shadow-md">Truck Parking</h3>
                 </div>
               </div>
-              <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-1">
-                <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                  <strong>Free truck parking</strong> in Adel and Cordele, GA. Wide paved lots with pull-through spaces for 18-wheelers, tankers, and flatbeds — monitored around the clock. Reserve truck parking also available.
+              <div className="p-6 flex flex-col flex-1 bg-white">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  <strong>Free & reserve truck parking</strong> in Adel and Cordele, GA. Wide paved pull-through spots sized for 18-wheelers, tankers, flatbeds, and doubles.
                 </p>
-                <ul className="space-y-1.5 mb-4">
-                  {['24/7 Camera Surveillance', 'Pull-Through Spaces', 'Free & Reserve Parking Available', 'Well-Lit Lots All Night'].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-gray-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0 mt-1.5"></span>
-                      {item}
-                    </li>
+                <div className="space-y-2 mb-6">
+                  {['24/7 Security & CCTV Coverage', 'Pull-Through Spaces For Easy Out', 'Free Parking & Reserve Options', 'Bright Overhead Lighting All Night'].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </div>
                   ))}
-                </ul>
-                <div className="mt-auto pt-4 border-t border-gray-200">
-                  <Link href="/truck-parking/" className="text-[#FFD10C] font-semibold text-sm inline-flex items-center gap-1 hover:text-yellow-500 transition-colors">
-                    Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+                <div className="mt-auto pt-4 border-t border-gray-100">
+                  <Link 
+                    href="/truck-parking/" 
+                    className="inline-flex items-center justify-between w-full text-black font-bold text-sm bg-gray-50 hover:bg-[#FFD10C] py-2.5 px-4 rounded-xl transition-all duration-300 group/link"
+                  >
+                    <span>Parking Information</span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Service 3 — Food & Amenities */}
-            <div className="group bg-white p-0 rounded-2xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col">
-              <div className="w-full h-48 overflow-hidden bg-gray-200 relative flex-shrink-0">
-                <ImageWithFallback
+            <div className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col overflow-hidden">
+              <div className="w-full h-52 overflow-hidden bg-gray-900 relative flex-shrink-0">
+                <img
                   src="/kfc_image.jpg"
-                  alt="Hot food dining and shower facilities at Georgia truck stop"
+                  alt="Hot restaurant dining and driver showers at Super Petroleum"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  style={{ opacity: 1 }}
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
                 <div className="absolute top-4 right-4">
-                  <div className="bg-[#FFD10C] p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Coffee className="w-6 h-6 text-black" />
+                  <div className="bg-[#FFD10C] p-2.5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Coffee className="w-5 h-5 text-black" />
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg">Food & Amenities</h3>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="text-[#FFD10C] text-xs font-bold tracking-wider uppercase block mb-0.5">Dining & Rest</span>
+                  <h3 className="text-xl font-extrabold text-white drop-shadow-md">Food & Amenities</h3>
                 </div>
               </div>
-              <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-1">
-                <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                  <strong>KFC, Starbucks, Sbarro, and Curry & Grill</strong> on-site. Plus private showers, clean restrooms, and free WiFi — everything a driver needs without leaving the property.
+              <div className="p-6 flex flex-col flex-1 bg-white">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  <strong>4 dining options inside</strong>: KFC, Starbucks, Sbarro, and Curry & Grill. Plus private hot shower suites cleaned between every single use.
                 </p>
-                <ul className="space-y-1.5 mb-4">
-                  {['4 Restaurant Options On-Site', 'Private Showers 24/7', 'Free High-Speed WiFi', 'Clean Restrooms · Fresh Towels'].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-gray-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0 mt-1.5"></span>
-                      {item}
-                    </li>
+                <div className="space-y-2 mb-6">
+                  {['4 On-Site Restaurant Brands', 'Private Hot Showers 24/7', 'Free High-Speed Driver WiFi', 'Spotless Restrooms & Fresh Towels'].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </div>
                   ))}
-                </ul>
-                <div className="mt-auto pt-4 border-t border-gray-200">
-                  <Link href="/food-amenities/" className="text-[#FFD10C] font-semibold text-sm inline-flex items-center gap-1 hover:text-yellow-500 transition-colors">
-                    Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+                <div className="mt-auto pt-4 border-t border-gray-100">
+                  <Link 
+                    href="/food-amenities/" 
+                    className="inline-flex items-center justify-between w-full text-black font-bold text-sm bg-gray-50 hover:bg-[#FFD10C] py-2.5 px-4 rounded-xl transition-all duration-300 group/link"
+                  >
+                    <span>View Dining & Showers</span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Service 4 — Truck Care Shop */}
-            <div className="group bg-white p-0 rounded-2xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col">
-              <div className="w-full h-48 overflow-hidden bg-gray-200 relative flex-shrink-0">
-                <ImageWithFallback
+            <div className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-3 relative flex flex-col overflow-hidden">
+              <div className="w-full h-52 overflow-hidden bg-gray-900 relative flex-shrink-0">
+                <img
                   src="/truck_care.jpg"
-                  alt="Truck repair maintenance and DOT inspection Adel Georgia"
+                  alt="ASE-certified commercial truck repair and maintenance shop"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  style={{ opacity: 1 }}
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
                 <div className="absolute top-4 right-4">
-                  <div className="bg-[#FFD10C] p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Wrench className="w-6 h-6 text-black" />
+                  <div className="bg-[#FFD10C] p-2.5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Wrench className="w-5 h-5 text-black" />
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg">Truck Care Shop</h3>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="text-[#FFD10C] text-xs font-bold tracking-wider uppercase block mb-0.5">ASE Certified</span>
+                  <h3 className="text-xl font-extrabold text-white drop-shadow-md">Truck Care Shop</h3>
                 </div>
               </div>
-              <div className="p-6 bg-gradient-to-b from-white to-gray-50 flex flex-col flex-1">
-                <p className="text-gray-700 leading-relaxed text-sm mb-4">
-                  <strong>ASE-certified technicians</strong> handling oil changes, tire service, brake repair, DOT inspections, and 24/7 emergency roadside assistance for all commercial truck brands.
+              <div className="p-6 flex flex-col flex-1 bg-white">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  <strong>Full-service commercial shop</strong> for oil changes, tire replacement, brake service, DOT annual inspections, and 24/7 roadside emergency calls.
                 </p>
-                <ul className="space-y-1.5 mb-4">
-                  {['Oil Changes & Lube Service', 'Tire Repair & Replacement', 'DOT Safety Inspections', '24/7 Emergency Roadside'].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-gray-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0 mt-1.5"></span>
-                      {item}
-                    </li>
+                <div className="space-y-2 mb-6">
+                  {['Oil Changes & Lube Service', 'Commercial Tire Repair & Sales', 'Official DOT Safety Inspections', '24/7 Emergency Mobile Roadside'].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#FFD10C] flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </div>
                   ))}
-                </ul>
-                <div className="mt-auto pt-4 border-t border-gray-200">
-                  <Link href="/truck-care/" className="text-[#FFD10C] font-semibold text-sm inline-flex items-center gap-1 hover:text-yellow-500 transition-colors">
-                    Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+                <div className="mt-auto pt-4 border-t border-gray-100">
+                  <Link 
+                    href="/truck-care/" 
+                    className="inline-flex items-center justify-between w-full text-black font-bold text-sm bg-gray-50 hover:bg-[#FFD10C] py-2.5 px-4 rounded-xl transition-all duration-300 group/link"
+                  >
+                    <span>Truck Care Services</span>
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>

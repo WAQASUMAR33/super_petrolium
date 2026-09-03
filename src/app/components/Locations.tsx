@@ -12,7 +12,7 @@ const locations = [
     phone: '(229) 896-7453',
     hours: 'Open 24/7',
     description: 'Marathon station in Adel, GA — high speed diesel, free truck parking, and dining right off I-75.',
-    image: 'https://images.unsplash.com/photo-1638425637198-f4ebe6ef341a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWVzZWwlMjBmdWVsJTIwcHVtcHxlbnwxfHx8fDE3NjQwMjE0OTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/gas_astation2.jpg',
     amenities: [
       { icon: Utensils, label: 'Huddle House' },
       { icon: Fuel, label: 'High Speed Diesel & DEF' },
@@ -32,7 +32,7 @@ const locations = [
     phone: '(229) 513-1590',
     hours: 'Open 24/7',
     description: 'Travel Centers of America — high speed diesel, free truck parking, and full services at I-75/Exit-97.',
-    image: 'https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/cordele_location.jpg',
     amenities: [
       { icon: Fuel, label: 'High Speed Diesel & DEF' },
       { icon: Truck, label: 'Free Truck Parking' }

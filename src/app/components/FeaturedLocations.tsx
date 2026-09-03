@@ -7,14 +7,14 @@ const locations = [
     address: '1503 West 4th St, Adel, GA 31620',
     hours: 'Open 24/7',
     features: ['Huddle House Restaurant', 'Full Service Dining', 'Dine-In & Pickup Available'],
-    image: 'https://images.unsplash.com/photo-1638425637198-f4ebe6ef341a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWVzZWwlMjBmdWVsJTIwcHVtcHxlbnwxfHx8fDE3NjQwMjE0OTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    image: '/gas_astation2.jpg'
   },
   {
     name: 'Petro-Stopping Center',
     address: 'Travel Centers of America, Cordele, GA 31015',
     hours: 'Open 24/7',
     features: ['Full Service Station', 'Truck Parking', 'Fuel Services'],
-    image: 'https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    image: '/cordele_location.jpg'
   }
 ];
 
