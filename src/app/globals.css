@@ -51,3 +51,8 @@ p {
 button {
   font-family: inherit;
 }
+
+/* Force all images to be visible and prevent any opacity-0 classes from hiding them */
+img {
+  opacity: 1 !important;
+}

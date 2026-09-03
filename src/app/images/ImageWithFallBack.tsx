@@ -57,13 +57,18 @@ export const ImageWithFallback = forwardRef<HTMLImageElement, ImageWithFallbackP
       }
     };
 
+    // Strip any opacity-0 class to ensure image is always 100% visible
+    const cleanClassName = (className || '')
+      .replace(/\bopacity-\d+\b/g, '')
+      .trim();
+
     return (
       <img
         ref={ref}
         src={imgSrc}
         alt={alt}
-        className={className}
-        style={style}
+        className={cleanClassName}
+        style={{ opacity: 1, ...style }}
         loading={priority ? 'eager' : loading}
         decoding={decoding}
         fetchPriority={priority ? 'high' : fetchPriority}
