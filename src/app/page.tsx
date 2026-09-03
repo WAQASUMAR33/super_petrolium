@@ -94,15 +94,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {/* Location 1 */}
             <div className="group bg-white p-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden">
-              <div className="w-full h-64 md:h-72 overflow-hidden bg-gray-200 relative">
-                <ImageWithFallback
+              <div className="w-full h-64 md:h-72 overflow-hidden relative">
+                <img
                   src="/gas_astation2.jpg"
                   alt="Adel Location"
                   className="w-full h-full object-cover object-bottom group-hover:scale-110 transition-transform duration-500"
-                  loading="eager"
-                  fetchPriority="high"
+                  style={{ opacity: 1 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
                 <div className="absolute bottom-4 left-4">
                   <div className="bg-[#FFD10C] p-2 rounded-lg inline-block">
                     <MapPin className="w-5 h-5 text-black" />
@@ -142,15 +141,14 @@ export default function Home() {
 
             {/* Location 2 - Petro-Stopping Center */}
             <div className="group bg-white p-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden">
-              <div className="w-full h-64 md:h-72 overflow-hidden bg-gray-200 relative">
-                <ImageWithFallback
+              <div className="w-full h-64 md:h-72 overflow-hidden relative">
+                <img
                   src="https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRpbmluZ3xlbnwxfHx8fDE3NjQwMjE0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                   alt="Petro-Stopping Center"
                   className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                  loading="eager"
-                  fetchPriority="high"
+                  style={{ opacity: 1 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
                 <div className="absolute bottom-4 left-4">
                   <div className="bg-[#FFD10C] p-2 rounded-lg inline-block">
                     <MapPin className="w-5 h-5 text-black" />
