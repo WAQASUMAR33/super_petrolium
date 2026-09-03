@@ -94,11 +94,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {/* Location 1 */}
             <div className="group bg-white p-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden">
-              <div className="w-full h-64 overflow-hidden bg-gray-200 relative">
+              <div className="w-full h-64 md:h-72 overflow-hidden bg-gray-200 relative">
                 <ImageWithFallback
                   src="/gas_astation2.jpg"
                   alt="Adel Location"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-bottom group-hover:scale-110 transition-transform duration-500"
                   loading="eager"
                   fetchPriority="high"
                 />
@@ -142,11 +142,11 @@ export default function Home() {
 
             {/* Location 2 - Petro-Stopping Center */}
             <div className="group bg-white p-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden">
-              <div className="w-full h-64 overflow-hidden bg-gray-200 relative">
+              <div className="w-full h-64 md:h-72 overflow-hidden bg-gray-200 relative">
                 <ImageWithFallback
                   src="/gas_astation2.jpg"
                   alt="Petro-Stopping Center"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-bottom group-hover:scale-110 transition-transform duration-500"
                   loading="eager"
                   fetchPriority="high"
                 />

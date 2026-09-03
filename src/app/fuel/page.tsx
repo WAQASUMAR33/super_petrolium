@@ -195,7 +195,7 @@ export default function FuelPage() {
               <ImageWithFallback
                 src="/gas_astation2.jpg"
                 alt="Super Petroleum fuel station Adel Georgia I-75"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-bottom"
               />
             </div>
             <div>

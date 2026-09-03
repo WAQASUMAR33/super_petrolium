@@ -25,6 +25,17 @@ export function ImageWithFallback({
 }: ImageWithFallbackProps) {
   const [didError, setDidError] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const imgRef = React.useRef<HTMLImageElement>(null)
+
+  React.useEffect(() => {
+    if (imgRef.current?.complete) {
+      if (imgRef.current.naturalWidth === 0) {
+        setDidError(true)
+      } else {
+        setIsLoaded(true)
+      }
+    }
+  }, [src])
 
   const handleError = () => {
     setDidError(true)
@@ -56,6 +67,7 @@ export function ImageWithFallback({
     </div>
   ) : (
     <img
+      ref={imgRef}
       src={src}
       alt={alt}
       className={`${className ?? ''} ${!isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
