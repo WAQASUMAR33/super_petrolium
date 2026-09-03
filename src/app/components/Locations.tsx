@@ -105,6 +105,7 @@ export function Locations() {
                     src={location.image}
                     alt={location.name}
                     className="w-full h-full object-cover"
+                    style={{ opacity: 1 }}
                   />
                   <div className="absolute top-4 right-4">
                     <span className="bg-[#FFD10C] text-black px-4 py-2 rounded-full">

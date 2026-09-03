@@ -37,6 +37,7 @@ export function FeaturedLocations() {
                   src={location.image}
                   alt={location.name}
                   className="w-full h-full object-cover"
+                  style={{ opacity: 1 }}
                 />
               </div>
               <div className="p-6">
