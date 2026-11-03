@@ -22,7 +22,7 @@ export function CallToAction() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Cards We Accept</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We accept the following fuel cards at both locations. Convenient and secure payment options for professional drivers.
+            We accept all major fuel cards 24/7. Convenient and secure payment options for professional drivers.
           </p>
         </div>
 
@@ -52,23 +52,17 @@ export function CallToAction() {
         {/* Additional Info */}
         <div className="mt-16 text-center">
           <div className="bg-white/5 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-white">Accepted at Both Locations</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">Accepted at Adel Truck Stop</h3>
             <p className="text-gray-300 mb-6">
-              All fuel cards listed above are accepted at our Adel Truck Stop and Petro-Stopping Center locations. 
-              Enjoy seamless payment experiences at any of our travel centers.
+              All fuel cards listed above are accepted at our Adel Truck Stop location. 
+              Enjoy seamless payment experiences at our travel center.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-md mx-auto">
               <div className="text-center">
                 <div className="w-12 h-12 bg-[#FFD10C]/20 rounded-full flex items-center justify-center mx-auto mb-3">
                   <CheckCircle className="w-6 h-6 text-[#FFD10C]" />
                 </div>
-                <p className="text-gray-300 text-sm">Adel Truck Stop</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#FFD10C]/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle className="w-6 h-6 text-[#FFD10C]" />
-                </div>
-                <p className="text-gray-300 text-sm">Petro-Stopping Center</p>
+                <p className="text-gray-300 text-sm">Adel Truck Stop (Exit 39)</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-[#FFD10C]/20 rounded-full flex items-center justify-center mx-auto mb-3">

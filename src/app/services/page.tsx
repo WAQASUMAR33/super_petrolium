@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Our Services - High Speed Diesel, Free Truck Parking & More | Marathon Station Georgia',
-  description: 'Super Petroleum — proud Marathon station in Adel, GA and Marathon station in Cordele, GA — offers high speed diesel, free truck parking, reserve truck parking, dining, truck repair, and 24/7 services.',
+  description: 'Super Petroleum — proud Marathon station in Adel, GA — offers high speed diesel, free truck parking, reserve truck parking, dining, truck repair, and 24/7 services.',
   path: '/services',
 });
 

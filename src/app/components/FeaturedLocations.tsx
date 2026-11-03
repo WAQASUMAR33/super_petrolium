@@ -6,15 +6,8 @@ const locations = [
     name: 'Adel Truck Stop',
     address: '1503 West 4th St, Adel, GA 31620',
     hours: 'Open 24/7',
-    features: ['Huddle House Restaurant', 'Full Service Dining', 'Dine-In & Pickup Available'],
+    features: ['Curry & Grill Restaurant', 'Full Service Dining', 'Dine-In & Pickup Available'],
     image: '/gas_astation2.jpg'
-  },
-  {
-    name: 'Petro-Stopping Center',
-    address: 'Travel Centers of America, Cordele, GA 31015',
-    hours: 'Open 24/7',
-    features: ['Full Service Station', 'Truck Parking', 'Fuel Services'],
-    image: '/cordele_location.jpg'
   }
 ];
 
@@ -23,13 +16,13 @@ export function FeaturedLocations() {
     <section id="locations" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Featured Locations</h2>
+          <h2 className="mb-4">Featured Location</h2>
           <p className="max-w-2xl mx-auto">
-            Conveniently located along major highways and interstates across the country
+            Conveniently located along I-75 in Georgia
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-xl mx-auto">
           {locations.map((location, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">

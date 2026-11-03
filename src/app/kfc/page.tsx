@@ -5,8 +5,8 @@ import { MapPin, Clock, CheckCircle, Star, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'KFC at Super Petroleum - Adel & Cordele Georgia Travel Center',
-  description: 'KFC restaurant at Super Petroleum travel center in Adel and Cordele, GA. Hot fried chicken, sides, and meals available at our I-75 truck stop. Open daily for dine-in and carry-out.',
+  title: 'KFC at Super Petroleum - Adel Georgia Travel Center',
+  description: 'KFC restaurant at Super Petroleum travel center in Adel, GA. Hot fried chicken, sides, and meals available at our I-75 truck stop. Open daily for dine-in and carry-out.',
   path: '/kfc/',
 });
 

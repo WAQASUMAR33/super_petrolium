@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { Fuel, Truck, Coffee, Wrench, CreditCard, MapPin, Clock, Shield, Star, Quote, ChevronDown, CheckCircle, Zap, Phone, Navigation, ArrowRight, Utensils, Sparkles } from 'lucide-react';
+import { Fuel, Truck, Coffee, Wrench, CreditCard, MapPin, Clock, Shield, Star, Quote, ChevronDown, CheckCircle, Zap, Phone, Navigation, ArrowRight, Utensils } from 'lucide-react';
 import Link from 'next/link';
 import { ImageWithFallback } from './images/ImageWithFallBack';
 
 export const metadata: Metadata = {
-  title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
-  description: 'Super Petroleum — proud Marathon station in Adel, GA and Marathon station in Cordele, GA — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services.',
+  title: 'Super Petroleum - Travel Center & Truck Stop in Georgia',
+  description: 'Super Petroleum — proud Marathon station in Adel, GA — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services.',
   alternates: {
     canonical: 'https://superpetroleums.com/',
   },
   openGraph: {
-    title: 'Super Petroleum - Travel Centers & Truck Stops in Georgia',
-    description: 'Super Petroleum — proud Marathon station in Adel, GA and Marathon station in Cordele, GA — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services.',
+    title: 'Super Petroleum - Travel Center & Truck Stop in Georgia',
+    description: 'Super Petroleum — proud Marathon station in Adel, GA — offers high speed diesel, free truck parking, truck repair, dining, and 24/7 services.',
     url: 'https://superpetroleums.com/',
     images: [{ url: 'https://superpetroleums.com/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -67,7 +67,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { value: '30+', label: 'Years Serving Drivers' },
-              { value: '2', label: 'I-75 Georgia Locations' },
+              { value: '1', label: 'Premier I-75 Location' },
               { value: '24/7', label: 'Always Open' },
               { value: '6+', label: 'Fuel Cards Accepted' },
             ].map((s, i) => (
@@ -93,148 +93,22 @@ export default function Home() {
               <span className="text-xs md:text-sm font-bold tracking-wide uppercase">Strategic I-75 Georgia Corridor</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">
-              Our Premier <span className="bg-gradient-to-r from-gray-900 via-[#ca9d00] to-gray-900 bg-clip-text text-transparent">Travel Centers</span>
+              Our Premier <span className="bg-gradient-to-r from-gray-900 via-[#ca9d00] to-gray-900 bg-clip-text text-transparent">Travel Center</span>
             </h2>
             <div className="w-24 h-1.5 bg-[#FFD10C] rounded-full mx-auto mb-4"></div>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Two full-service travel centers strategically located along I-75 in South Georgia. Built specifically for professional drivers.
+              Full-service travel center strategically located along I-75 in South Georgia. Built specifically for professional drivers.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
-            {/* Location 1: Adel Truck Stop */}
-            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden flex flex-col relative">
-              {/* Image Banner */}
-              <div className="w-full h-72 md:h-80 overflow-hidden relative bg-gray-900">
+          <div className="max-w-6xl mx-auto">
+            {/* Location: Adel Truck Stop - Flagship Big Card */}
+            <div className="group bg-white rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 border border-gray-200/90 hover:border-[#FFD10C] overflow-hidden grid grid-cols-1 lg:grid-cols-12 relative">
+              {/* Left Side: Large Image Showcase */}
+              <div className="lg:col-span-6 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] h-full overflow-hidden bg-gray-900">
                 <img
                   src="/gas_astation2.jpg"
                   alt="Adel Truck Stop along I-75 Georgia"
-                  className="w-full h-full object-cover object-bottom group-hover:scale-105 transition-transform duration-700"
-                  style={{ opacity: 1 }}
-                  loading="eager"
-                  fetchPriority="high"
-                />
-                {/* Visual Gradients */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
-
-                {/* Top Badges */}
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-[#FFD10C] text-black text-xs md:text-sm font-bold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5">
-                    <Navigation className="w-3.5 h-3.5" />
-                    I-75 • Exit 39
-                  </span>
-                  <span className="bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-white/20">
-                    Adel, GA
-                  </span>
-                </div>
-
-                <div className="absolute top-4 right-4">
-                  <div className="bg-emerald-500/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 border border-emerald-400/40">
-                    <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                    Open 24/7
-                  </div>
-                </div>
-
-                {/* Bottom Image Overlay Text */}
-                <div className="absolute bottom-4 left-5 right-5">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[#FFD10C] text-xs font-bold uppercase tracking-wider">Marathon Travel Plaza</span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight drop-shadow-md">
-                    Adel Truck Stop
-                  </h3>
-                  <p className="text-gray-300 text-xs md:text-sm line-clamp-1 mt-0.5">
-                    1503 West 4th St, Adel, GA 31620
-                  </p>
-                </div>
-              </div>
-
-              {/* Card Details Body */}
-              <div className="p-6 md:p-8 flex flex-col flex-1 bg-white">
-                {/* Quick Info Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-6 border-b border-gray-100 mb-6 text-sm">
-                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
-                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-4 h-4 text-black" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">Direct Phone</p>
-                      <a href="tel:229-896-7453" className="font-bold text-gray-900 hover:text-[#ca9d00] transition-colors">
-                        (229) 896-7453
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
-                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-4 h-4 text-black" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">Station Hours</p>
-                      <span className="font-bold text-gray-900">Always Open 24/7</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Amenity Highlights Badges */}
-                <div className="mb-6">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">On-Site Amenities & Services</p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      { label: 'High Speed Diesel & DEF', icon: Fuel },
-                      { label: 'Free Truck Parking', icon: Truck },
-                      { label: 'KFC Restaurant', icon: Utensils },
-                      { label: 'Starbucks Coffee', icon: Coffee },
-                      { label: 'Sbarro Pizza', icon: Utensils },
-                      { label: 'Curry & Grill', icon: Utensils },
-                      { label: 'ASE Truck Care Shop', icon: Wrench },
-                      { label: 'Private Showers 24/7', icon: CheckCircle },
-                    ].map((badge, idx) => {
-                      const Icon = badge.icon;
-                      return (
-                        <span
-                          key={idx}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-[#FFD10C]/20 text-gray-800 text-xs font-semibold border border-gray-200/80 transition-colors"
-                        >
-                          <Icon className="w-3.5 h-3.5 text-black" />
-                          {badge.label}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Card Action Buttons */}
-                <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-[#FFD10C] text-black py-3.5 px-5 rounded-xl font-bold hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn text-sm text-center"
-                  >
-                    <Navigation className="w-4 h-4 text-black group-hover/btn:translate-x-0.5 transition-transform" />
-                    <span>Get Directions</span>
-                  </a>
-
-                  <a 
-                    href="tel:229-896-7453"
-                    className="flex-1 bg-black text-white py-3.5 px-5 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm text-center"
-                  >
-                    <Phone className="w-4 h-4 text-[#FFD10C]" />
-                    <span>Call Adel</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Location 2: Petro-Cordele */}
-            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/80 hover:border-[#FFD10C] hover:-translate-y-2 overflow-hidden flex flex-col relative">
-              {/* Image Banner */}
-              <div className="w-full h-72 md:h-80 overflow-hidden relative bg-gray-900">
-                <img
-                  src="/cordele_location.jpg"
-                  alt="Petro-Cordele Travel Center I-75 Exit 97"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   style={{ opacity: 1 }}
                   loading="eager"
@@ -242,113 +116,133 @@ export default function Home() {
                 />
                 {/* Visual Gradients */}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent"></div>
 
                 {/* Top Badges */}
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="bg-[#FFD10C] text-black text-xs md:text-sm font-bold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5">
-                    <Navigation className="w-3.5 h-3.5" />
-                    I-75 • Exit 97
+                <div className="absolute top-5 left-5 flex flex-wrap gap-2.5">
+                  <span className="bg-[#FFD10C] text-black text-xs sm:text-sm font-extrabold px-3.5 py-2 rounded-xl shadow-lg flex items-center gap-1.5 uppercase tracking-wide">
+                    <Navigation className="w-4 h-4 fill-black" />
+                    I-75 • Exit 39
                   </span>
-                  <span className="bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-white/20">
-                    Cordele, GA
+                  <span className="bg-black/70 backdrop-blur-md text-white text-xs sm:text-sm font-bold px-3.5 py-2 rounded-xl border border-white/20">
+                    Adel, GA
                   </span>
                 </div>
 
-                <div className="absolute top-4 right-4">
-                  <div className="bg-emerald-500/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 border border-emerald-400/40">
-                    <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                <div className="absolute top-5 right-5">
+                  <div className="bg-emerald-500/90 backdrop-blur-md text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-2 border border-emerald-400/40">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
                     Open 24/7
                   </div>
                 </div>
 
                 {/* Bottom Image Overlay Text */}
-                <div className="absolute bottom-4 left-5 right-5">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[#FFD10C] text-xs font-bold uppercase tracking-wider">Travel Centers of America Partner</span>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-[#FFD10C] text-xs sm:text-sm font-extrabold uppercase tracking-widest">
+                      Marathon Travel Plaza
+                    </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight drop-shadow-md">
-                    Petro-Cordele
+                  <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight drop-shadow-md">
+                    Adel Truck Stop
                   </h3>
-                  <p className="text-gray-300 text-xs md:text-sm line-clamp-1 mt-0.5">
-                    Travel Centers of America, Cordele, GA 31015
+                  <p className="text-gray-300 text-sm sm:text-base line-clamp-1 mt-1 font-medium">
+                    1503 West 4th St, Adel, GA 31620
                   </p>
                 </div>
               </div>
 
-              {/* Card Details Body */}
-              <div className="p-6 md:p-8 flex flex-col flex-1 bg-white">
-                {/* Quick Info Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-6 border-b border-gray-100 mb-6 text-sm">
-                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
-                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-4 h-4 text-black" />
+              {/* Right Side: Data & Details Body */}
+              <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between bg-white">
+                <div>
+                  {/* Header & Short Intro */}
+                  <div className="mb-6">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-[#ca9d00] block mb-1">
+                      Premier Travel Center
+                    </span>
+                    <h4 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-2">
+                      Full-Service Stop on I-75
+                    </h4>
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      Strategically located between Valdosta and Tifton. Engineered for commercial rigs with easy on/off access, wide pull-through lanes, and driver-first hospitality.
+                    </p>
+                  </div>
+
+                  {/* Quick Info Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-6 border-b border-gray-100 mb-6">
+                    <div className="flex items-center gap-3.5 text-gray-700 bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                      <div className="w-12 h-12 rounded-xl bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-6 h-6 text-black" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Direct Phone</p>
+                        <a href="tel:229-896-7453" className="text-base sm:text-lg font-black text-gray-900 hover:text-[#ca9d00] transition-colors">
+                          (229) 896-7453
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">Direct Phone</p>
-                      <a href="tel:229-513-1590" className="font-bold text-gray-900 hover:text-[#ca9d00] transition-colors">
-                        (229) 513-1590
-                      </a>
+
+                    <div className="flex items-center gap-3.5 text-gray-700 bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                      <div className="w-12 h-12 rounded-xl bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-6 h-6 text-black" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Station Hours</p>
+                        <span className="text-base sm:text-lg font-black text-gray-900">Always Open 24/7</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 text-gray-700 bg-gray-50/80 p-3 rounded-xl">
-                    <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-4 h-4 text-black" />
+                  {/* Amenity Highlights Badges */}
+                  <div className="mb-8">
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3.5">
+                      On-Site Amenities & Services
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {[
+                        { label: 'High Speed Diesel & DEF', icon: Fuel, desc: 'High-flow islands' },
+                        { label: 'Free Truck Parking', icon: Truck, desc: 'Wide pull-through' },
+                        { label: 'Curry & Grill', icon: Utensils, desc: 'Fresh hot dining' },
+                        { label: 'Private Showers 24/7', icon: CheckCircle, desc: 'Sanitized suites' },
+                      ].map((badge, idx) => {
+                        const Icon = badge.icon;
+                        return (
+                          <div
+                            key={idx}
+                            className="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 hover:bg-[#FFD10C]/15 border border-gray-200/80 transition-colors"
+                          >
+                            <div className="w-9 h-9 rounded-lg bg-[#FFD10C]/20 flex items-center justify-center flex-shrink-0">
+                              <Icon className="w-4 h-4 text-black" />
+                            </div>
+                            <div>
+                              <p className="text-xs sm:text-sm font-bold text-gray-900 leading-tight">{badge.label}</p>
+                              <p className="text-[11px] text-gray-500 font-medium">{badge.desc}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">Station Hours</p>
-                      <span className="font-bold text-gray-900">Always Open 24/7</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Amenity Highlights Badges */}
-                <div className="mb-6">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">On-Site Amenities & Services</p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      { label: 'High Speed Diesel & DEF', icon: Fuel },
-                      { label: 'Free Truck Parking', icon: Truck },
-                      { label: 'Reserve Parking Available', icon: Shield },
-                      { label: 'Driver Lounge & Cafe', icon: Coffee },
-                      { label: 'Hot Private Showers', icon: CheckCircle },
-                      { label: 'All Major Fleet Cards', icon: CreditCard },
-                      { label: 'TA Travel Center Services', icon: Sparkles },
-                      { label: '24/7 Monitored Lots', icon: Shield },
-                    ].map((badge, idx) => {
-                      const Icon = badge.icon;
-                      return (
-                        <span
-                          key={idx}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-[#FFD10C]/20 text-gray-800 text-xs font-semibold border border-gray-200/80 transition-colors"
-                        >
-                          <Icon className="w-3.5 h-3.5 text-black" />
-                          {badge.label}
-                        </span>
-                      );
-                    })}
                   </div>
                 </div>
 
                 {/* Card Action Buttons */}
-                <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row gap-3.5">
                   <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Travel+Centers+of+America,+Cordele,+GA+31015"
+                    href="https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-[#FFD10C] text-black py-3.5 px-5 rounded-xl font-bold hover:bg-yellow-400 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn text-sm text-center"
+                    className="flex-1 bg-[#FFD10C] text-black py-4 px-6 rounded-2xl font-black hover:bg-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2.5 text-sm sm:text-base text-center group/btn"
                   >
-                    <Navigation className="w-4 h-4 text-black group-hover/btn:translate-x-0.5 transition-transform" />
+                    <Navigation className="w-5 h-5 text-black group-hover/btn:translate-x-0.5 transition-transform" />
                     <span>Get Directions</span>
                   </a>
 
                   <a 
-                    href="tel:229-513-1590"
-                    className="flex-1 bg-black text-white py-3.5 px-5 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm text-center"
+                    href="tel:229-896-7453"
+                    className="flex-1 bg-black text-white py-4 px-6 rounded-2xl font-bold hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2.5 text-sm sm:text-base text-center"
                   >
-                    <Phone className="w-4 h-4 text-[#FFD10C]" />
-                    <span>Call Cordele</span>
+                    <Phone className="w-5 h-5 text-[#FFD10C]" />
+                    <span>Call Adel: (229) 896-7453</span>
                   </a>
                 </div>
               </div>
@@ -443,7 +337,7 @@ export default function Home() {
               </div>
               <div className="p-6 flex flex-col flex-1 bg-white">
                 <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                  <strong>Free & reserve truck parking</strong> in Adel and Cordele, GA. Wide paved pull-through spots sized for 18-wheelers, tankers, flatbeds, and doubles.
+                  <strong>Free & reserve truck parking</strong> in Adel, GA. Wide paved pull-through spots sized for 18-wheelers, tankers, flatbeds, and doubles.
                 </p>
                 <div className="space-y-2 mb-6">
                   {['24/7 Security & CCTV Coverage', 'Pull-Through Spaces For Easy Out', 'Free Parking & Reserve Options', 'Bright Overhead Lighting All Night'].map((item, idx) => (
@@ -614,13 +508,13 @@ export default function Home() {
                 The Travel Center I-75 Drivers Actually Count On
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-              Super Petroleum locations are proud <strong>Marathon</strong> stations — sitting right on I-75 in South Georgia, so you're never out of your way. Our locations in Adel and Cordele are built to meet the needs of all long-haul and regional drivers.
+              Super Petroleum is a proud <strong>Marathon</strong> station — sitting right on I-75 in South Georgia, so you're never out of your way. Our location in Adel is built to meet the needs of all long-haul and regional drivers.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-              As proud Marathon stations, we carry the same commitment to professional drivers that Marathon has built over decades — high speed diesel, DEF, free truck parking, hot food, showers, and a full truck care shop under one roof. We've been serving Georgia drivers since 1995.
+              As a proud Marathon station, we carry the same commitment to professional drivers that Marathon has built over decades — high speed diesel, DEF, free truck parking, hot food, showers, and a full truck care shop under one roof. We've been serving Georgia drivers since 1995.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Need to reserve truck parking ahead of time? Call us before you arrive and we'll hold a space for you. Walk-ins are always welcome too — free truck parking is available first-come, first-served at both locations.
+                Need to reserve truck parking ahead of time? Call us before you arrive and we'll hold a space for you. Walk-ins are always welcome too — free truck parking is available first-come, first-served.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -646,13 +540,13 @@ export default function Home() {
           <div className="bg-gray-900 rounded-2xl p-10 text-white">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">Strategically Located on <span className="text-[#FFD10C]">I-75 in South Georgia</span></h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">Two travel centers covering the stretch of I-75 between Valdosta and Macon — the backbone of Southeast freight traffic.</p>
+              <p className="text-gray-400 max-w-2xl mx-auto">Our travel center covers the vital stretch of I-75 between Valdosta and Tifton — the backbone of Southeast freight traffic.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: "Adel, GA — Exit 39", body: "All four restaurants, full truck care shop, showers, and wide pull-through lots. Between Valdosta and Tifton on I-75." },
-                { title: "Cordele, GA — I-75/Exit-97", body: "I-75/Exit-97. Key stop for drivers heading to Florida, Georgia coast, or Alabama. Full fuel and amenities." },
-                { title: "Who Uses Our Stops", body: "OTR long-haul drivers, regional carriers, owner-operators, family travelers, reefer haulers, flatbeds, and tankers." },
+                { title: "Adel, GA — Exit 39", body: "Curry & Grill dining, private showers, high speed diesel, DEF, and wide pull-through lots. Between Valdosta and Tifton on I-75." },
+                { title: "Easy Interstate Access", body: "Direct on-and-off access from I-75 Exit 39. Key stop for drivers heading to Florida, Atlanta, or anywhere in the Southeast." },
+                { title: "Who Uses Our Stop", body: "OTR long-haul drivers, regional carriers, owner-operators, family travelers, reefer haulers, flatbeds, and tankers." },
               ].map((item, i) => (
                 <div key={i} className="border border-gray-700 hover:border-[#FFD10C] p-6 rounded-xl transition-all duration-300">
                   <h3 className="font-bold text-[#FFD10C] text-base mb-3">{item.title}</h3>
@@ -759,7 +653,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6 bg-gradient-to-b from-white to-gray-50">
-                <p className="text-gray-700 leading-relaxed text-sm mb-4">Flavorful Indian and grilled specialties. Spicy curries, tender grilled meats, and aromatic rice dishes for an authentic taste experience.</p>
+                <p className="text-gray-700 leading-relaxed text-sm mb-4">Delicious curry dishes and grilled specialties. Savor the authentic spices and hearty meals prepared fresh daily.</p>
                 <div className="pt-4 border-t border-gray-200">
                   <Link href="/curry-grill/" className="text-black font-semibold text-sm inline-flex items-center gap-1 hover:text-gray-700 transition-colors">
                     Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -771,18 +665,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50">
+      {/* Driver Reviews Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-              What Our Customers Say
-            </h2>
-            <div className="w-24 h-1 bg-[#FFD10C] mx-auto mb-4"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Trusted by professional drivers across the nation</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">What Drivers Are Saying</h2>
+            <p className="text-xl text-gray-600">Real feedback from professional drivers who rely on Super Petroleum</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
               <div className="flex items-center gap-1 mb-4 text-[#FFD10C]">
@@ -792,7 +683,7 @@ export default function Home() {
               </div>
               <Quote className="w-8 h-8 text-[#FFD10C] mb-4 opacity-50" />
               <p className="text-gray-700 mb-6 leading-relaxed italic">
-                "Best travel center I've been to in Georgia. Clean facilities, great fuel prices, and the staff is always friendly. This is my regular stop on I-75."
+                "Easy in and out off I-75. The parking lot is huge and well-maintained. Clean showers and great food options make this my preferred stop on my weekly Florida run."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#FFD10C] flex items-center justify-center text-black font-bold text-lg">
@@ -867,7 +758,7 @@ export default function Home() {
             {[
               { title: "Diesel & DEF at Every Island", body: "DEF available at every pump island — fill your truck and top off in one stop. No separate DEF-only lane." },
               { title: "Fuel Cards — All Major Programs", body: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager accepted. If your fleet runs a fuel card program, you're covered." },
-              { title: "Private Showers, Not an Afterthought", body: "Private shower rooms cleaned between every use. Fresh towels provided. Available 24 hours at both locations." },
+              { title: "Private Showers, Not an Afterthought", body: "Private shower rooms cleaned between every use. Fresh towels provided. Available 24 hours." },
               { title: "Truck Shop That's Actually Open", body: "Walk-in truck care shop — oil changes, tires, brakes, DOT inspections, and 24/7 emergency roadside." },
               { title: "Free Parking, No Time Limit", body: "Pull-through spaces for 18-wheelers. Free, no time limit — stay as long as your HOS break requires." },
               { title: "Free WiFi That Actually Works", body: "High-speed WiFi throughout the facility. Load board, ELD logs, dispatch calls — the connection holds up." },
@@ -893,12 +784,12 @@ export default function Home() {
           </div>
           <div className="space-y-3">
             {[
-              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Two locations: Adel Truck Stop at 1503 West 4th St, Adel, GA 31620 (Exit 39) and Cordele at Travel Centers of America, Cordele, GA 31015. Both open 24/7." },
-              { q: "What fuel cards do you accept?", a: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager are all accepted at both locations." },
-              { q: "Is there free truck parking at Super Petroleum?", a: "Yes — free parking with no time limits at both locations. Pull-through spaces for 18-wheelers, doubles, and oversized loads." },
+              { q: "Where is Super Petroleum located on I-75 in Georgia?", a: "Adel Truck Stop is located at 1503 West 4th St, Adel, GA 31620 (Exit 39 off I-75). Open 24/7." },
+              { q: "What fuel cards do you accept?", a: "Comdata, Fleetone, EFS, TCH, T-Chek, and Voyager are all accepted." },
+              { q: "Is there free truck parking at Super Petroleum?", a: "Yes — free parking with no time limits. Pull-through spaces for 18-wheelers, doubles, and oversized loads." },
               { q: "Do you have DEF (diesel exhaust fluid) available?", a: "Yes. DEF is available at every pump island at our Adel location — no separate stop required." },
               { q: "Is there a truck repair shop at the travel center?", a: "Yes. The Adel location has a full truck care shop — oil changes, tires, brakes, DOT inspections, and 24/7 roadside. Walk-ins welcome." },
-              { q: "What restaurants are inside the Adel travel center?", a: "KFC, Starbucks, Sbarro, and Curry & Grill — all four inside the building, no driving to a separate location." },
+              { q: "What dining is available at the Adel travel center?", a: "Curry & Grill is located inside the travel center, offering fresh hot meals without driving to a separate location." },
               { q: "Are showers available at the truck stop?", a: "Yes. Private shower rooms available 24 hours — cleaned between uses, fresh towels provided." },
             ].map((faq, i) => (
               <details key={i} className="group bg-white border border-gray-200 rounded-xl overflow-hidden">
@@ -918,7 +809,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black">Ready to Hit the Road?</h2>
           <p className="text-xl mb-8 text-gray-800">
-            Stop by one of our locations or contact us for more information about our services and fuel card programs.
+            Stop by our location or contact us for more information about our services and fuel card programs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 

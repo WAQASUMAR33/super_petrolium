@@ -38,7 +38,7 @@ const faqs = [
     id: 6,
     category: 'Gas Station',
     question: 'Is truck parking free? Can I reserve truck parking?',
-    answer: 'Free truck parking is available at both our Adel and Cordele locations — no fees, no membership required. Just pull in and park. If you want to guarantee a spot ahead of your arrival, you can also reserve truck parking by calling us. Both options are available 24/7 with full security monitoring and well-lit pull-through spaces for all rig sizes.'
+    answer: 'Free truck parking is available at our Adel location — no fees, no membership required. Just pull in and park. If you want to guarantee a spot ahead of your arrival, you can also reserve truck parking by calling us. Our parking is available 24/7 with full security monitoring and well-lit pull-through spaces for all rig sizes.'
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const faqs = [
     id: 11,
     category: 'Gas Station',
     question: 'Is Super Petroleum a Marathon station?',
-    answer: 'Yes. Super Petroleum locations are proud Marathon stations. Our locations in Adel and Cordele, Georgia operate to the same high standards Marathon drivers rely on across the country: reliable high speed diesel, safe truck parking, clean facilities, and full driver services all in one stop.'
+    answer: 'Yes. Super Petroleum is a proud Marathon station. Our location in Adel, Georgia operates to the same high standards Marathon drivers rely on across the country: reliable high speed diesel, safe truck parking, clean facilities, and full driver services all in one stop.'
   }
 ];
 

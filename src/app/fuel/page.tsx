@@ -6,17 +6,17 @@ import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'High Speed Diesel & Fuel Cards - Super Petroleum Travel Center Georgia',
-  description: 'High speed diesel and gasoline at competitive prices in Adel and Cordele, GA. We accept Comdata, Fleetone, EFS, TCH, T-Chek, and all major fleet fuel cards. DEF available 24/7.',
+  description: 'High speed diesel and gasoline at competitive prices in Adel, GA. We accept Comdata, Fleetone, EFS, TCH, T-Chek, and all major fleet fuel cards. DEF available 24/7.',
   path: '/fuel/',
 });
 
 const acceptedCards = [
-  { name: 'Comdata', detail: 'Accepted at both locations' },
-  { name: 'Fleetone', detail: 'Accepted at both locations' },
-  { name: 'EFS', detail: 'Accepted at both locations' },
-  { name: 'TCH', detail: 'Accepted at both locations' },
-  { name: 'T-Chek', detail: 'Accepted at both locations' },
-  { name: 'Voyager', detail: 'Accepted at both locations' },
+  { name: 'Comdata', detail: 'Accepted 24/7' },
+  { name: 'Fleetone', detail: 'Accepted 24/7' },
+  { name: 'EFS', detail: 'Accepted 24/7' },
+  { name: 'TCH', detail: 'Accepted 24/7' },
+  { name: 'T-Chek', detail: 'Accepted 24/7' },
+  { name: 'Voyager', detail: 'Accepted 24/7' },
 ];
 
 const fuelFeatures = [
@@ -71,13 +71,13 @@ export default function FuelPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <div className="inline-block bg-[#FFD10C]/20 px-4 py-2 rounded-full mb-6">
-            <p className="text-[#FFD10C] uppercase tracking-widest text-sm font-semibold">Diesel Fuel — Adel & Cordele, Georgia</p>
+            <p className="text-[#FFD10C] uppercase tracking-widest text-sm font-semibold">Diesel Fuel — Adel, Georgia</p>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             High Speed Diesel at <br /><span className="text-[#FFD10C]">Competitive Prices</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
-            High speed diesel, DEF, and gasoline at two Georgia travel centers. All major fleet fuel cards accepted — 24 hours a day, 7 days a week.
+            High speed diesel, DEF, and gasoline at our Georgia travel center. All major fleet fuel cards accepted — 24 hours a day, 7 days a week.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/locations/" className="bg-[#FFD10C] text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors shadow-lg">
@@ -228,13 +228,12 @@ export default function FuelPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Two Locations on Your Route</h2>
-            <p className="text-gray-600">Both locations offer diesel, DEF, gasoline, and full fleet card support — 24/7</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Location on Your Route</h2>
+            <p className="text-gray-600">Offering diesel, DEF, gasoline, and full fleet card support — 24/7</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-xl mx-auto">
             {[
               { name: 'Adel Truck Stop', address: '1503 West 4th St, Adel, GA 31620', phone: '(229) 896-7453', maps: 'https://www.google.com/maps/search/?api=1&query=1503+West+4th+St,+Adel,+GA+31620' },
-              { name: 'Petro-Stopping Center', address: 'Travel Centers of America, Cordele, GA 31015', phone: '(229) 513-1590', maps: 'https://www.google.com/maps/search/?api=1&query=Travel+Centers+of+America,+Cordele,+GA+31015' },
             ].map((loc, i) => (
               <div key={i} className="bg-white border border-gray-200 hover:border-[#FFD10C] p-8 rounded-2xl transition-all duration-300 hover:shadow-lg">
                 <div className="flex items-start gap-4 mb-4">
@@ -283,7 +282,7 @@ export default function FuelPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Ready to Fuel Up?</h2>
           <p className="text-gray-800 text-xl mb-8">
-            Both locations are open 24/7 with diesel, DEF, and all major fleet cards. No surprises — just reliable fuel at a fair price.
+            Open 24/7 with diesel, DEF, and all major fleet cards. No surprises — just reliable fuel at a fair price.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/locations/" className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors">

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Food, Showers & Amenities - Super Petroleum Travel Center Georgia',
-  description: 'Hot meals, KFC, Starbucks, Sbarro, clean showers, free WiFi, and restroom facilities at Super Petroleum travel centers in Adel and Cordele, GA. Everything a driver needs.',
+  description: 'Hot meals, KFC, Starbucks, Sbarro, clean showers, free WiFi, and restroom facilities at Super Petroleum travel center in Adel, GA. Everything a driver needs.',
   path: '/food-amenities/',
 });
 
@@ -238,13 +238,12 @@ export default function FoodAmenitiesPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Visit Us in Georgia</h2>
-            <p className="text-gray-600">All amenities available at both locations, 24 hours a day</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Visit Us in Adel, Georgia</h2>
+            <p className="text-gray-600">All amenities available 24 hours a day</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-xl mx-auto">
             {[
               { name: 'Adel Truck Stop', address: '1503 West 4th St, Adel, GA 31620', phone: '(229) 896-7453' },
-              { name: 'Petro-Stopping Center', address: 'Travel Centers of America, Cordele, GA 31015', phone: '(229) 513-1590' },
             ].map((loc, i) => (
               <div key={i} className="bg-white border border-gray-200 hover:border-[#FFD10C] p-8 rounded-2xl transition-all duration-300 hover:shadow-lg">
                 <div className="flex items-start gap-4 mb-4">
@@ -267,7 +266,7 @@ export default function FoodAmenitiesPage() {
       <section className="py-16 bg-[#FFD10C]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Ready for a Real Break?</h2>
-          <p className="text-gray-800 text-xl mb-8">Pull in at either location — hot food, coffee, showers, and free WiFi are waiting.</p>
+          <p className="text-gray-800 text-xl mb-8">Pull in — hot food, coffee, showers, and free WiFi are waiting.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/locations/" className="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
               Get Directions

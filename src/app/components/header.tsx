@@ -46,7 +46,7 @@ export function Header() {
                 SUPER <span className="text-[#FFD10C]">PETROLEUM</span>
               </div>
               <div className="text-[#FFD10C] text-xs font-medium tracking-widest uppercase">
-                Petro-Stopping Center
+                Travel Center & Truck Stop
               </div>
             </div>
           </Link>

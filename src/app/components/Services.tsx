@@ -41,7 +41,7 @@ const services = [
     image: '/truck_parking.jpg',
     title: 'Free & Reserve Truck Parking',
     href: '/truck-parking/',
-    description: 'Free truck parking at both our Adel and Cordele locations — no fees, no apps, no hassle. Walk in anytime or call ahead to reserve truck parking if you need a guaranteed spot for a long restart. Well-lit, paved pull-through spaces monitored 24/7, sized for 18-wheelers, tankers, flatbeds, and doubles. High speed diesel is steps away when you\'re ready to roll.',
+    description: 'Free truck parking at our Adel location — no fees, no apps, no hassle. Walk in anytime or call ahead to reserve truck parking if you need a guaranteed spot for a long restart. Well-lit, paved pull-through spaces monitored 24/7, sized for 18-wheelers, tankers, flatbeds, and doubles. High speed diesel is steps away when you\'re ready to roll.',
     features: ['Free Truck Parking', 'Reserve Truck Parking Available', '24/7 Security Monitoring', 'All Rig Sizes Welcome']
   }
 ];
@@ -59,7 +59,7 @@ export function Services() {
           </h1>
           <div className="w-24 h-1 bg-[#FFD10C] mx-auto mb-4"></div>
           <p className="max-w-2xl mx-auto text-xl text-gray-600">
-            Proud Marathon stations — everything you need to keep moving, all in one stop in Adel and Cordele, Georgia.
+            Proud Marathon station — everything you need to keep moving, all in one stop in Adel, Georgia.
           </p>
         </div>
 

@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: "Can I get emergency roadside assistance near I-75 in Georgia?",
-    a: "Yes. We offer 24/7 emergency roadside service for drivers in the South Georgia area. If you're broken down near Adel or Cordele, call us and we'll get someone out to you."
+    a: "Yes. We offer 24/7 emergency roadside service for drivers in the South Georgia area. If you're broken down near Adel, call us and we'll get someone out to you."
   },
   {
     q: "How long does a typical oil change take?",
@@ -363,7 +363,7 @@ export function TruckCareShop() {
                 Broken Down Near I-75?<br /><span className="text-[#FFD10C]">We Can Get to You.</span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Broken down on I-75 near Adel or Cordele? Our roadside team runs 24/7. One call gets you a tech with tools and parts — blown tires, dead batteries, brake issues, fuel problems, minor mechanical failures. If we can fix it roadside, we will.
+                Broken down on I-75 near Adel? Our roadside team runs 24/7. One call gets you a tech with tools and parts — blown tires, dead batteries, brake issues, fuel problems, minor mechanical failures. If we can fix it roadside, we will.
               </p>
               <a href="tel:229-896-7453" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg">
                 <Phone className="w-5 h-5 text-[#FFD10C]" />

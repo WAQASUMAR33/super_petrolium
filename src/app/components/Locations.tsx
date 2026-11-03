@@ -14,7 +14,7 @@ const locations = [
     description: 'Marathon station in Adel, GA — high speed diesel, free truck parking, and dining right off I-75.',
     image: '/gas_astation2.jpg',
     amenities: [
-      { icon: Utensils, label: 'Huddle House' },
+      { icon: Utensils, label: 'Curry & Grill' },
       { icon: Fuel, label: 'High Speed Diesel & DEF' },
       { icon: Truck, label: 'Free Truck Parking' }
     ],
@@ -22,28 +22,7 @@ const locations = [
       'Marathon station in Adel, GA',
       'High Speed Diesel & DEF 24/7',
       'Free Truck Parking — No Fees',
-      'Huddle House Restaurant'
-    ]
-  },
-  {
-    name: 'Petro-Cordele',
-    address: 'Travel Centers of America',
-    city: 'Cordele, GA 31015',
-    phone: '(229) 513-1590',
-    hours: 'Open 24/7',
-    description: 'Travel Centers of America — high speed diesel, free truck parking, and full services at I-75/Exit-97.',
-    image: '/cordele_location.jpg',
-    amenities: [
-      { icon: Fuel, label: 'High Speed Diesel & DEF' },
-      { icon: Truck, label: 'Free Truck Parking' }
-    ],
-    features: [
-      'Travel Centers of America',
-      'High Speed Diesel & DEF 24/7',
-      'Free Truck Parking — No Fees',
-      'Reserve Truck Parking Available',
-      'Clean Facilities',
-      'All Major Fleet Cards Accepted'
+      'Curry & Grill Restaurant'
     ]
   }
 ];
@@ -60,9 +39,9 @@ export function Locations() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="mb-6 text-4xl md:text-5xl font-bold">Our Locations</h1>
+            <h1 className="mb-6 text-4xl md:text-5xl font-bold">Our Location</h1>
             <p className="text-xl">
-              Super Petroleum locations are proud Marathon stations. Find our two Georgia travel centers in Adel and Cordele — high speed diesel, free truck parking, and full services right off I-75.
+              Super Petroleum is a proud Marathon station. Find our Georgia travel center in Adel — high speed diesel, free truck parking, and full services right off I-75.
             </p>
           </div>
         </div>
@@ -93,7 +72,7 @@ export function Locations() {
       {/* Locations Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="max-w-3xl mx-auto">
             {locations.map((location, index) => (
               <div 
                 key={index} 
